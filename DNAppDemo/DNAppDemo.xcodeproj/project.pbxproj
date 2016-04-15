@@ -16,13 +16,13 @@
 		51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D381CC0BB98004E93A9 /* ThirdViewController.xib */; };
 		51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D3C1CC0BBB5004E93A9 /* SecondViewController.m */; };
 		51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D3D1CC0BBB5004E93A9 /* SecondViewController.xib */; };
-		51888D431CC0C02B004E93A9 /* MBProgressHUD+DN.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D421CC0C02B004E93A9 /* MBProgressHUD+DN.m */; };
 		51888D471CC0C0DB004E93A9 /* DNNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D461CC0C0DB004E93A9 /* DNNetworking.m */; };
 		51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 51888D481CC0C20A004E93A9 /* DNShowHUD.bundle */; };
 		51888D4B1CC0C37C004E93A9 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D4A1CC0C37C004E93A9 /* Home.xcassets */; };
 		51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D4C1CC0C386004E93A9 /* Second.xcassets */; };
 		51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D4E1CC0C38E004E93A9 /* Third.xcassets */; };
 		51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D501CC0C395004E93A9 /* Mine.xcassets */; };
+		51888D521CC0E84F004E93A9 /* MBProgressHUD+DN.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D421CC0C02B004E93A9 /* MBProgressHUD+DN.m */; };
 		5189EECF1CC08F2900091684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189EECE1CC08F2900091684 /* main.m */; };
 		5189EED21CC08F2900091684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189EED11CC08F2900091684 /* AppDelegate.m */; };
 		5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5189EED91CC08F2900091684 /* Assets.xcassets */; };
@@ -848,6 +848,11 @@
 				TargetAttributes = {
 					5189EEC91CC08F2900091684 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5189EEE21CC08F2900091684 = {
 						CreatedOnToolsVersion = 7.3;
@@ -968,6 +973,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51888D521CC0E84F004E93A9 /* MBProgressHUD+DN.m in Sources */,
 				5189EF421CC09EC900091684 /* DNNavigationController.m in Sources */,
 				5189EF4C1CC0B85500091684 /* DNTabBarController.m in Sources */,
 				5189EF491CC0B81C00091684 /* DNTabBarButton.m in Sources */,
@@ -980,7 +986,6 @@
 				51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */,
 				5189EECF1CC08F2900091684 /* main.m in Sources */,
 				51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */,
-				51888D431CC0C02B004E93A9 /* MBProgressHUD+DN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

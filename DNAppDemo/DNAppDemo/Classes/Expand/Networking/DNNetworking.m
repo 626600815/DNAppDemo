@@ -22,6 +22,7 @@ static NSString *privateNetworkBaseUrl = nil;
 
 + (void)netWorkReachability{
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
         switch (status) {
             case AFNetworkReachabilityStatusUnknown://未知信号
             {
@@ -110,7 +111,7 @@ static NSString *privateNetworkBaseUrl = nil;
 + (void)postWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters images:(NSArray *)images progress:(DNProgressBlock)progress success:(DNSuccessBlock)success failure:(DNFailureBlock)failure {
      DNNetLog(@"POST请求的链接--------------------->%@",urlString);
     AFHTTPSessionManager *session = nil;
-    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"]) {
+    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"] && ![urlString hasPrefix:@"https://"]) {
         session = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[self baseUrl]]];
     }else {
         DNNetLog(@"全域名");
@@ -136,7 +137,7 @@ static NSString *privateNetworkBaseUrl = nil;
 + (void)postWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters data:(NSData*)data mimeType:(NSString *)type progress:(DNProgressBlock)progress success:(DNSuccessBlock)success failure:(DNFailureBlock)failure {
     DNNetLog(@"POST请求的链接--------------------->%@",urlString);
     AFHTTPSessionManager *session = nil;
-    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"]) {
+    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"] && ![urlString hasPrefix:@"https://"]) {
         session = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[self baseUrl]]];
     }else {
         DNNetLog(@"全域名");
@@ -159,7 +160,7 @@ static NSString *privateNetworkBaseUrl = nil;
 + (void)postWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters Data:(NSData*)data movieLogoImage:(UIImage *)img progress:(DNProgressBlock)progress success:(DNSuccessBlock)success failure:(DNFailureBlock)failure {
     DNNetLog(@"上传视频的链接-------------------->%@",urlString);
     AFHTTPSessionManager *session = nil;
-    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"]) {
+    if ([self baseUrl] != nil && ![urlString hasPrefix:@"http://"] && ![urlString hasPrefix:@"https://"]) {
         session = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[self baseUrl]]];
     }else {
         DNNetLog(@"全域名");

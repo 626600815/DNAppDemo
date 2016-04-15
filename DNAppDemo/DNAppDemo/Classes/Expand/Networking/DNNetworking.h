@@ -17,6 +17,8 @@ typedef void (^DNFailureBlock)(NSError *error);
 typedef void (^DNProgressBlock)(NSProgress *progress);
 typedef void (^DNDownloadBlock)(NSURL *filePath, NSError *error);
 
+//typedef  void (^DNNetWorking)();
+
 @interface DNNetworking : NSObject
 
 + (void)updateBaseUrl:(NSString *)baseUrl;

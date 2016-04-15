@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MainControllerManage.h"
 
-
 @interface AppDelegate ()
 
 @end

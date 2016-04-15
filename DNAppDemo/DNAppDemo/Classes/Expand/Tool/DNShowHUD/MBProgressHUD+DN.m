@@ -45,7 +45,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.tag = 1000002;
     hud.labelText = text;
-    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"DNShowHUD.bundle/%@", icon]]];
     hud.mode = MBProgressHUDModeCustomView;
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:2.5f];
