@@ -45,7 +45,6 @@
     return self;
 }
 
-
 - (UIViewController *)creatMainControllerWithArray:(NSArray *)array {
     [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *className =obj[@"controller"];
@@ -73,7 +72,6 @@
     
     return self.tabBarController;
 }
-
 
 - (DNNavigationController *)addChildWithVC:(UIViewController *)childVC title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName {
     childVC.tabBarItem = [TabBarTool  itemWithTitle:title normalImg:imageName selectImg:selectImageName];

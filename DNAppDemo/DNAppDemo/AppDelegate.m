@@ -49,8 +49,10 @@
 }
 
 #pragma mark - method
-
-
+//加载引导页
+- (void)PageLoadingGuide {
+    
+}
 
 
 

@@ -11,7 +11,7 @@
 #import "DNQRCodeReader.h"
 #import "DetailViewController.h"
 
-@interface CenterViewController ()<DNQRCodeReaderDelegate>
+@interface CenterViewController ()<DNQRCodeReaderDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIView *QRBackView;
 
@@ -46,6 +46,24 @@
 #pragma mark - ItemMethod
 - (void)getPhotos {
     NSLog(@"从相册中选取");
+    BOOL isCameraSupport = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
+    if(isCameraSupport){
+        UIImagePickerController *imagepicker = [[UIImagePickerController alloc]init];
+        imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagepicker.allowsEditing = YES;
+        imagepicker.delegate = self;
+        [self presentViewController:imagepicker animated:YES completion:nil];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{
+        UIImage *image = info[UIImagePickerControllerEditedImage];
+        //这里是准备解析图片中的二维码的，等等在写
+        NSLog(@"选取的图片是:%@",image);
+    }];
 }
 
 - (void)dismissVC {
@@ -56,8 +74,6 @@
 #pragma mark - DNQRCodeReaderDelegate
 - (void)didDetectQRCode:(AVMetadataMachineReadableCodeObject *)qrCode {
     [[DNQRCodeReader sharedReader] stopReader];
-    NSString *message = [NSString stringWithFormat:@"Detected a QR code! type:%@, value:%@",qrCode.type, qrCode.stringValue];
-    NSLog(@"扫码的到的信息是:%@",message);
     DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:NSStringFromClass([DetailViewController class]) bundle:nil];
     detailVC.urlString = qrCode.stringValue;
     [self.navigationController pushViewController:detailVC animated:YES];

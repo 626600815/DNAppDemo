@@ -19,6 +19,9 @@
 		5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C8201CC4C0830023E6B2 /* CenterViewController.xib */; };
 		5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8241CC4CA5E0023E6B2 /* DetailViewController.m */; };
 		5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C8251CC4CA5E0023E6B2 /* DetailViewController.xib */; };
+		5177C82A1CC4E2470023E6B2 /* DNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8291CC4E2470023E6B2 /* DNTableHeaderView.m */; };
+		5177C82E1CC4EFDC0023E6B2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C82C1CC4EFDC0023E6B2 /* SettingViewController.m */; };
+		5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C82D1CC4EFDC0023E6B2 /* SettingViewController.xib */; };
 		51888D251CC0BB09004E93A9 /* MainController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51888D241CC0BB09004E93A9 /* MainController.plist */; };
 		51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D271CC0BB66004E93A9 /* HomeViewController.m */; };
 		51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D281CC0BB66004E93A9 /* HomeViewController.xib */; };
@@ -87,6 +90,11 @@
 		5177C8231CC4CA5E0023E6B2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5177C8241CC4CA5E0023E6B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5177C8251CC4CA5E0023E6B2 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		5177C8281CC4E2470023E6B2 /* DNTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTableHeaderView.h; sourceTree = "<group>"; };
+		5177C8291CC4E2470023E6B2 /* DNTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTableHeaderView.m; sourceTree = "<group>"; };
+		5177C82B1CC4EFDC0023E6B2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		5177C82C1CC4EFDC0023E6B2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		5177C82D1CC4EFDC0023E6B2 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		51888D241CC0BB09004E93A9 /* MainController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainController.plist; sourceTree = "<group>"; };
 		51888D261CC0BB66004E93A9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		51888D271CC0BB66004E93A9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -585,6 +593,9 @@
 				51888D311CC0BB85004E93A9 /* MineViewController.h */,
 				51888D321CC0BB85004E93A9 /* MineViewController.m */,
 				51888D331CC0BB85004E93A9 /* MineViewController.xib */,
+				5177C82B1CC4EFDC0023E6B2 /* SettingViewController.h */,
+				5177C82C1CC4EFDC0023E6B2 /* SettingViewController.m */,
+				5177C82D1CC4EFDC0023E6B2 /* SettingViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -631,6 +642,8 @@
 		5189EF191CC09AA700091684 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5177C8281CC4E2470023E6B2 /* DNTableHeaderView.h */,
+				5177C8291CC4E2470023E6B2 /* DNTableHeaderView.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1082,6 +1095,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */,
+				5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */,
 				5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */,
 				51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
@@ -1176,7 +1190,9 @@
 				5189EF4F1CC0B8B300091684 /* TabBarTool.m in Sources */,
 				51888D391CC0BB98004E93A9 /* ThirdViewController.m in Sources */,
 				51888D471CC0C0DB004E93A9 /* DNNetworking.m in Sources */,
+				5177C82E1CC4EFDC0023E6B2 /* SettingViewController.m in Sources */,
 				5177C7ED1CC4789F0023E6B2 /* DNKeyChain.m in Sources */,
+				5177C82A1CC4E2470023E6B2 /* DNTableHeaderView.m in Sources */,
 				51888D341CC0BB85004E93A9 /* MineViewController.m in Sources */,
 				5189EF521CC0B94400091684 /* MainControllerManage.m in Sources */,
 				5189EED21CC08F2900091684 /* AppDelegate.m in Sources */,
