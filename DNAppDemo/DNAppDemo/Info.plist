@@ -77,8 +77,8 @@
 		</dict>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>开启定位服务,是否打开.</string>
+	<string>YES</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<true/>
+	<string>YES</string>
 </dict>
 </plist>
