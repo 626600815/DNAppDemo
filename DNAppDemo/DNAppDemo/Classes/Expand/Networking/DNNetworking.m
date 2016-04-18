@@ -42,7 +42,8 @@ static NSString *privateNetworkBaseUrl = nil;
             case AFNetworkReachabilityStatusNotReachable://没有信号
             {
                 DNNetLog(@"没有信号");
-               
+               [MBProgressHUD showMessage:@"网络连接中断" toView:nil];
+                break;
             }
             default:
                 break;

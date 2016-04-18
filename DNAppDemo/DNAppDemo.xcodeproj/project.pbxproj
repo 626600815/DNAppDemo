@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5177C7E91CC4782C0023E6B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5177C7E81CC4782C0023E6B2 /* Security.framework */; };
+		5177C7ED1CC4789F0023E6B2 /* DNKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C7EC1CC4789F0023E6B2 /* DNKeyChain.m */; };
+		5177C7F31CC478E60023E6B2 /* DNSecretInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C7F21CC478E60023E6B2 /* DNSecretInfo.m */; };
+		5177C8021CC480AE0023E6B2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5177C8011CC480AE0023E6B2 /* libsqlite3.tbd */; };
+		5177C80A1CC4883F0023E6B2 /* DNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8091CC4883F0023E6B2 /* DNUserInfo.m */; };
+		5177C80E1CC4AA9E0023E6B2 /* DNLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */; };
+		5177C8101CC4AAF50023E6B2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5177C80F1CC4AAF50023E6B2 /* CoreLocation.framework */; };
 		51888D251CC0BB09004E93A9 /* MainController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51888D241CC0BB09004E93A9 /* MainController.plist */; };
 		51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D271CC0BB66004E93A9 /* HomeViewController.m */; };
 		51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D281CC0BB66004E93A9 /* HomeViewController.xib */; };
@@ -55,6 +62,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5177C7E81CC4782C0023E6B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5177C7EB1CC4789F0023E6B2 /* DNKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNKeyChain.h; sourceTree = "<group>"; };
+		5177C7EC1CC4789F0023E6B2 /* DNKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNKeyChain.m; sourceTree = "<group>"; };
+		5177C7F11CC478E60023E6B2 /* DNSecretInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSecretInfo.h; sourceTree = "<group>"; };
+		5177C7F21CC478E60023E6B2 /* DNSecretInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSecretInfo.m; sourceTree = "<group>"; };
+		5177C8011CC480AE0023E6B2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5177C8071CC488170023E6B2 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		5177C8081CC4883F0023E6B2 /* DNUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNUserInfo.h; sourceTree = "<group>"; };
+		5177C8091CC4883F0023E6B2 /* DNUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNUserInfo.m; sourceTree = "<group>"; };
+		5177C80C1CC4AA9E0023E6B2 /* DNLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNLocationManager.h; sourceTree = "<group>"; };
+		5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNLocationManager.m; sourceTree = "<group>"; };
+		5177C80F1CC4AAF50023E6B2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		51888D241CC0BB09004E93A9 /* MainController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainController.plist; sourceTree = "<group>"; };
 		51888D261CC0BB66004E93A9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		51888D271CC0BB66004E93A9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -113,6 +132,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5177C8101CC4AAF50023E6B2 /* CoreLocation.framework in Frameworks */,
+				5177C8021CC480AE0023E6B2 /* libsqlite3.tbd in Frameworks */,
+				5177C7E91CC4782C0023E6B2 /* Security.framework in Frameworks */,
 				5FBB418836D234B562B3F6B8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +159,73 @@
 		2C441FFDC231C179A8FE897A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5177C80F1CC4AAF50023E6B2 /* CoreLocation.framework */,
+				5177C8011CC480AE0023E6B2 /* libsqlite3.tbd */,
+				5177C7E81CC4782C0023E6B2 /* Security.framework */,
 				AD7EB9FF4F196A3658DBEFF7 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5177C7E51CC475440023E6B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5177C7E61CC475440023E6B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5177C7E71CC475440023E6B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5177C7EA1CC4786A0023E6B2 /* UserInfo(用户信息) */ = {
+			isa = PBXGroup;
+			children = (
+				5177C8061CC487F30023E6B2 /* Singleton */,
+				5177C7F41CC47A460023E6B2 /* KeyChain */,
+			);
+			name = "UserInfo(用户信息)";
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		5177C7F41CC47A460023E6B2 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				5177C7EB1CC4789F0023E6B2 /* DNKeyChain.h */,
+				5177C7EC1CC4789F0023E6B2 /* DNKeyChain.m */,
+				5177C7F11CC478E60023E6B2 /* DNSecretInfo.h */,
+				5177C7F21CC478E60023E6B2 /* DNSecretInfo.m */,
+			);
+			name = KeyChain;
+			sourceTree = "<group>";
+		};
+		5177C8061CC487F30023E6B2 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				5177C8071CC488170023E6B2 /* Singleton.h */,
+				5177C8081CC4883F0023E6B2 /* DNUserInfo.h */,
+				5177C8091CC4883F0023E6B2 /* DNUserInfo.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		5177C80B1CC4AA8A0023E6B2 /* DNLocation */ = {
+			isa = PBXGroup;
+			children = (
+				5177C80C1CC4AA9E0023E6B2 /* DNLocationManager.h */,
+				5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */,
+			);
+			path = DNLocation;
 			sourceTree = "<group>";
 		};
 		51888D401CC0C02B004E93A9 /* DNShowHUD */ = {
@@ -286,6 +372,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				5177C80B1CC4AA8A0023E6B2 /* DNLocation */,
 				51888D401CC0C02B004E93A9 /* DNShowHUD */,
 			);
 			name = "Tool(工具)";
@@ -723,6 +810,7 @@
 		5189EF3B1CC09E1000091684 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				5177C7EA1CC4786A0023E6B2 /* UserInfo(用户信息) */,
 				5189EF3F1CC09E1000091684 /* TabBar */,
 				5189EF3C1CC09E1000091684 /* Navigation */,
 				5189EF3D1CC09E1000091684 /* Public(公共) */,
@@ -743,6 +831,9 @@
 		5189EF3D1CC09E1000091684 /* Public(公共) */ = {
 			isa = PBXGroup;
 			children = (
+				5177C7E51CC475440023E6B2 /* Controllers */,
+				5177C7E61CC475440023E6B2 /* Models */,
+				5177C7E71CC475440023E6B2 /* Views */,
 			);
 			name = "Public(公共)";
 			path = Public;
@@ -977,13 +1068,17 @@
 				5189EF421CC09EC900091684 /* DNNavigationController.m in Sources */,
 				5189EF4C1CC0B85500091684 /* DNTabBarController.m in Sources */,
 				5189EF491CC0B81C00091684 /* DNTabBarButton.m in Sources */,
+				5177C80A1CC4883F0023E6B2 /* DNUserInfo.m in Sources */,
+				5177C80E1CC4AA9E0023E6B2 /* DNLocationManager.m in Sources */,
 				5189EF4F1CC0B8B300091684 /* TabBarTool.m in Sources */,
 				51888D391CC0BB98004E93A9 /* ThirdViewController.m in Sources */,
 				51888D471CC0C0DB004E93A9 /* DNNetworking.m in Sources */,
+				5177C7ED1CC4789F0023E6B2 /* DNKeyChain.m in Sources */,
 				51888D341CC0BB85004E93A9 /* MineViewController.m in Sources */,
 				5189EF521CC0B94400091684 /* MainControllerManage.m in Sources */,
 				5189EED21CC08F2900091684 /* AppDelegate.m in Sources */,
 				51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */,
+				5177C7F31CC478E60023E6B2 /* DNSecretInfo.m in Sources */,
 				5189EECF1CC08F2900091684 /* main.m in Sources */,
 				51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */,
 			);

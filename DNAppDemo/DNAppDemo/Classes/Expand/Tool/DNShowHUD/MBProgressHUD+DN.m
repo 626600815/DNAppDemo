@@ -22,6 +22,7 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = message;
     hud.removeFromSuperViewOnHide = YES;
+    hud.color = [UIColor colorWithRed:0 green:0 blue:0 alpha:.8];
     [hud hide:YES afterDelay:2.5f];
 }
 
