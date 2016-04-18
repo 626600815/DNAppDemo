@@ -1,36 +1,31 @@
 //
-//  HomeViewController.m
+//  DetailViewController.m
 //  DNAppDemo
 //
-//  Created by mainone on 16/4/15.
+//  Created by mainone on 16/4/18.
 //  Copyright © 2016年 wjn. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "DNUserInfo.h"
-#import "DNLocationManager.h"
+#import "DetailViewController.h"
 
-@interface HomeViewController ()
+@interface DetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
-@implementation HomeViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-}
-
 
 @end

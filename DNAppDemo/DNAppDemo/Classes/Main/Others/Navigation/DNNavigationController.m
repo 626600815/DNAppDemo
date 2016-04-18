@@ -35,8 +35,8 @@
         viewController.hidesBottomBarWhenPushed = YES; // 隐藏底部的工具条
         // 左上角的返回按钮
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"back_highlight"] forState:UIControlStateHighlighted];
+        [backButton setImage:[UIImage imageNamed:@"nav_back_normal"] forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"nav_back_selected"] forState:UIControlStateHighlighted];
         [backButton sizeToFit];
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         

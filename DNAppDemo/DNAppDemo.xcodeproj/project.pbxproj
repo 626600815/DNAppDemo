@@ -14,6 +14,11 @@
 		5177C80A1CC4883F0023E6B2 /* DNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8091CC4883F0023E6B2 /* DNUserInfo.m */; };
 		5177C80E1CC4AA9E0023E6B2 /* DNLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */; };
 		5177C8101CC4AAF50023E6B2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5177C80F1CC4AAF50023E6B2 /* CoreLocation.framework */; };
+		5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8131CC4BE8B0023E6B2 /* DNQRCodeReader.m */; };
+		5177C8211CC4C0830023E6B2 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C81F1CC4C0830023E6B2 /* CenterViewController.m */; };
+		5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C8201CC4C0830023E6B2 /* CenterViewController.xib */; };
+		5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8241CC4CA5E0023E6B2 /* DetailViewController.m */; };
+		5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C8251CC4CA5E0023E6B2 /* DetailViewController.xib */; };
 		51888D251CC0BB09004E93A9 /* MainController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51888D241CC0BB09004E93A9 /* MainController.plist */; };
 		51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D271CC0BB66004E93A9 /* HomeViewController.m */; };
 		51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D281CC0BB66004E93A9 /* HomeViewController.xib */; };
@@ -74,6 +79,14 @@
 		5177C80C1CC4AA9E0023E6B2 /* DNLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNLocationManager.h; sourceTree = "<group>"; };
 		5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNLocationManager.m; sourceTree = "<group>"; };
 		5177C80F1CC4AAF50023E6B2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5177C8121CC4BE8B0023E6B2 /* DNQRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNQRCodeReader.h; sourceTree = "<group>"; };
+		5177C8131CC4BE8B0023E6B2 /* DNQRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNQRCodeReader.m; sourceTree = "<group>"; };
+		5177C81E1CC4C0830023E6B2 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		5177C81F1CC4C0830023E6B2 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		5177C8201CC4C0830023E6B2 /* CenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
+		5177C8231CC4CA5E0023E6B2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5177C8241CC4CA5E0023E6B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5177C8251CC4CA5E0023E6B2 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		51888D241CC0BB09004E93A9 /* MainController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainController.plist; sourceTree = "<group>"; };
 		51888D261CC0BB66004E93A9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		51888D271CC0BB66004E93A9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -170,6 +183,9 @@
 		5177C7E51CC475440023E6B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5177C8231CC4CA5E0023E6B2 /* DetailViewController.h */,
+				5177C8241CC4CA5E0023E6B2 /* DetailViewController.m */,
+				5177C8251CC4CA5E0023E6B2 /* DetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +242,89 @@
 				5177C80D1CC4AA9E0023E6B2 /* DNLocationManager.m */,
 			);
 			path = DNLocation;
+			sourceTree = "<group>";
+		};
+		5177C8111CC4BE7D0023E6B2 /* DNQRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				5177C8121CC4BE8B0023E6B2 /* DNQRCodeReader.h */,
+				5177C8131CC4BE8B0023E6B2 /* DNQRCodeReader.m */,
+			);
+			path = DNQRCodeReader;
+			sourceTree = "<group>";
+		};
+		5177C8151CC4C0570023E6B2 /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				5177C8161CC4C0570023E6B2 /* Controllers */,
+				5177C8171CC4C0570023E6B2 /* Models */,
+				5177C81B1CC4C0570023E6B2 /* Views */,
+				5177C81A1CC4C0570023E6B2 /* Other */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		5177C8161CC4C0570023E6B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5177C81E1CC4C0830023E6B2 /* CenterViewController.h */,
+				5177C81F1CC4C0830023E6B2 /* CenterViewController.m */,
+				5177C8201CC4C0830023E6B2 /* CenterViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5177C8171CC4C0570023E6B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5177C8181CC4C0570023E6B2 /* Entitys */,
+				5177C8191CC4C0570023E6B2 /* Services */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5177C8181CC4C0570023E6B2 /* Entitys */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entitys;
+			sourceTree = "<group>";
+		};
+		5177C8191CC4C0570023E6B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5177C81A1CC4C0570023E6B2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5177C81B1CC4C0570023E6B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5177C81C1CC4C0570023E6B2 /* Cells */,
+				5177C81D1CC4C0570023E6B2 /* SubViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5177C81C1CC4C0570023E6B2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5177C81D1CC4C0570023E6B2 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		51888D401CC0C02B004E93A9 /* DNShowHUD */ = {
@@ -372,6 +471,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				5177C8111CC4BE7D0023E6B2 /* DNQRCodeReader */,
 				5177C80B1CC4AA8A0023E6B2 /* DNLocation */,
 				51888D401CC0C02B004E93A9 /* DNShowHUD */,
 			);
@@ -382,6 +482,7 @@
 		5189EF081CC09AA700091684 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				5177C8151CC4C0570023E6B2 /* Center */,
 				5189EF091CC09AA700091684 /* Home */,
 				5189EF1B1CC09AA700091684 /* Second */,
 				5189EF241CC09AA700091684 /* Third */,
@@ -981,6 +1082,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */,
+				5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */,
 				51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
 				51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */,
@@ -988,6 +1090,7 @@
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
 				51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
+				5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
 				51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */,
@@ -1078,9 +1181,12 @@
 				5189EF521CC0B94400091684 /* MainControllerManage.m in Sources */,
 				5189EED21CC08F2900091684 /* AppDelegate.m in Sources */,
 				51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */,
+				5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */,
+				5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */,
 				5177C7F31CC478E60023E6B2 /* DNSecretInfo.m in Sources */,
 				5189EECF1CC08F2900091684 /* main.m in Sources */,
 				51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */,
+				5177C8211CC4C0830023E6B2 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

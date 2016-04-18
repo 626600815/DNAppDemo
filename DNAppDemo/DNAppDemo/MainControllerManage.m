@@ -12,6 +12,8 @@
 #import "DNTabBarButton.h"
 #import "TabBarTool.h"
 
+#import "CenterViewController.h"
+
 @interface MainControllerManage ()
 
 //主视图(tabbar)
@@ -82,11 +84,10 @@
 
 //按钮按下
 - (void)centerButtonPressed {
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击的是中间的按钮" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-    [alertView show];
+    CenterViewController *centerVC = [[CenterViewController alloc] initWithNibName:NSStringFromClass([CenterViewController class]) bundle:nil];
+    DNNavigationController *nav = [[DNNavigationController alloc] initWithRootViewController:centerVC];
+    [self.tabBarController presentViewController:nav animated:NO completion:nil];
 }
-
 
 #pragma mark - 初始化
 
