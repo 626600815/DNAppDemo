@@ -557,7 +557,6 @@
 			isa = PBXGroup;
 			children = (
 				5189EF021CC09AA700091684 /* Category(分类) */,
-				5189EF031CC09AA700091684 /* Const(常量) */,
 				5189EF041CC09AA700091684 /* DataBase(数据库) */,
 				5189EF051CC09AA700091684 /* Macros(宏) */,
 				5189EF061CC09AA700091684 /* Networking(网络) */,
@@ -576,14 +575,6 @@
 			);
 			name = "Category(分类)";
 			path = Category;
-			sourceTree = "<group>";
-		};
-		5189EF031CC09AA700091684 /* Const(常量) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Const(常量)";
-			path = Const;
 			sourceTree = "<group>";
 		};
 		5189EF041CC09AA700091684 /* DataBase(数据库) */ = {
