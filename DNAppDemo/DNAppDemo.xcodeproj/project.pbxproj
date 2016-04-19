@@ -89,6 +89,12 @@
 		5191AC991CC5D27B007FF44E /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5191AC981CC5D27B007FF44E /* UINavigationController+FDFullscreenPopGesture.m */; };
 		5191AC9D1CC5DAC3007FF44E /* DNPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5191AC9C1CC5DAC3007FF44E /* DNPageView.m */; };
 		5191ACA01CC5DD76007FF44E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5191AC9F1CC5DD76007FF44E /* MediaPlayer.framework */; };
+		51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B773771CC61BD700001B95 /* DOPDropDownMenu.m */; };
+		51B7737C1CC61BD700001B95 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B773781CC61BD700001B95 /* icon_chose_arrow_nor@2x.png */; };
+		51B7737D1CC61BD700001B95 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B773791CC61BD700001B95 /* icon_chose_arrow_sel@2x.png */; };
+		51B7737E1CC61BD700001B95 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B7737A1CC61BD700001B95 /* icon_chose_bottom@2x.png */; };
+		51B773821CC61CC900001B95 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B773801CC61CC900001B95 /* MenuViewController.m */; };
+		51B773831CC61CC900001B95 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B773811CC61CC900001B95 /* MenuViewController.xib */; };
 		5FBB418836D234B562B3F6B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7EB9FF4F196A3658DBEFF7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -262,6 +268,14 @@
 		5191AC9B1CC5DAC3007FF44E /* DNPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNPageView.h; sourceTree = "<group>"; };
 		5191AC9C1CC5DAC3007FF44E /* DNPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNPageView.m; sourceTree = "<group>"; };
 		5191AC9F1CC5DD76007FF44E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		51B773761CC61BD700001B95 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
+		51B773771CC61BD700001B95 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
+		51B773781CC61BD700001B95 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
+		51B773791CC61BD700001B95 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
+		51B7737A1CC61BD700001B95 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		51B7737F1CC61CC900001B95 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		51B773801CC61CC900001B95 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		51B773811CC61CC900001B95 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		A34554734F63AF1E2238C569 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AD7EB9FF4F196A3658DBEFF7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19851A391DB043B6148348F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -797,6 +811,9 @@
 				51888D3B1CC0BBB5004E93A9 /* SecondViewController.h */,
 				51888D3C1CC0BBB5004E93A9 /* SecondViewController.m */,
 				51888D3D1CC0BBB5004E93A9 /* SecondViewController.xib */,
+				51B7737F1CC61CC900001B95 /* MenuViewController.h */,
+				51B773801CC61CC900001B95 /* MenuViewController.m */,
+				51B773811CC61CC900001B95 /* MenuViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -931,6 +948,7 @@
 		5189EF2D1CC09AA700091684 /* Vendor(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				51B773751CC61BD700001B95 /* DOPDropDownMenu */,
 			);
 			name = "Vendor(第三方)";
 			path = Vendor;
@@ -1239,6 +1257,18 @@
 			path = DNMoviePlayer;
 			sourceTree = "<group>";
 		};
+		51B773751CC61BD700001B95 /* DOPDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				51B773761CC61BD700001B95 /* DOPDropDownMenu.h */,
+				51B773771CC61BD700001B95 /* DOPDropDownMenu.m */,
+				51B773781CC61BD700001B95 /* icon_chose_arrow_nor@2x.png */,
+				51B773791CC61BD700001B95 /* icon_chose_arrow_sel@2x.png */,
+				51B7737A1CC61BD700001B95 /* icon_chose_bottom@2x.png */,
+			);
+			path = DOPDropDownMenu;
+			sourceTree = "<group>";
+		};
 		5588BED1F5FA1843839BBD2A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1362,16 +1392,20 @@
 				51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */,
 				5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */,
 				5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */,
+				51B7737E1CC61BD700001B95 /* icon_chose_bottom@2x.png in Resources */,
 				51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
 				51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */,
 				51888D251CC0BB09004E93A9 /* MainController.plist in Resources */,
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
+				51B7737D1CC61BD700001B95 /* icon_chose_arrow_sel@2x.png in Resources */,
 				51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
+				51B7737C1CC61BD700001B95 /* icon_chose_arrow_nor@2x.png in Resources */,
 				5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
+				51B773831CC61CC900001B95 /* MenuViewController.xib in Resources */,
 				51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */,
 				51888D4B1CC0C37C004E93A9 /* Home.xcassets in Resources */,
 			);
@@ -1449,6 +1483,7 @@
 				5191AC291CC5C4AE007FF44E /* DNLocationHelper.m in Sources */,
 				51888D521CC0E84F004E93A9 /* MBProgressHUD+DN.m in Sources */,
 				5189EF421CC09EC900091684 /* DNNavigationController.m in Sources */,
+				51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */,
 				5191AC8C1CC5C858007FF44E /* UISearchBar+DN.m in Sources */,
 				5191AC7F1CC5C858007FF44E /* NSUserDefaults+DN.m in Sources */,
 				5191AC801CC5C858007FF44E /* UIActionSheet+DN.m in Sources */,
@@ -1491,6 +1526,7 @@
 				5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */,
 				5191AC8A1CC5C858007FF44E /* UINavigationItem+DN.m in Sources */,
 				5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */,
+				51B773821CC61CC900001B95 /* MenuViewController.m in Sources */,
 				5177C7F31CC478E60023E6B2 /* DNSecretInfo.m in Sources */,
 				5191AC751CC5C858007FF44E /* NSData+DN.m in Sources */,
 				5191AC861CC5C858007FF44E /* UIImageView+DN.m in Sources */,
