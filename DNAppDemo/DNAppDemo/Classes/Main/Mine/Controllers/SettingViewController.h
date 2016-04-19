@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DNBaseViewController.h"
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : DNBaseViewController
 
 @end

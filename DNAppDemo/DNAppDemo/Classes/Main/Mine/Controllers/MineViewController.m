@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) DNTableHeaderView *stretchHeaderView;
 
-@property (nonatomic, strong) UIView *statusBar;
-
 
 @end
 
@@ -29,6 +27,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initNav];//初始化导航栏
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar Rreset];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:self.tableView.contentOffset.y/(StretchHeaderHeight-64)]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,17 +49,15 @@
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, StretchHeaderHeight)];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     bgImageView.clipsToBounds = YES;
-    bgImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo" ofType:@"jpg"]];
-    
+    bgImageView.image = [UIImage imageNamed:@"mine_bg.jpg"];
     
     //背景之上的内容
     UIView *contentView = [[UIView alloc] initWithFrame:bgImageView.bounds];
     contentView.backgroundColor = [UIColor clearColor];
     
-    UIImageView *avater = [[UIImageView alloc] initWithFrame:CGRectMake(bgImageView.frame.size.width - 90, bgImageView.frame.size.height - 40, 70, 70)];
-    avater.image = [UIImage imageNamed:@"avater"];
+    UIImageView *avater = [[UIImageView alloc] initWithFrame:CGRectMake(bgImageView.center.x-35, bgImageView.frame.size.height - 120, 70, 70)];
+    avater.image = [UIImage imageNamed:@"mine_avater"];
     [contentView addSubview:avater];
-     
     
     self.stretchHeaderView = [[DNTableHeaderView alloc] init];
     [self.stretchHeaderView stretchHeaderForTableView:self.tableView withView:bgImageView subViews:contentView];
@@ -61,7 +67,7 @@
 #pragma mark - table delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return 55;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -90,13 +96,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.stretchHeaderView scrollViewDidScroll:scrollView];
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:(scrollView.contentOffset.y/(StretchHeaderHeight-64))];
-    self.statusBar.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:(scrollView.contentOffset.y/(StretchHeaderHeight-64))];
-    if (scrollView.contentOffset.y < (StretchHeaderHeight-64)/3) {
-        self.navigationItem.title = @"";
-    }else {
-        self.navigationItem.title = @"个人中心";
-    }
+    [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:scrollView.contentOffset.y/(StretchHeaderHeight-64)]];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -105,13 +105,8 @@
 
 #pragma mark - 初始化
 - (void)initNav {
-    self.navigationItem.title = @"";
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
-    self.statusBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    self.statusBar.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.statusBar];
+    [self.navigationController.navigationBar RsetBackgroundColor:[UIColor clearColor]];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [[UIView alloc] init];

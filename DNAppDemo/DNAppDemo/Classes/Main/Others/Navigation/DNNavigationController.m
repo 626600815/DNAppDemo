@@ -19,10 +19,11 @@
     
     self.interactivePopGestureRecognizer.delegate = self;
     
-    [self.navigationBar setBarTintColor:Nav_BarTintColor];
+//    [self.navigationBar setBarTintColor:Nav_BarTintColor];
     [self.navigationBar setTintColor:Nav_TintColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:Nav_TitleFont,
                                                                       NSForegroundColorAttributeName:Nav_TitleColor}];
+    [self.navigationBar setBarStyle:UIBarStyleDefault];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +40,6 @@
         [backButton setImage:[UIImage imageNamed:@"nav_back_selected"] forState:UIControlStateHighlighted];
         [backButton sizeToFit];
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        
         UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceItem.width = -10;
