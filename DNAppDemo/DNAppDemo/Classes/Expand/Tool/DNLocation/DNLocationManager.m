@@ -15,6 +15,8 @@
 @property (nonatomic, strong) DNAddressBlock addressBlock;
 @property (nonatomic, strong) DNCityBlock cityBlock;
 @property (nonatomic, strong) DNLocationErrorBlock errorBlock;
+@property (nonatomic, strong) DNAddressErrorBlock addressErrorBlock;
+
 
 @property (nonatomic, strong) CLLocationManager *locationM;
 @property (nonatomic, strong) CLGeocoder *geocoder;
@@ -39,22 +41,23 @@
     [self startLocation];
 }
 
-- (void)getAddress:(DNAddressBlock)addressBlock failure:(DNLocationErrorBlock)error {
+- (void)getAddress:(DNAddressBlock)addressBlock failure:(DNAddressErrorBlock)error {
     self.addressBlock = [addressBlock copy];
-    self.errorBlock = [error copy];
+    self.addressErrorBlock = [error copy];
     [self startLocation];
 }
 
-- (void)getLocationCoordinate:(DNLocationBlock)locaiontBlock withAddress:(DNAddressBlock)addressBlock failure:(DNLocationErrorBlock)error {
+- (void)getLocationCoordinate:(DNLocationBlock)locaiontBlock withAddress:(DNAddressBlock)addressBlock failure:(DNLocationErrorBlock)error addressFailure:(DNAddressErrorBlock)Aerror {
     self.locationBlock = [locaiontBlock copy];
     self.addressBlock = [addressBlock copy];
     self.errorBlock = [error copy];
+    self.addressErrorBlock = [Aerror copy];
     [self startLocation];
 }
 
 - (void)getCity:(DNCityBlock)cityBlock failure:(DNLocationErrorBlock)error{
     self.cityBlock = [cityBlock copy];
-    self.errorBlock = [error copy];
+    self.addressErrorBlock = [error copy];
     [self startLocation];
 }
 
@@ -71,11 +74,11 @@
         _locationM.distanceFilter = 10;//超出位置变化范围更新位置信息
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
             [_locationM requestWhenInUseAuthorization ];//使用的时候使用
-//            [_locationM requestAlwaysAuthorization];//总是使用
+            //            [_locationM requestAlwaysAuthorization];//总是使用
         }
-//        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
-//            _locationM.allowsBackgroundLocationUpdates = YES;
-//        }
+        //        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+        //            _locationM.allowsBackgroundLocationUpdates = YES;
+        //        }
     }
     return _locationM;
 }
@@ -98,10 +101,9 @@
     
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (error || placemarks.count==0) {
-            NSLog(@"出错了 : %@",error);
-            if (_errorBlock) {
-                _errorBlock(error);
-                _errorBlock = nil;
+            if (_addressErrorBlock) {
+                _addressErrorBlock(error);
+                _addressErrorBlock = nil;
             }
             return;
         }
@@ -147,7 +149,7 @@
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"定位功能被拒绝，是否前往设置开启" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
                     [alertView show];
                 } else {
-                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"定位功能未开启,请在设置中开启" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"定位功能未开启,请在设置中开启" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                     [alertView show];
                 }
                 
@@ -184,6 +186,5 @@
         [[UIApplication sharedApplication] openURL:settingURL];
     }
 }
-
 
 @end
