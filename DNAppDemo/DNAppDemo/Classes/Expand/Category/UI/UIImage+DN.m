@@ -254,5 +254,24 @@ static const void *FailBlockKey = &FailBlockKey;
     return nil;
 }
 
++ (UIImage *)streImageNamed:(NSString *)imageName {
+    if (imageName == nil) {
+        return nil;
+    }
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImage *streImage = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
+    return streImage;
+}
+
++ (UIImage *)streImageNamed:(NSString *)imageName capX:(CGFloat)x capY:(CGFloat)y {
+    if (imageName == nil) {
+        return nil;
+    }
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImage *streImage = [image stretchableImageWithLeftCapWidth:x topCapHeight:y];
+    return streImage;
+}
+
+
 @end
 

@@ -29,6 +29,9 @@
 //宏定义
 #import "Macros.h" //项目默认样式设置
 
+//常量
+#import "DNGlobeConst.h"
+
 //请求数据菊花显示
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+DN.h"

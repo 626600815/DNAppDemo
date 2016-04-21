@@ -99,5 +99,15 @@
  */
 + (UIImage *)imageWithFileName:(NSString *)name;
 
+/**
+ *  获取一个可拉伸的UIImage
+ *
+ *  @param imageName 图片名称
+ *
+ *  @return Image
+ */
++ (UIImage *)streImageNamed:(NSString *)imageName;
++ (UIImage *)streImageNamed:(NSString *)imageName capX:(CGFloat)x capY:(CGFloat)y;
+
 @end
 

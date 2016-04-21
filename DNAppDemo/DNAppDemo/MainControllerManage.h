@@ -10,10 +10,19 @@
 
 @interface MainControllerManage : NSObject
 
-//主视图控制器
-@property(strong, readonly, nonatomic) UIViewController *mainViewController;
-
 //获取单利
 + (MainControllerManage *)sharedManager;
+
+/**
+ *  主视图控制器
+ */
+@property(strong, readonly, nonatomic) UIViewController *mainViewController;
+
+/**
+ *  跳转到首页
+ *
+ *  @param VC 当前视图控制器
+ */
+- (void)jumpToHomeFromVC:(UIViewController *)VC;
 
 @end

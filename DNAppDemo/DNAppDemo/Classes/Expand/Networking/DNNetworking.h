@@ -20,6 +20,11 @@ typedef void (^DNDownloadBlock)(NSURL *filePath, NSError *error);
 
 @interface DNNetworking : NSObject
 
+/**
+ *  设置全局域名
+ *
+ *  @param baseUrl 域名字符串
+ */
 + (void)updateBaseUrl:(NSString *)baseUrl;
 
 /**

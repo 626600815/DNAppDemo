@@ -87,6 +87,15 @@
     [self.tabBarController presentViewController:nav animated:NO completion:nil];
 }
 
+- (void)jumpToHomeFromVC:(UIViewController *)VC {
+    UITabBarController *tabBarVC =(UITabBarController *)self.mainViewController;
+    if ([tabBarVC presentedViewController]) {
+        [tabBarVC dismissViewControllerAnimated:NO completion:NULL];
+    }
+    [VC.navigationController popToRootViewControllerAnimated:NO];
+    tabBarVC.selectedIndex = 0;
+}
+
 #pragma mark - 初始化
 
 - (NSMutableArray *)dataArray {

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51727AF11CC7539F00DAE734 /* DNGlobeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 51727AF01CC7539F00DAE734 /* DNGlobeConst.m */; };
+		51727B021CC77D8600DAE734 /* page_4s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF51CC77D8600DAE734 /* page_4s1.png */; };
+		51727B031CC77D8600DAE734 /* page_4s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF61CC77D8600DAE734 /* page_4s2.png */; };
+		51727B041CC77D8600DAE734 /* page_4s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF71CC77D8600DAE734 /* page_4s3.png */; };
+		51727B051CC77D8600DAE734 /* page_5s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF81CC77D8600DAE734 /* page_5s1.png */; };
+		51727B061CC77D8600DAE734 /* page_5s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF91CC77D8600DAE734 /* page_5s2.png */; };
+		51727B071CC77D8600DAE734 /* page_5s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFA1CC77D8600DAE734 /* page_5s3.png */; };
+		51727B081CC77D8600DAE734 /* page_6s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFB1CC77D8600DAE734 /* page_6s1.png */; };
+		51727B091CC77D8600DAE734 /* page_6s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFC1CC77D8600DAE734 /* page_6s2.png */; };
+		51727B0A1CC77D8600DAE734 /* page_6s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFD1CC77D8600DAE734 /* page_6s3.png */; };
 		5177C7E91CC4782C0023E6B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5177C7E81CC4782C0023E6B2 /* Security.framework */; };
 		5177C7ED1CC4789F0023E6B2 /* DNKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C7EC1CC4789F0023E6B2 /* DNKeyChain.m */; };
 		5177C7F31CC478E60023E6B2 /* DNSecretInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C7F21CC478E60023E6B2 /* DNSecretInfo.m */; };
@@ -116,6 +126,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51727AEF1CC7539F00DAE734 /* DNGlobeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNGlobeConst.h; sourceTree = "<group>"; };
+		51727AF01CC7539F00DAE734 /* DNGlobeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNGlobeConst.m; sourceTree = "<group>"; };
+		51727AF51CC77D8600DAE734 /* page_4s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s1.png; sourceTree = "<group>"; };
+		51727AF61CC77D8600DAE734 /* page_4s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s2.png; sourceTree = "<group>"; };
+		51727AF71CC77D8600DAE734 /* page_4s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s3.png; sourceTree = "<group>"; };
+		51727AF81CC77D8600DAE734 /* page_5s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_5s1.png; sourceTree = "<group>"; };
+		51727AF91CC77D8600DAE734 /* page_5s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_5s2.png; sourceTree = "<group>"; };
+		51727AFA1CC77D8600DAE734 /* page_5s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_5s3.png; sourceTree = "<group>"; };
+		51727AFB1CC77D8600DAE734 /* page_6s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s1.png; sourceTree = "<group>"; };
+		51727AFC1CC77D8600DAE734 /* page_6s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s2.png; sourceTree = "<group>"; };
+		51727AFD1CC77D8600DAE734 /* page_6s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s3.png; sourceTree = "<group>"; };
 		5177C7E81CC4782C0023E6B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5177C7EB1CC4789F0023E6B2 /* DNKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNKeyChain.h; sourceTree = "<group>"; };
 		5177C7EC1CC4789F0023E6B2 /* DNKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNKeyChain.m; sourceTree = "<group>"; };
@@ -321,6 +342,32 @@
 				AD7EB9FF4F196A3658DBEFF7 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51727AEB1CC74EDA00DAE734 /* Const(常量) */ = {
+			isa = PBXGroup;
+			children = (
+				51727AEF1CC7539F00DAE734 /* DNGlobeConst.h */,
+				51727AF01CC7539F00DAE734 /* DNGlobeConst.m */,
+			);
+			name = "Const(常量)";
+			path = Const;
+			sourceTree = "<group>";
+		};
+		51727AF21CC77D8600DAE734 /* page */ = {
+			isa = PBXGroup;
+			children = (
+				51727AF51CC77D8600DAE734 /* page_4s1.png */,
+				51727AF61CC77D8600DAE734 /* page_4s2.png */,
+				51727AF71CC77D8600DAE734 /* page_4s3.png */,
+				51727AF81CC77D8600DAE734 /* page_5s1.png */,
+				51727AF91CC77D8600DAE734 /* page_5s2.png */,
+				51727AFA1CC77D8600DAE734 /* page_5s3.png */,
+				51727AFB1CC77D8600DAE734 /* page_6s1.png */,
+				51727AFC1CC77D8600DAE734 /* page_6s2.png */,
+				51727AFD1CC77D8600DAE734 /* page_6s3.png */,
+			);
+			path = page;
 			sourceTree = "<group>";
 		};
 		5177C7E51CC475440023E6B2 /* Controllers */ = {
@@ -556,6 +603,7 @@
 		5189EF011CC09AA700091684 /* Expand(拓展) */ = {
 			isa = PBXGroup;
 			children = (
+				51727AEB1CC74EDA00DAE734 /* Const(常量) */,
 				5189EF021CC09AA700091684 /* Category(分类) */,
 				5189EF041CC09AA700091684 /* DataBase(数据库) */,
 				5189EF051CC09AA700091684 /* Macros(宏) */,
@@ -957,6 +1005,7 @@
 		5189EF2F1CC09AA700091684 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				51727AF21CC77D8600DAE734 /* page */,
 				51888D4A1CC0C37C004E93A9 /* Home.xcassets */,
 				51888D4C1CC0C386004E93A9 /* Second.xcassets */,
 				51888D4E1CC0C38E004E93A9 /* Third.xcassets */,
@@ -1383,21 +1432,30 @@
 				51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */,
 				5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */,
 				5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */,
+				51727B021CC77D8600DAE734 /* page_4s1.png in Resources */,
 				51B7737E1CC61BD700001B95 /* icon_chose_bottom@2x.png in Resources */,
 				51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
 				51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */,
 				51888D251CC0BB09004E93A9 /* MainController.plist in Resources */,
+				51727B051CC77D8600DAE734 /* page_5s1.png in Resources */,
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
 				51B7737D1CC61BD700001B95 /* icon_chose_arrow_sel@2x.png in Resources */,
 				51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */,
+				51727B061CC77D8600DAE734 /* page_5s2.png in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
+				51727B041CC77D8600DAE734 /* page_4s3.png in Resources */,
+				51727B071CC77D8600DAE734 /* page_5s3.png in Resources */,
 				51B7737C1CC61BD700001B95 /* icon_chose_arrow_nor@2x.png in Resources */,
 				5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */,
+				51727B0A1CC77D8600DAE734 /* page_6s3.png in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
+				51727B081CC77D8600DAE734 /* page_6s1.png in Resources */,
 				51B773831CC61CC900001B95 /* MenuViewController.xib in Resources */,
+				51727B031CC77D8600DAE734 /* page_4s2.png in Resources */,
 				51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */,
+				51727B091CC77D8600DAE734 /* page_6s2.png in Resources */,
 				51888D4B1CC0C37C004E93A9 /* Home.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1514,6 +1572,7 @@
 				51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */,
 				5191AC741CC5C858007FF44E /* NSArray+DN.m in Sources */,
 				5191AC7A1CC5C858007FF44E /* NSNotificationCenter+DN.m in Sources */,
+				51727AF11CC7539F00DAE734 /* DNGlobeConst.m in Sources */,
 				5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */,
 				5191AC8A1CC5C858007FF44E /* UINavigationItem+DN.m in Sources */,
 				5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "MainControllerManage.h"
 
 @interface SettingViewController ()
 
@@ -22,6 +23,13 @@
     self.navigationItem.title = @"设置";
     
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [[MainControllerManage sharedManager] jumpToHomeFromVC:self];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

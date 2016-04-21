@@ -36,7 +36,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:self.tableView.contentOffset.y/(StretchHeaderHeight-64)]];
+    if (self.tableView.contentOffset.y/(StretchHeaderHeight-64) < 0.8) {
+        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:self.tableView.contentOffset.y/(StretchHeaderHeight-64)]];
+    }else {
+        [self.navigationController.navigationBar Rreset];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,7 +101,11 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.stretchHeaderView scrollViewDidScroll:scrollView];
-    [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:scrollView.contentOffset.y/(StretchHeaderHeight-64)]];
+    if (scrollView.contentOffset.y/(StretchHeaderHeight-64) < 0.8) {
+        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:scrollView.contentOffset.y/(StretchHeaderHeight-64)]];
+    }else {
+        [self.navigationController.navigationBar Rreset];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
