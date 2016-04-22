@@ -11,7 +11,7 @@
 
 @implementation HomeService
 
-+ (void)requestHomeListInfo:(DNListInfo)infoArr {
++ (void)requestHomeListInfo:(void (^)(NSArray *listArray))infoArr {
     NSString *dataFilePath = [[NSBundle mainBundle] pathForResource:@"Home" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:dataFilePath];
     NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "MainControllerManage.h"
+#import "DNActionSheetManager.h"
 
 @interface SettingViewController ()
 
@@ -22,14 +23,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"设置";
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectImage)];
+    self.navigationItem.rightMargin = 10;
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    //调到首页
-//    [[MainControllerManage sharedManager] jumpToHomeFromVC:self];
-//}
+- (void)selectImage {
+    [[DNActionSheetManager shareActionSheet] showImagePickerWithVC:self selectImage:^(UIImage *image) {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    }];
+}
 
-
+                          
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

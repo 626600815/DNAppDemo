@@ -25,13 +25,6 @@ static NSString *const Indentifier = @"cellID";
 
 @implementation HomeViewController
 
-- (NSMutableArray *)listArray {
-    if (!_listArray) {
-        _listArray = [[NSMutableArray alloc] init];
-    }
-    return _listArray;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -39,6 +32,11 @@ static NSString *const Indentifier = @"cellID";
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:Indentifier];
     self.tableView.fd_debugLogEnabled = YES;
 
+    [self loadDataList];
+}
+
+//请求数据刷新列表
+- (void)loadDataList {
     [HomeService requestHomeListInfo:^(NSArray *listArray) {
         [self.listArray addObjectsFromArray:listArray];
         [self.tableView reloadData];
@@ -76,12 +74,24 @@ static NSString *const Indentifier = @"cellID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma Mark- 初始化
+
+- (NSMutableArray *)listArray {
+    if (!_listArray) {
+        _listArray = [[NSMutableArray alloc] init];
+    }
+    return _listArray;
 }
 
 @end

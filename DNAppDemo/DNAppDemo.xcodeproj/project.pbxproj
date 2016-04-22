@@ -11,6 +11,8 @@
 		5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECF1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m */; };
 		5170CED61CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED11CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m */; };
 		5170CED71CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED31CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		5170CEE11CC9F7C800C063FD /* DNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CEE01CC9F7C800C063FD /* DNActionSheet.m */; };
+		5170CEE71CCA046F00C063FD /* DNActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */; };
 		51727AF11CC7539F00DAE734 /* DNGlobeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 51727AF01CC7539F00DAE734 /* DNGlobeConst.m */; };
 		51727B021CC77D8600DAE734 /* page_4s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF51CC77D8600DAE734 /* page_4s1.png */; };
 		51727B031CC77D8600DAE734 /* page_4s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF61CC77D8600DAE734 /* page_4s2.png */; };
@@ -143,6 +145,10 @@
 		5170CED11CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		5170CED21CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		5170CED31CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		5170CEDF1CC9F7C800C063FD /* DNActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNActionSheet.h; sourceTree = "<group>"; };
+		5170CEE01CC9F7C800C063FD /* DNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNActionSheet.m; sourceTree = "<group>"; };
+		5170CEE51CCA046F00C063FD /* DNActionSheetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNActionSheetManager.h; sourceTree = "<group>"; };
+		5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNActionSheetManager.m; sourceTree = "<group>"; };
 		51727AEF1CC7539F00DAE734 /* DNGlobeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNGlobeConst.h; sourceTree = "<group>"; };
 		51727AF01CC7539F00DAE734 /* DNGlobeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNGlobeConst.m; sourceTree = "<group>"; };
 		51727AF51CC77D8600DAE734 /* page_4s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s1.png; sourceTree = "<group>"; };
@@ -368,6 +374,17 @@
 				AD7EB9FF4F196A3658DBEFF7 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5170CED81CC9C7A700C063FD /* DNActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				5170CEDF1CC9F7C800C063FD /* DNActionSheet.h */,
+				5170CEE01CC9F7C800C063FD /* DNActionSheet.m */,
+				5170CEE51CCA046F00C063FD /* DNActionSheetManager.h */,
+				5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */,
+			);
+			path = DNActionSheet;
 			sourceTree = "<group>";
 		};
 		51727AEB1CC74EDA00DAE734 /* Const(常量) */ = {
@@ -694,6 +711,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				5170CED81CC9C7A700C063FD /* DNActionSheet */,
 				5173EA8A1CC87382009E3636 /* DNWebView */,
 				5191AC9E1CC5DC1C007FF44E /* DNMoviePlayer */,
 				5191AC261CC5C498007FF44E /* DNLocationHelper(坐标转换) */,
@@ -1615,6 +1633,7 @@
 				5177C82A1CC4E2470023E6B2 /* DNTableHeaderView.m in Sources */,
 				5191AC991CC5D27B007FF44E /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				51888D341CC0BB85004E93A9 /* MineViewController.m in Sources */,
+				5170CEE71CCA046F00C063FD /* DNActionSheetManager.m in Sources */,
 				5189EF521CC0B94400091684 /* MainControllerManage.m in Sources */,
 				5191AC941CC5C858007FF44E /* UIView+DN.m in Sources */,
 				5191AC791CC5C858007FF44E /* NSHTTPCookieStorage+DN.m in Sources */,
@@ -1643,6 +1662,7 @@
 				5191AC811CC5C858007FF44E /* UIAlertView+DN.m in Sources */,
 				5177C8211CC4C0830023E6B2 /* CenterViewController.m in Sources */,
 				5191AC881CC5C858007FF44E /* UINavigationBar+DN.m in Sources */,
+				5170CEE11CC9F7C800C063FD /* DNActionSheet.m in Sources */,
 				5191AC781CC5C858007FF44E /* NSFileManager+DN.m in Sources */,
 				5191AC931CC5C858007FF44E /* UITextView+DN.m in Sources */,
 				5170CED71CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
