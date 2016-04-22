@@ -7,6 +7,8 @@
 //
 
 #import "DNBaseViewController.h"
+#import "DNNavigationController.h"
+
 
 @interface DNBaseViewController ()
 
@@ -20,6 +22,15 @@
     
     self.view.backgroundColor = Ctr_backgroundColor;
     self.navigationItem.leftMargin = 8;
+    
+    DNNavigationController *nav = (DNNavigationController *)self.navigationController;
+    [nav.backButton addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        [self backBarButtonItemAction];
+    }];
+}
+//重新定义返回事件
+- (void)backBarButtonItemAction {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

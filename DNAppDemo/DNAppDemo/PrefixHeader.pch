@@ -9,6 +9,9 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+#endif /* PrefixHeader_pch */
+
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -20,6 +23,9 @@
 #import "AFNetworking.h"
 #import "DNNetworking.h"
 
+//加载网络图片
+#import "UIImageView+WebCache.h"
+
 //数据建模
 #import "MJExtension.h"
 
@@ -28,6 +34,7 @@
 
 //宏定义
 #import "Macros.h" //项目默认样式设置
+#import "Define.h"
 
 //常量
 #import "DNGlobeConst.h"
@@ -36,8 +43,8 @@
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+DN.h"
 
+//自动布局
+#import "Masonry.h"
+
 
 #endif
-
-
-#endif /* PrefixHeader_pch */

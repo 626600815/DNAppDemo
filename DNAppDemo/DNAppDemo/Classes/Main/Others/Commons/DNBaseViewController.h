@@ -10,4 +10,6 @@
 
 @interface DNBaseViewController : UIViewController
 
+- (void)backBarButtonItemAction;
+
 @end

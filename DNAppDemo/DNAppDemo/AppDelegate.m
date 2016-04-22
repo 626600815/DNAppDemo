@@ -13,7 +13,7 @@
 @interface AppDelegate ()
 
 @property (nonatomic, assign) CFAbsoluteTime resignTime;  //记录进入后台的时间
-@property (nonatomic, assign) CFAbsoluteTime currentTime;  //记录进入后台的时间
+@property (nonatomic, assign) CFAbsoluteTime currentTime; //记录进入前台的时间
 
 @end
 
@@ -56,7 +56,7 @@
     //当应用进入后台时间超过10分钟(处理一些有时效性的界面或者账号)
     self.currentTime = CFDateGetAbsoluteTime((CFDateRef)[NSDate date]);
     if (self.resignTime != 0 && self.currentTime - self.resignTime > 600) {
-        
+        NSLog(@"我是不是沉睡了好长时间");
     }
 }
 

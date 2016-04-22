@@ -74,8 +74,8 @@
 #pragma mark - DNQRCodeReaderDelegate
 - (void)didDetectQRCode:(AVMetadataMachineReadableCodeObject *)qrCode {
     [[DNQRCodeReader sharedReader] stopReader];
-    DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:NSStringFromClass([DetailViewController class]) bundle:nil];
-    detailVC.urlString = qrCode.stringValue;
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    detailVC.urlStr = qrCode.stringValue;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

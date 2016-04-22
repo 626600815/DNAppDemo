@@ -10,4 +10,6 @@
 
 @interface DNNavigationController : UINavigationController
 
+@property (nonatomic, strong) UIButton *backButton;
+
 @end

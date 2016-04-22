@@ -87,7 +87,7 @@
     }
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld个cell",(long)indexPath.row];
-    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor colorWithRed:230 green:230 blue:230 alpha:1];
     return cell;
 }
 

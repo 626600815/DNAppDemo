@@ -40,3 +40,5 @@
 #import "UIView+DN.h"
 #import "UIViewController+DN.h"
 #import "UIWebView+DN.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+

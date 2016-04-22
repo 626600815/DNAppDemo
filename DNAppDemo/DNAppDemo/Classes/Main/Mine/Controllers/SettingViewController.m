@@ -24,11 +24,10 @@
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [[MainControllerManage sharedManager] jumpToHomeFromVC:self];
-}
-
-
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    //调到首页
+//    [[MainControllerManage sharedManager] jumpToHomeFromVC:self];
+//}
 
 
 - (void)didReceiveMemoryWarning {

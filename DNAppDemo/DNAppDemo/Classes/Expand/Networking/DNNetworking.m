@@ -20,7 +20,7 @@ static NSString *privateNetworkBaseUrl = nil;
 
 @implementation DNNetworking
 
-+ (void)netWorkReachability{
++ (void)netWorkReachability {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
         switch (status) {

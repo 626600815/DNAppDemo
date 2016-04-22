@@ -6,10 +6,10 @@
 //  Copyright © 2016年 wjn. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DNWebViewController.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : DNWebViewController
 
-@property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSString *urlStr;
 
 @end

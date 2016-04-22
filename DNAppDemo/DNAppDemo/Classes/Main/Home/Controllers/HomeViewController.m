@@ -9,19 +9,73 @@
 #import "HomeViewController.h"
 #import "DNUserInfo.h"
 #import "DNLocationManager.h"
+#import "HomeService.h"
+#import "HomeModel.h"
+#import "HomeCell.h"
 
-@interface HomeViewController ()
+
+static NSString *const Indentifier = @"cellID";
+
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray *listArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation HomeViewController
 
+- (NSMutableArray *)listArray {
+    if (!_listArray) {
+        _listArray = [[NSMutableArray alloc] init];
+    }
+    return _listArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:Indentifier];
+    self.tableView.fd_debugLogEnabled = YES;
 
+    [HomeService requestHomeListInfo:^(NSArray *listArray) {
+        [self.listArray addObjectsFromArray:listArray];
+        [self.tableView reloadData];
+    }];
+
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.listArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:Indentifier forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    cell.fd_enforceFrameLayout = NO;
+    cell.homeModel = self.listArray[indexPath.row];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+   CGFloat cellHeight = [tableView fd_heightForCellWithIdentifier:Indentifier configuration:^(id cell) {
+         [self configureCell:cell atIndexPath:indexPath];
+    }];
+    
+    if (cellHeight < 100) {
+        return 100;
+    }
+    return cellHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

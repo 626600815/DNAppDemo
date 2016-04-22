@@ -35,12 +35,12 @@
     if (self.childViewControllers.count >= 1) {
         viewController.hidesBottomBarWhenPushed = YES; // 隐藏底部的工具条
         // 左上角的返回按钮
-        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"nav_back_normal"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"nav_back_selected"] forState:UIControlStateHighlighted];
-        [backButton sizeToFit];
-        [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.backButton setImage:[UIImage imageNamed:@"nav_back_normal"] forState:UIControlStateNormal];
+        [self.backButton setImage:[UIImage imageNamed:@"nav_back_selected"] forState:UIControlStateHighlighted];
+        [self.backButton sizeToFit];
+        [self.backButton addTarget:self action:@selector(backBarButtonItemAction) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceItem.width = -10;
         
@@ -49,7 +49,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
-- (void)back {
+- (void)backBarButtonItemAction {
     [self popViewControllerAnimated:YES];
 }
 
