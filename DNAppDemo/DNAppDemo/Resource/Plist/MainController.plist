@@ -24,7 +24,7 @@
 	</dict>
 	<dict>
 		<key>controller</key>
-		<string>ThirdViewController</string>
+		<string>ThirdTableViewController</string>
 		<key>title</key>
 		<string>第三页</string>
 		<key>image</key>

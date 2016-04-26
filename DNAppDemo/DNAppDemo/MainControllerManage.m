@@ -55,7 +55,6 @@
                 NSString *title = obj[@"title"];
                 NSString *imageName = obj[@"image"];
                 NSString *HimageName = obj[@"imageH"];
-                
                 [self.dataArray addObject:[self addChildWithVC:instance title:title imageName:imageName selectImageName:HimageName]];
             }
         }

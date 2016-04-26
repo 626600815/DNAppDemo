@@ -23,6 +23,13 @@
 		51727B081CC77D8600DAE734 /* page_6s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFB1CC77D8600DAE734 /* page_6s1.png */; };
 		51727B091CC77D8600DAE734 /* page_6s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFC1CC77D8600DAE734 /* page_6s2.png */; };
 		51727B0A1CC77D8600DAE734 /* page_6s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AFD1CC77D8600DAE734 /* page_6s3.png */; };
+		5172AD1A1CCF621200537050 /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5172AD191CCF621200537050 /* friends.plist */; };
+		5172AD1E1CCF625700537050 /* ThirdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5172AD1C1CCF625700537050 /* ThirdTableViewController.m */; };
+		5172AD1F1CCF625700537050 /* ThirdTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5172AD1D1CCF625700537050 /* ThirdTableViewController.xib */; };
+		5172AD221CCF629000537050 /* ThirdHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5172AD211CCF629000537050 /* ThirdHeadView.m */; };
+		5172AD251CCF62C300537050 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5172AD241CCF62C300537050 /* FriendGroup.m */; };
+		5172AD281CCF62D800537050 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5172AD271CCF62D800537050 /* Friend.m */; };
+		5172AD2B1CCF635400537050 /* ThirdService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5172AD2A1CCF635400537050 /* ThirdService.m */; };
 		5173EA971CC87393009E3636 /* webview_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173EA921CC87393009E3636 /* webview_menu.png */; };
 		5173EA991CC873C0009E3636 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5173EA981CC873C0009E3636 /* WebKit.framework */; };
 		5173EA9E1CC874D4009E3636 /* DNActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5173EA9B1CC874D4009E3636 /* DNActionSheetView.m */; };
@@ -52,8 +59,6 @@
 		51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D281CC0BB66004E93A9 /* HomeViewController.xib */; };
 		51888D341CC0BB85004E93A9 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D321CC0BB85004E93A9 /* MineViewController.m */; };
 		51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D331CC0BB85004E93A9 /* MineViewController.xib */; };
-		51888D391CC0BB98004E93A9 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D371CC0BB98004E93A9 /* ThirdViewController.m */; };
-		51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D381CC0BB98004E93A9 /* ThirdViewController.xib */; };
 		51888D3E1CC0BBB5004E93A9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D3C1CC0BBB5004E93A9 /* SecondViewController.m */; };
 		51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51888D3D1CC0BBB5004E93A9 /* SecondViewController.xib */; };
 		51888D471CC0C0DB004E93A9 /* DNNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D461CC0C0DB004E93A9 /* DNNetworking.m */; };
@@ -160,6 +165,18 @@
 		51727AFB1CC77D8600DAE734 /* page_6s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s1.png; sourceTree = "<group>"; };
 		51727AFC1CC77D8600DAE734 /* page_6s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s2.png; sourceTree = "<group>"; };
 		51727AFD1CC77D8600DAE734 /* page_6s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_6s3.png; sourceTree = "<group>"; };
+		5172AD191CCF621200537050 /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
+		5172AD1B1CCF625700537050 /* ThirdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTableViewController.h; sourceTree = "<group>"; };
+		5172AD1C1CCF625700537050 /* ThirdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTableViewController.m; sourceTree = "<group>"; };
+		5172AD1D1CCF625700537050 /* ThirdTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdTableViewController.xib; sourceTree = "<group>"; };
+		5172AD201CCF629000537050 /* ThirdHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdHeadView.h; sourceTree = "<group>"; };
+		5172AD211CCF629000537050 /* ThirdHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdHeadView.m; sourceTree = "<group>"; };
+		5172AD231CCF62C300537050 /* FriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroup.h; sourceTree = "<group>"; };
+		5172AD241CCF62C300537050 /* FriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroup.m; sourceTree = "<group>"; };
+		5172AD261CCF62D800537050 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		5172AD271CCF62D800537050 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		5172AD291CCF635400537050 /* ThirdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdService.h; sourceTree = "<group>"; };
+		5172AD2A1CCF635400537050 /* ThirdService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdService.m; sourceTree = "<group>"; };
 		5173EA891CC86FFC009E3636 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		5173EA921CC87393009E3636 /* webview_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webview_menu.png; sourceTree = "<group>"; };
 		5173EA981CC873C0009E3636 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -207,9 +224,6 @@
 		51888D311CC0BB85004E93A9 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		51888D321CC0BB85004E93A9 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		51888D331CC0BB85004E93A9 /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
-		51888D361CC0BB98004E93A9 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		51888D371CC0BB98004E93A9 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		51888D381CC0BB98004E93A9 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		51888D3B1CC0BBB5004E93A9 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		51888D3C1CC0BBB5004E93A9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		51888D3D1CC0BBB5004E93A9 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
@@ -989,9 +1003,9 @@
 		5189EF251CC09AA700091684 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				51888D361CC0BB98004E93A9 /* ThirdViewController.h */,
-				51888D371CC0BB98004E93A9 /* ThirdViewController.m */,
-				51888D381CC0BB98004E93A9 /* ThirdViewController.xib */,
+				5172AD1B1CCF625700537050 /* ThirdTableViewController.h */,
+				5172AD1C1CCF625700537050 /* ThirdTableViewController.m */,
+				5172AD1D1CCF625700537050 /* ThirdTableViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1008,6 +1022,10 @@
 		5189EF271CC09AA700091684 /* Entitys */ = {
 			isa = PBXGroup;
 			children = (
+				5172AD231CCF62C300537050 /* FriendGroup.h */,
+				5172AD241CCF62C300537050 /* FriendGroup.m */,
+				5172AD261CCF62D800537050 /* Friend.h */,
+				5172AD271CCF62D800537050 /* Friend.m */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1015,6 +1033,8 @@
 		5189EF281CC09AA700091684 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5172AD291CCF635400537050 /* ThirdService.h */,
+				5172AD2A1CCF635400537050 /* ThirdService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1038,6 +1058,8 @@
 		5189EF2B1CC09AA700091684 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5172AD201CCF629000537050 /* ThirdHeadView.h */,
+				5172AD211CCF629000537050 /* ThirdHeadView.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1083,6 +1105,7 @@
 		5189EF301CC09AA700091684 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				5172AD191CCF621200537050 /* friends.plist */,
 				51888D241CC0BB09004E93A9 /* MainController.plist */,
 			);
 			path = Plist;
@@ -1509,10 +1532,11 @@
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
 				5173EA971CC87393009E3636 /* webview_menu.png in Resources */,
 				51B7737D1CC61BD700001B95 /* icon_chose_arrow_sel@2x.png in Resources */,
-				51888D3A1CC0BB98004E93A9 /* ThirdViewController.xib in Resources */,
 				51727B061CC77D8600DAE734 /* page_5s2.png in Resources */,
+				5172AD1F1CCF625700537050 /* ThirdTableViewController.xib in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
 				51727B041CC77D8600DAE734 /* page_4s3.png in Resources */,
+				5172AD1A1CCF621200537050 /* friends.plist in Resources */,
 				51727B071CC77D8600DAE734 /* page_5s3.png in Resources */,
 				5173EAAD1CC8BC99009E3636 /* HomeCell.xib in Resources */,
 				51B7737C1CC61BD700001B95 /* icon_chose_arrow_nor@2x.png in Resources */,
@@ -1600,24 +1624,27 @@
 			files = (
 				5191AC291CC5C4AE007FF44E /* DNLocationHelper.m in Sources */,
 				51888D521CC0E84F004E93A9 /* MBProgressHUD+DN.m in Sources */,
+				5172AD221CCF629000537050 /* ThirdHeadView.m in Sources */,
 				5189EF421CC09EC900091684 /* DNNavigationController.m in Sources */,
 				51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */,
 				5191AC8C1CC5C858007FF44E /* UISearchBar+DN.m in Sources */,
+				5172AD251CCF62C300537050 /* FriendGroup.m in Sources */,
 				5191AC7F1CC5C858007FF44E /* NSUserDefaults+DN.m in Sources */,
 				5191AC801CC5C858007FF44E /* UIActionSheet+DN.m in Sources */,
 				5191AC891CC5C858007FF44E /* UINavigationController+DN.m in Sources */,
 				5173EAA21CC8A88F009E3636 /* HomeModel.m in Sources */,
+				5172AD281CCF62D800537050 /* Friend.m in Sources */,
 				5189EF4C1CC0B85500091684 /* DNTabBarController.m in Sources */,
 				5189EF491CC0B81C00091684 /* DNTabBarButton.m in Sources */,
 				5191AC7E1CC5C858007FF44E /* NSURL+DN.m in Sources */,
 				5191AC821CC5C858007FF44E /* UIBarButtonItem+DN.m in Sources */,
 				5177C80A1CC4883F0023E6B2 /* DNUserInfo.m in Sources */,
+				5172AD2B1CCF635400537050 /* ThirdService.m in Sources */,
 				5191AC871CC5C858007FF44E /* UILabel+DN.m in Sources */,
 				5191AC241CC5BD28007FF44E /* DNBaseViewController.m in Sources */,
 				5191AC921CC5C858007FF44E /* UITextField+DN.m in Sources */,
 				5177C80E1CC4AA9E0023E6B2 /* DNLocationManager.m in Sources */,
 				5189EF4F1CC0B8B300091684 /* TabBarTool.m in Sources */,
-				51888D391CC0BB98004E93A9 /* ThirdViewController.m in Sources */,
 				5173EAAC1CC8BC99009E3636 /* HomeCell.m in Sources */,
 				5191AC7C1CC5C858007FF44E /* NSObject+DN.m in Sources */,
 				5191AC961CC5C858007FF44E /* UIWebView+DN.m in Sources */,
@@ -1647,6 +1674,7 @@
 				51727AF11CC7539F00DAE734 /* DNGlobeConst.m in Sources */,
 				5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */,
 				5173EAA51CC8A936009E3636 /* HomeService.m in Sources */,
+				5172AD1E1CCF625700537050 /* ThirdTableViewController.m in Sources */,
 				5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */,
 				5191AC8A1CC5C858007FF44E /* UINavigationItem+DN.m in Sources */,
 				5173EA9E1CC874D4009E3636 /* DNActionSheetView.m in Sources */,
