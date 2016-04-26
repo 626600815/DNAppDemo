@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     self.navigationItem.title = @"设置";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectImage)];
@@ -30,6 +30,8 @@
 - (void)selectImage {
     [[DNActionSheetManager shareActionSheet] showImagePickerWithVC:self selectImage:^(UIImage *image) {
         self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    } cancel:^{
+        NSLog(@"取消了");
     }];
 }
 

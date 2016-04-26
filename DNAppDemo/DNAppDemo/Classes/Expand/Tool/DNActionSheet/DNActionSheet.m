@@ -14,6 +14,7 @@
 #define BUTTON_HEIGHT 48
 
 #define BUTTON_TitlecColor [UIColor colorWithRed:30 / 255.0 green:30 / 255.0 blue:30 / 255.0 alpha:1.0]
+#define BUTTON_WHITEALPHA [UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:.5]
 
 @interface DNActionSheet ()
 
@@ -75,10 +76,10 @@ CGFloat contentViewHeight;
     contentViewHeight = 0;
     
     _contentView = [[UIView alloc] init];
-    _contentView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
+    _contentView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:.9];
     
     _buttonView = [[UIView alloc] init];
-    _buttonView.backgroundColor = [UIColor whiteColor];
+    _buttonView.backgroundColor = BUTTON_WHITEALPHA;
     
     [self initTitle];
     [self initButtons];
@@ -95,7 +96,7 @@ CGFloat contentViewHeight;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor grayColor];
         _titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
-        _titleLabel.backgroundColor = [UIColor whiteColor];
+        _titleLabel.backgroundColor = BUTTON_WHITEALPHA;
         [_buttonView addSubview:_titleLabel];
         contentViewHeight += _titleLabel.frame.size.height;
     }
@@ -109,7 +110,7 @@ CGFloat contentViewHeight;
             lineView.backgroundColor = [UIColor colorWithRed:230 / 255.0 green:230 / 255.0 blue:230 / 255.0 alpha:1.0];
             [_buttonView addSubview:lineView];
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + 1, contentViewWidth, BUTTON_HEIGHT)];
-            button.backgroundColor = [UIColor whiteColor];
+            button.backgroundColor = BUTTON_WHITEALPHA;
             button.titleLabel.font = [UIFont systemFontOfSize:18];
             [button setTitle:_buttonTitleArray[i] forState:UIControlStateNormal];
             [button setTitleColor:BUTTON_TitlecColor forState:UIControlStateNormal];
@@ -126,7 +127,7 @@ CGFloat contentViewHeight;
 - (void)initCancelButton {
     if (_cancelButtonTitle != nil) {
         _cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + SPACE_SMALL, contentViewWidth, BUTTON_HEIGHT)];
-        _cancelButton.backgroundColor = [UIColor whiteColor];
+        _cancelButton.backgroundColor = [UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:.8];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
         [_cancelButton setTitle:_cancelButtonTitle forState:UIControlStateNormal];
         [_cancelButton setTitleColor:BUTTON_TitlecColor forState:UIControlStateNormal];
@@ -160,7 +161,6 @@ CGFloat contentViewHeight;
     if (color != nil) {
         _titleLabel.textColor = color;
     }
-    
     if (size > 0) {
         _titleLabel.font = [UIFont systemFontOfSize:size];
     }
@@ -171,11 +171,9 @@ CGFloat contentViewHeight;
     if (color != nil) {
         [button setTitleColor:color forState:UIControlStateNormal];
     }
-    
     if (bgcolor != nil) {
         [button setBackgroundColor:bgcolor];
     }
-    
     if (size > 0) {
         button.titleLabel.font = [UIFont systemFontOfSize:size];
     }
@@ -185,11 +183,9 @@ CGFloat contentViewHeight;
     if (color != nil) {
         [_cancelButton setTitleColor:color forState:UIControlStateNormal];
     }
-    
     if (bgcolor != nil) {
         [_cancelButton setBackgroundColor:bgcolor];
     }
-    
     if (size > 0) {
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:size];
     }

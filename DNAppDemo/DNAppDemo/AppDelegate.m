@@ -26,8 +26,6 @@
     //设置全局接口请求的主机域名
     [DNNetworking updateBaseUrl:DNHostURLStr];
     
-    
-    
     //创建跟视图
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -62,7 +60,7 @@
 
 // 程序重新激活
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-   
+    
 }
 
 // 程序意外暂行

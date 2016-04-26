@@ -22,7 +22,7 @@ static NSString *privateNetworkBaseUrl = nil;
 
 + (void)netWorkReachability {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        
+        [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
         switch (status) {
             case AFNetworkReachabilityStatusUnknown://未知信号
             {

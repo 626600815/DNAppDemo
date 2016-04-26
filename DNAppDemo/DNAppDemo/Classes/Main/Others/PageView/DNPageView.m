@@ -41,7 +41,7 @@ static NSInteger const pageNum = 3;
     return pageInstance;
 }
 
-- (void)initPageViewToView:(UIView *)view dismiss:(DNPageDismiss)dismiss{
+- (void)initPageViewToView:(UIView *)view dismiss:(DNPageDismiss)dismiss {
     self.dismissBlock = [dismiss copy];
     self.frame = view.bounds;
     self.backgroundColor = [UIColor whiteColor];

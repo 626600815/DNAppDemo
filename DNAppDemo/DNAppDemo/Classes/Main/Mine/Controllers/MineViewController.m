@@ -9,6 +9,8 @@
 #import "MineViewController.h"
 #import "DNTableHeaderView.h"
 #import "SettingViewController.h"
+#import "DNPageView.h"
+#import "AppDelegate.h"
 
 #define StretchHeaderHeight 200
 
@@ -17,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) DNTableHeaderView *stretchHeaderView;
+
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 
 @end
@@ -27,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initNav];//初始化导航栏
+    [self loadDataWithArray];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -47,6 +52,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadDataWithArray {
+    NSArray *array = @[@"重现引导页", @"选个图片"];
+    [self.dataArray addObjectsFromArray:array];
 }
 
 - (void)initStretchHeader {
@@ -76,7 +86,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,13 +96,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld个cell",(long)indexPath.row];
+    cell.textLabel.text = self.dataArray[indexPath.row];
     cell.backgroundColor = [UIColor colorWithRed:230 green:230 blue:230 alpha:1];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (indexPath.row == 0) {
+        [NSFileManager setAppSettingsForObject:@"1.0" forKey:@"VersionStr"];
+        return;
+    }
+    
     SettingViewController *setting = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     [self.navigationController pushViewController:setting animated:YES];
 }
@@ -120,6 +136,13 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self initStretchHeader];
+}
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc] init];
+    }
+    return _dataArray;
 }
 
 @end

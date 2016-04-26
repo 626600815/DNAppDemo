@@ -10,6 +10,7 @@
 
 typedef void (^DNClickIndex) (NSInteger index);
 typedef void (^DNSelectImage) (UIImage *image);
+typedef void (^DNBlock) ();
 
 
 @interface DNActionSheetManager : NSObject
@@ -22,7 +23,7 @@ typedef void (^DNSelectImage) (UIImage *image);
  *  @param VC    当前所在的Controller
  *  @param image 返回的图片
  */
-- (void)showImagePickerWithVC:(UIViewController *)VC selectImage:(DNSelectImage)image;
+- (void)showImagePickerWithVC:(UIViewController *)VC selectImage:(DNSelectImage)image cancel:(DNBlock)cancel;
 
 /**
  *  账号注销样式
