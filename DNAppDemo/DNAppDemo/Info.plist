@@ -18,36 +18,6 @@
 	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>alipayShare</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>ap2015072400185895</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>vk5312801</string>
-				<string>yx0d9a9f9088ea44d78680f3274da1765f</string>
-				<string>pin4799618093317899411</string>
-				<string>kakao48d3f524e4a636b08d81b3ceb50f1003</string>
-				<string>pdk4799618093317899411</string>
-				<string>tb2QUXqO9fcgGdtGG1FcvML6ZunIQzAEL8xY6hIaxdJnDti2DYwM</string>
-				<string>com.mob.demoShareSDK</string>
-				<string>rm226427com.mob.demoShareSDK</string>
-				<string>pocketapp1234</string>
-				<string>QQ05FB8B52</string>
-				<string>wx4868b35061f87885</string>
-				<string>tencent100371282</string>
-				<string>fb107704292745179</string>
-				<string>wb568898243</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -75,6 +45,69 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>OpenShare</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>openshare</string>
+				<string>wx23a6cb69443b042f</string>
+				<string>tencent1105131586</string>
+				<string>tencent1105131586.content</string>
+				<string>QQ41DEF842</string>
+				<string>wb4076797266</string>
+				<string>renrenshare228525</string>
+				<string>fb776442542471056</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>wechat</string>
+		<string>weixin</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>mqqapi</string>
+		<string>mqq</string>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>mqqconnect</string>
+		<string>mqqopensdkdataline</string>
+		<string>mqqopensdkgrouptribeshare</string>
+		<string>mqqopensdkfriend</string>
+		<string>mqqopensdkapi</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqopensdkapiV3</string>
+		<string>mqzoneopensdk</string>
+		<string>wtloginmqq</string>
+		<string>wtloginmqq2</string>
+		<string>mqqwpa</string>
+		<string>mqzone</string>
+		<string>mqzonev2</string>
+		<string>mqzoneshare</string>
+		<string>wtloginqzone</string>
+		<string>mqzonewx</string>
+		<string>mqzoneopensdkapiV2</string>
+		<string>mqzoneopensdkapi19</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqzoneopensdk</string>
+		<string>renrenios</string>
+		<string>renrenapi</string>
+		<string>renren</string>
+		<string>renreniphone</string>
+		<string>yixin</string>
+		<string>instagram</string>
+		<string>whatsapp</string>
+		<string>line</string>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 </dict>
 </plist>

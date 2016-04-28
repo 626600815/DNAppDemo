@@ -170,4 +170,11 @@ typedef NSUInteger NSStringScoreOption;
  */
 + (NSString *)URLString:(NSString *)urlString appendParameters:(NSDictionary *)parameters;
 
+
+/// 将字符串进行Url编码
+- (NSString *)encodeURL;
+
+/// 将字符串进行Hash
+- (NSString *)hmacSha1WithKey:(NSString *)key;
+
 @end

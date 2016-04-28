@@ -410,5 +410,18 @@
     return [NSDate timestampFormatString];
 }
 
+- (NSString *)toTimeStamp {
+    return [NSString stringWithFormat:@"%lf", [self timeIntervalSince1970]];
+}
+
++ (NSDate *)toDateWithTimeStamp:(NSString *)timeStamp {
+    NSString *arg = timeStamp;
+    if (![timeStamp isKindOfClass:[NSString class]]) {
+        arg = [NSString stringWithFormat:@"%@", timeStamp];
+    }
+    NSTimeInterval time = [timeStamp doubleValue];
+    return [NSDate dateWithTimeIntervalSince1970:time];
+}
+
 @end
 

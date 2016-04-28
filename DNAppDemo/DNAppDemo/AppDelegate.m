@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainControllerManage.h"
 #import "DNPageView.h"
+#import "OpenShareHeader.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,7 @@
     
     //设置全局接口请求的主机域名
     [DNNetworking updateBaseUrl:DNHostURLStr];
+    [self setThirdKeys];
     
     //创建跟视图
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -35,8 +37,10 @@
     //设置引导图
     [self PageLoadingGuide];
     
+    
     return YES;
 }
+
 
 // 程序暂行
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -68,6 +72,16 @@
     
 }
 
+//客户端回调
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    //第二步：添加回调
+    if ([OpenShare handleOpenURL:url]) {
+        return YES;
+    }
+    //这里可以写上其他OpenShare不支持的客户端的回调，比如支付宝等。
+    return YES;
+}
+
 #pragma mark - method
 //加载引导页
 - (void)PageLoadingGuide {
@@ -80,6 +94,22 @@
             [NSFileManager setAppSettingsForObject:currentVersion forKey:@"VersionStr"];
         }];
     }
+}
+
+/*
+ static NSString * const weixinAppID = @"wx23a6cb69443b042f";
+ static NSString * const weixinAppSecret = @"cba6cbf624b6b4e68774129ced9a11ef";
+ static NSString * const QQAppID = @"1105131586";
+ static NSString * const QQAppKey = @"EG6Gu07agawph6Dg";
+ static NSString * const defaultUrl = @"http:www.baidu.com";
+ */
+
+//设置三方登录分享的key
+- (void)setThirdKeys {
+    [OpenShare connectQQWithAppId:QQAppID];
+    [OpenShare connectWeiboWithAppKey:WeiBoAppId];
+    [OpenShare connectWeixinWithAppId:weixinAppID];
+    [OpenShare connectAlipay];//支付宝参数都是服务器端生成的，这里不需要key.
 }
 
 @end
