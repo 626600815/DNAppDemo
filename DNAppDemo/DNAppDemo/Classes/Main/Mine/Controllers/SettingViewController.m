@@ -36,14 +36,16 @@
     
     //加载一个视频
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 64, width, width*(9.0/16.0))];
-    self.videoController.delegate = self;
-    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
-    [self.videoController showInView:self.view];
+    
     
     DNScrollText *scrollText = [[DNScrollText alloc] initWithFrame:CGRectMake(20, width*(9.0/16.0)+80, width - 40, 50)];
     scrollText.text = @"本视频用到的三方库是KRVideoPlayerController，这个库还是很好用的，给个赞！";
     [self.view addSubview:scrollText];
+    
+    self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 64, width, width*(9.0/16.0))];
+    self.videoController.delegate = self;
+    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    [self.videoController showInView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

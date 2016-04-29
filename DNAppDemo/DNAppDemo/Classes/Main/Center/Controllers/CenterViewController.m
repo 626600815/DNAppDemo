@@ -84,6 +84,7 @@
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
                
             } title:@"解析结果" message:@"解析失败" cancelButtonName:@"取消" otherButtonTitles:@"前往", nil];
+            return;
         }
         [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
             if (buttonIndex == 1) {
