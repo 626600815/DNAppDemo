@@ -58,7 +58,7 @@
     //当应用进入后台时间超过10分钟(处理一些有时效性的界面或者账号)
     self.currentTime = CFDateGetAbsoluteTime((CFDateRef)[NSDate date]);
     if (self.resignTime != 0 && self.currentTime - self.resignTime > 600) {
-        NSLog(@"我是不是沉睡了好长时间");
+        DNLog(@"我是不是沉睡了好长时间");
     }
 }
 
@@ -90,19 +90,12 @@
     if (historyVersion == nil || [historyVersion compare:currentVersion options:NSNumericSearch] == NSOrderedAscending) {
         [DNPageView sharePageView].isPageControl = NO;
         [[DNPageView sharePageView] initPageViewToView:self.window dismiss:^{
-            NSLog(@"记住了 我已经看过你了");
+            DNLog(@"记住了 我已经看过你了");
             [NSFileManager setAppSettingsForObject:currentVersion forKey:@"VersionStr"];
         }];
     }
 }
 
-/*
- static NSString * const weixinAppID = @"wx23a6cb69443b042f";
- static NSString * const weixinAppSecret = @"cba6cbf624b6b4e68774129ced9a11ef";
- static NSString * const QQAppID = @"1105131586";
- static NSString * const QQAppKey = @"EG6Gu07agawph6Dg";
- static NSString * const defaultUrl = @"http:www.baidu.com";
- */
 
 //设置三方登录分享的key
 - (void)setThirdKeys {

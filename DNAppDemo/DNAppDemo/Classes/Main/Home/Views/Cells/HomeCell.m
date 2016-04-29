@@ -27,7 +27,7 @@
     _homeModel = homeModel;
     self.titleLabel.text = homeModel.title;
     self.detailLabel.text = homeModel.content;
-    [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:@"https://img3.doubanio.com/lpic/s27026051.jpg"]];
+    [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:homeModel.imageName]];
 }
 
 

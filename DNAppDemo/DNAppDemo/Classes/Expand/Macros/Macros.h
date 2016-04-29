@@ -3,6 +3,9 @@
  *  项目中的样式以及配置
  */
 
+//工具
+#define DNWeakSelf __weak typeof(self) weakSelf = self;//弱引用
+
 
 //默认加载图片
 #define PLACEHOLDER [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"placeholder" ofType:@"jpg"]]

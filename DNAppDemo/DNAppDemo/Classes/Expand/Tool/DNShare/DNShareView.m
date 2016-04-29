@@ -236,10 +236,12 @@
              [MBProgressHUD showError:@"分享失败"];
         }];
     } else if ([name isEqualToString:@"短信"]) {
-         [self showMessageWithtitle:@"分享给好友" body:self.contentUrl];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self showMessageWithtitle:@"分享给好友" body:self.contentUrl];
+        });
+        
     }
 }
-
 
 // 指定回调方法
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
@@ -360,7 +362,6 @@
 - (MFMessageComposeViewController *)smsController {
     if (!_smsController) {
         _smsController = [[MFMessageComposeViewController alloc] init];
-        _smsController.navigationBar.tintColor = [UIColor redColor];
         _smsController.messageComposeDelegate = self;
     }
     return _smsController;

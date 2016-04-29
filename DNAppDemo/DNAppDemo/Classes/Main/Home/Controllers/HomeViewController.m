@@ -30,7 +30,7 @@ static NSString *const Indentifier = @"cellID";
     // Do any additional setup after loading the view from its nib.
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:Indentifier];
-    self.tableView.fd_debugLogEnabled = YES;
+    self.tableView.fd_debugLogEnabled = NO;
 
     [self loadDataList];
 }

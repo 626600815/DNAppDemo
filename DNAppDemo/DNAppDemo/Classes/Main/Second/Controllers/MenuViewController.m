@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "DOPDropDownMenu.h"
+#import "DNThirdLogin.h"
 
 @interface MenuViewController () <DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
 
@@ -141,8 +142,35 @@
         str = [NSString stringWithFormat:@"点击的是第%ld个，第%ld行",(long)indexPath.column,(long)indexPath.row];
         NSLog(@"点击了 %ld - %ld 项目",(long)indexPath.column,(long)indexPath.row);
     }
-    [MBProgressHUD showMessage:str toView:self.view];
-    
+}
+
+
+//三方登录
+
+//QQ登录
+- (IBAction)QQLoginClick:(UIButton *)sender {
+    [self thirdLogin:DNThirdLoginTypeQQ];
+}
+
+//微信登录
+- (IBAction)weixinLoginClick:(UIButton *)sender {
+    [self thirdLogin:DNThirdLoginTypeWeiXin];
+}
+
+//微博登录
+- (IBAction)weiboLoginClick:(UIButton *)sender {
+    [self thirdLogin:DNThirdLoginTypeWeibo];
+}
+
+//三方登陆
+- (void)thirdLogin:(DNThirdLoginType)type {
+    [[DNThirdLogin shareLogin] loginToPlatform:type completionHandle:^(NSDictionary *data, NSError *error) {
+        if (error) {
+            DNLog(@"----->%@",error);
+            return ;
+        }
+        DNLog(@"=======>%@",data);
+    }];
 }
 
 

@@ -99,15 +99,15 @@
 
 
 - (void)webView:(DNWebViewController *)webView didStartLoadingURL:(NSURL *)URL {
-    NSLog(@"开始加载");
+    DNLog(@"开始加载");
 }
 
 - (void)webView:(DNWebViewController *)webView didFinishLoadingURL:(NSURL *)URL {
-    NSLog(@"结束加载");
+    DNLog(@"结束加载");
 }
 
 - (void)webView:(DNWebViewController *)webView didFailToLoadURL:(NSURL *)URL error:(NSError *)error {
-    NSLog(@"加载失败:%@",error);
+    DNLog(@"加载失败:%@",error);
 }
 
 

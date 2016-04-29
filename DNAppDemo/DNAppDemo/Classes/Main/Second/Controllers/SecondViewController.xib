@@ -14,29 +14,6 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-sc-LXk">
-                    <rect key="frame" x="74" y="101" width="100" height="30"/>
-                    <state key="normal" title="QQ"/>
-                    <connections>
-                        <action selector="QQLoginClick:" destination="-1" eventType="touchUpInside" id="QQt-Zh-yWj"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZG-G4-APg">
-                    <rect key="frame" x="74" y="180" width="100" height="30"/>
-                    <state key="normal" title="微信"/>
-                    <connections>
-                        <action selector="weixinLoginClick:" destination="-1" eventType="touchUpInside" id="vcG-D3-6Be"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e70-uw-qgW">
-                    <rect key="frame" x="74" y="252" width="100" height="30"/>
-                    <state key="normal" title="微博"/>
-                    <connections>
-                        <action selector="weiboLoginClick:" destination="-1" eventType="touchUpInside" id="Hem-CB-Vw2"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
     </objects>

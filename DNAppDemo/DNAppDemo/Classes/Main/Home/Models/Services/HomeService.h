@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HomeModel.h"
 
-//typedef void (^DNListInfo)(NSArray *listArray);
 
 @interface HomeService : NSObject
 

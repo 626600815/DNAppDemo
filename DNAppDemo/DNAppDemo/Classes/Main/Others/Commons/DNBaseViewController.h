@@ -10,6 +10,9 @@
 
 @interface DNBaseViewController : UIViewController
 
+/**
+ *  重写返回按钮的事件
+ */
 - (void)backBarButtonItemAction;
 
 @end

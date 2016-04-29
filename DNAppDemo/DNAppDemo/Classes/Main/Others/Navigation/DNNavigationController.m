@@ -19,7 +19,6 @@
     
     self.interactivePopGestureRecognizer.delegate = self;
     
-//    [self.navigationBar setBarTintColor:Nav_BarTintColor];
     [self.navigationBar setTintColor:Nav_TintColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:Nav_TitleFont,
                                                                       NSForegroundColorAttributeName:Nav_TitleColor}];

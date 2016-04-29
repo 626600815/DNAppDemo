@@ -76,6 +76,7 @@
     childVC.tabBarItem = [TabBarTool  itemWithTitle:title normalImg:imageName selectImg:selectImageName];
     childVC.navigationItem.title = title;
     DNNavigationController *navi = [[DNNavigationController alloc] initWithRootViewController:childVC];
+//    [self.tabBarController addChildViewController:navi];;
     return navi;
 }
 

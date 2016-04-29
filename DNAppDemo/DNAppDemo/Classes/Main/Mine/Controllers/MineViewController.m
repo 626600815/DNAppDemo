@@ -55,7 +55,7 @@
 }
 
 - (void)loadDataWithArray {
-    NSArray *array = @[@"重现引导页", @"选个图片"];
+    NSArray *array = @[@"重现引导页", @"选个图片放个视频"];
     [self.dataArray addObjectsFromArray:array];
 }
 
