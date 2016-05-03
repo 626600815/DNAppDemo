@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
             <connections>
+                <outlet property="cyclebackView" destination="7QF-AN-sNN" id="5B2-GX-l3D"/>
+                <outlet property="scrollView" destination="Kgw-jJ-Z58" id="nOh-ow-tYV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,34 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgw-jJ-Z58">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QF-AN-sNN">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                            <color key="backgroundColor" red="0.92549019610000005" green="0.1333333333" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="zrd-BK-rhr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7QF-AN-sNN" firstAttribute="top" secondItem="Kgw-jJ-Z58" secondAttribute="top" id="Dhl-xO-cRm"/>
+                        <constraint firstItem="7QF-AN-sNN" firstAttribute="centerX" secondItem="Kgw-jJ-Z58" secondAttribute="centerX" id="Ejd-vZ-j9G"/>
+                        <constraint firstItem="7QF-AN-sNN" firstAttribute="leading" secondItem="Kgw-jJ-Z58" secondAttribute="leading" id="GFq-h6-ZNb"/>
+                        <constraint firstAttribute="trailing" secondItem="7QF-AN-sNN" secondAttribute="trailing" id="Lay-79-gEE"/>
+                        <constraint firstAttribute="bottom" secondItem="7QF-AN-sNN" secondAttribute="bottom" constant="1000" id="j9x-cd-5mF"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Kgw-jJ-Z58" secondAttribute="bottom" id="9pK-2K-dfh"/>
+                <constraint firstItem="Kgw-jJ-Z58" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B9z-nu-vbh"/>
+                <constraint firstItem="Kgw-jJ-Z58" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JWc-6N-uSD"/>
+                <constraint firstAttribute="trailing" secondItem="Kgw-jJ-Z58" secondAttribute="trailing" id="eji-PQ-cQM"/>
+            </constraints>
         </view>
     </objects>
 </document>

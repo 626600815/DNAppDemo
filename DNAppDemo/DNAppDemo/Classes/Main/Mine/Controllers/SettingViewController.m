@@ -34,16 +34,22 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectImage)];
     self.navigationItem.rightMargin = 10;
     
-    //加载一个视频
+    
+    
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    //加一个滚动文字
+    DNScrollText *scrollText = [[DNScrollText alloc] initWithFrame:CGRectMake(20, width*(9.0/16.0)+80, width - 40, 50)];
+    scrollText.text = @"本视频用到的三方库是KRVideoPlayerController，这个库还是很好用的，给个赞！";
+    [self.view addSubview:scrollText];
+    
+    //加载一个视频
     self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 64, width, width*(9.0/16.0))];
     self.videoController.delegate = self;
     self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
     [self.videoController showInView:self.view];
     
-    DNScrollText *scrollText = [[DNScrollText alloc] initWithFrame:CGRectMake(20, width*(9.0/16.0)+80, width - 40, 50)];
-    scrollText.text = @"本视频用到的三方库是KRVideoPlayerController，这个库还是很好用的，给个赞！";
-    [self.view addSubview:scrollText];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
