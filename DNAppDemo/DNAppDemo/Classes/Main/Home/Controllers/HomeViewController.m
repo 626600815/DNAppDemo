@@ -35,7 +35,8 @@ static NSString *const Indentifier = @"cellID";
     self.tableView.fd_debugLogEnabled = NO;
 
     [self loadDataList];
-    [self check3DTouch];
+    
+    
 }
 
 //请求数据刷新列表
@@ -61,7 +62,14 @@ static NSString *const Indentifier = @"cellID";
 }
 
 - (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    [self registerForPreviewingWithDelegate:self sourceView:cell];
+    
+    //判断是否支持3Dtouch
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0f) {
+        if(self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        }
+    }
+    
     cell.fd_enforceFrameLayout = NO;
     cell.homeModel = self.listArray[indexPath.row];
 }
@@ -84,16 +92,7 @@ static NSString *const Indentifier = @"cellID";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)check3DTouch
-{
-    if(self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)
-    {
-        //ok
-    }
-    else{
-        //notok
-    }
-}
+
 
 #pragma mark - UIViewControllerPreviewingDelegate
 - (UIViewController *)previewingContext:(id)context viewControllerForLocation:(CGPoint) point {

@@ -90,18 +90,18 @@
         });
     });
     
-        //设置功能区
-        for (NSInteger i = 0; i < 10; i++) {
-            UIImageView *imageView = (UIImageView *)[self.scrollView viewWithTag:100+i];
-            UILabel *label = (UILabel *)[self.scrollView viewWithTag:1000+i];
-            label.text = self.functionArray[i][@"name"];
-            [imageView sd_setImageWithURL:[NSURL URLWithString:self.functionArray[i][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder"] options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                [imageView addCornerWithRadius:imageView.width/2];
-            }];
-            [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-                NSLog(@"功能区点击的按钮是:%@",self.functionArray[i][@"id"]);
-            }];
-        }
+    //设置功能区
+    for (NSInteger i = 0; i < 10; i++) {
+        UIImageView *imageView = (UIImageView *)[self.scrollView viewWithTag:100+i];
+        UILabel *label = (UILabel *)[self.scrollView viewWithTag:1000+i];
+        label.text = self.functionArray[i][@"name"];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.functionArray[i][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder"] options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [imageView addCornerWithRadius:imageView.width/2];
+        }];
+        [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            NSLog(@"功能区点击的按钮是:%@",self.functionArray[i][@"id"]);
+        }];
+    }
     
     //设置四个奇怪的按钮
     for (NSInteger i = 0; i < self.fourthArray.count; i++) {

@@ -11,15 +11,15 @@
 
 @implementation DNNetStatus
 
-+(NetworkStatus)status {
++ (NetworkStatus)status {
     return [[Reachability reachabilityForInternetConnection] currentReachabilityStatus];
 }
 
-+(BOOL)isWiFiEnable {
++ (BOOL)isWiFiEnable {
     return [self status]==ReachableViaWiFi;
 }
 
-+(BOOL)isNetworkEnable {
++ (BOOL)isNetworkEnable {
     return [self status] != NotReachable;
 }
 
