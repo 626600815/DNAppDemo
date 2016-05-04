@@ -11,6 +11,8 @@
 #import "SettingViewController.h"
 #import "DNPageView.h"
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "DNNavigationController.h"
 
 #define StretchHeaderHeight 200
 
@@ -18,10 +20,10 @@
 @interface MineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic,strong) DNTableHeaderView *stretchHeaderView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
-
 
 @end
 
@@ -42,11 +44,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (self.tableView.contentOffset.y/(StretchHeaderHeight-64) < 0.8) {
-        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:self.tableView.contentOffset.y/(StretchHeaderHeight-64)]];
+        float alphaNum = self.tableView.contentOffset.y/(StretchHeaderHeight-64);
+        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:alphaNum]];
+        [self.navigationController.navigationBar RsetElementsAlpha:alphaNum];
     }else {
         [self.navigationController.navigationBar Rreset];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,13 +77,19 @@
     avater.image = [UIImage imageNamed:@"mine_avater"];
     [contentView addSubview:avater];
     
+    avater.userInteractionEnabled = YES;
+    //点击头像去登录
+    [avater addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        DNNavigationController *loginNvc = [[DNNavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:loginNvc animated:YES completion:nil];
+    }];
+    
     self.stretchHeaderView = [[DNTableHeaderView alloc] init];
     [self.stretchHeaderView stretchHeaderForTableView:self.tableView withView:bgImageView subViews:contentView];
 }
 
-
 #pragma mark - table delegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 55;
 }
@@ -91,7 +100,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"reuseCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId ];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
@@ -103,24 +112,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
     if (indexPath.row == 0) {
         [NSFileManager setAppSettingsForObject:@"1.0" forKey:@"VersionStr"];
         return;
     }
-    
     SettingViewController *setting = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     [self.navigationController pushViewController:setting animated:YES];
 }
 
-
-
 #pragma mark - stretchableTable delegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.stretchHeaderView scrollViewDidScroll:scrollView];
     if (scrollView.contentOffset.y/(StretchHeaderHeight-64) < 0.8) {
-        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:scrollView.contentOffset.y/(StretchHeaderHeight-64)]];
+        float alphaNum = self.tableView.contentOffset.y/(StretchHeaderHeight-64);
+        [self.navigationController.navigationBar RsetBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:alphaNum]];
+        [self.navigationController.navigationBar RsetElementsAlpha:alphaNum];
     }else {
         [self.navigationController.navigationBar Rreset];
     }
@@ -132,7 +138,6 @@
 
 #pragma mark - 初始化
 - (void)initNav {
-    
     [self.navigationController.navigationBar RsetBackgroundColor:[UIColor clearColor]];
     
     self.automaticallyAdjustsScrollViewInsets = NO;

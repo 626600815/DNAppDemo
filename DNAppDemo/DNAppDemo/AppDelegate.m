@@ -29,6 +29,7 @@
     
     //设置全局接口请求的主机域名
     [DNNetworking updateBaseUrl:DNHostURLStr];
+    //设置三方登录分享的key
     [self setThirdKeys];
     
     //创建跟视图
@@ -36,7 +37,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[MainControllerManage sharedManager] mainViewController];
     [self.window makeKeyAndVisible];
-    
     
     [self PageLoadingGuide];//设置引导图
 //    [self TouchSetting];//设置3D touch
@@ -94,7 +94,7 @@
     }else if ([shortcutItem.type isEqualToString:@"two"]){
         DrawViewController *DrawVC = [[DrawViewController alloc]initWithNibName:@"DrawViewController" bundle:nil];
         UITabBarController *mytab = (UITabBarController*)self.window.rootViewController;
-        mytab.selectedIndex = 0;
+        mytab.selectedIndex = 1;
         UINavigationController *myNAV = [mytab.viewControllers firstObject];
         [myNAV pushViewController:DrawVC animated:YES];
         
@@ -121,13 +121,12 @@
 }
 
 //设置3D touch
-- (void)TouchSetting {
+- (void)TouchSetting {//也可以在info.plist中静态配置UIApplicationShortcutItems
     UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"扫码" localizedTitle:@"扫码"];
     UIApplicationShortcutItem *shortItem2 = [[UIApplicationShortcutItem alloc] initWithType:@"打开应用" localizedTitle:@"打开应用"];
     NSArray *shortItems = [[NSArray alloc] initWithObjects:shortItem1, shortItem2, nil];
     [[UIApplication sharedApplication] setShortcutItems:shortItems];
 }
-
 
 //设置三方登录分享的key
 - (void)setThirdKeys {

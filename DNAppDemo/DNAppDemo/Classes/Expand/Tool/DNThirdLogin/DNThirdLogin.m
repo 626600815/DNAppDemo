@@ -121,9 +121,12 @@
 
 - (void)weiboOAuthWithMessage:(NSDictionary *)message completionHandle:(void (^)(NSDictionary *, NSError *))completionHandler {
     NSString *url = @"https://api.weibo.com/2/users/show.json";
-    NSDictionary *params = @{@"source": WeiBoAppId,
+    NSDictionary *params = @{
+                             @"source": WeiBoAppId,
                              @"access_token": message[@"accessToken"],
-                             @"uid": message[@"userID"]};
+                             @"uid": message[@"userID"]
+                             };
+    NSLog(@"我已经获取到了用户的ID：%@",message);
     [DNSNSRequest get:url params:params completionHandler:^(NSDictionary *data, NSError *error) {
         NSMutableDictionary *dict = data.mutableCopy;
         [dict addEntriesFromDictionary:message];

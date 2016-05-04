@@ -65,7 +65,6 @@
             self.nextFourthArray = listinfoDic[@"nextfourth"];
             self.centerCycleArray = listinfoDic[@"centercycle"];
             
-            
             //刷新界面
             [self refreshView];
         }];
@@ -76,7 +75,6 @@
 
 
 - (void)refreshView {
-    
     //设置轮播图
     NSMutableArray *mutArray = [NSMutableArray arrayWithCapacity:self.cycleArray.count];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -132,7 +130,6 @@
             NSLog(@"点击的scrollView上得图标：%@",self.scrollArray[i][@"id"]);
         }];
         
-        
         UILabel *commissionLabel = [[UILabel alloc] initWithFrame:CGRectMake(imageV.x, imageV.height+5, imageV.width, 20)];
         commissionLabel.text = [NSString stringWithFormat:@"佣金：¥%@",self.scrollArray[i][@"commission"]];
         commissionLabel.textAlignment = NSTextAlignmentCenter;
@@ -172,14 +169,12 @@
     });
     
     //
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
@@ -188,7 +183,6 @@
     }else if (cycleScrollView == self.centerCycleScrollView) {
         NSLog(@"轮播图点击的是：%@", self.centerCycleArray[index][@"id"]);
     }
-    
 }
 
 - (void)dismissVC {
@@ -225,7 +219,7 @@
 //功能区
 - (void)createFunctionButton {
     for (NSInteger i = 0; i < 10; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i%5*(SCREEM_WIDTH/5)+10, 190+i/5*(SCREEM_WIDTH/5 + 10), SCREEM_WIDTH/5-20, SCREEM_WIDTH/5-20)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i%5*(SCREEM_WIDTH/5)+13, 190+i/5*(SCREEM_WIDTH/5 + 13), SCREEM_WIDTH/5-26, SCREEM_WIDTH/5-26)];
         imageView.tag = 100+i;
         imageView.userInteractionEnabled = YES;
         [self.scrollView addSubview:imageView];
@@ -269,7 +263,6 @@
 
 //能滚动的最高返佣
 - (void)highesCommission {
-    
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, self.viewHeight, SCREEM_WIDTH, 30)];
     backView.backgroundColor = [UIColor redColor];
     [self.scrollView addSubview:backView];
@@ -298,7 +291,6 @@
 }
 
 - (void)createNextFourthButton {
-    
     float widthAndHeight = SCREEM_WIDTH*1/3;
     UIImageView *imagev1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.viewHeight, SCREEM_WIDTH, widthAndHeight)];
     imagev1.backgroundColor = [UIColor RandomColor];

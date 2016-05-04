@@ -18,6 +18,12 @@
 		516D4FBD1CD99B2D008BA6CA /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */; };
 		516D4FBE1CD99B2D008BA6CA /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */; };
 		516D4FBF1CD99B2D008BA6CA /* TouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FBB1CD99B2D008BA6CA /* TouchViewController.xib */; };
+		516D4FCD1CD9D18E008BA6CA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FCB1CD9D18E008BA6CA /* LoginViewController.m */; };
+		516D4FCE1CD9D18E008BA6CA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FCC1CD9D18E008BA6CA /* LoginViewController.xib */; };
+		516D4FD21CD9D3AD008BA6CA /* ResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FD01CD9D3AD008BA6CA /* ResignViewController.m */; };
+		516D4FD31CD9D3AD008BA6CA /* ResignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FD11CD9D3AD008BA6CA /* ResignViewController.xib */; };
+		516D4FD71CD9EC5A008BA6CA /* MyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FD51CD9EC5A008BA6CA /* MyQRCodeViewController.m */; };
+		516D4FD81CD9EC5A008BA6CA /* MyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FD61CD9EC5A008BA6CA /* MyQRCodeViewController.xib */; };
 		5170CED41CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */; };
 		5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECF1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m */; };
 		5170CED61CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED11CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m */; };
@@ -418,6 +424,15 @@
 		516D4FB91CD99B2D008BA6CA /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
 		516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
 		516D4FBB1CD99B2D008BA6CA /* TouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchViewController.xib; sourceTree = "<group>"; };
+		516D4FCA1CD9D18E008BA6CA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		516D4FCB1CD9D18E008BA6CA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		516D4FCC1CD9D18E008BA6CA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		516D4FCF1CD9D3AD008BA6CA /* ResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResignViewController.h; sourceTree = "<group>"; };
+		516D4FD01CD9D3AD008BA6CA /* ResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResignViewController.m; sourceTree = "<group>"; };
+		516D4FD11CD9D3AD008BA6CA /* ResignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResignViewController.xib; sourceTree = "<group>"; };
+		516D4FD41CD9EC5A008BA6CA /* MyQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQRCodeViewController.h; sourceTree = "<group>"; };
+		516D4FD51CD9EC5A008BA6CA /* MyQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQRCodeViewController.m; sourceTree = "<group>"; };
+		516D4FD61CD9EC5A008BA6CA /* MyQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQRCodeViewController.xib; sourceTree = "<group>"; };
 		5170CECC1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		5170CECE1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -1397,6 +1412,9 @@
 				5177C81E1CC4C0830023E6B2 /* CenterViewController.h */,
 				5177C81F1CC4C0830023E6B2 /* CenterViewController.m */,
 				5177C8201CC4C0830023E6B2 /* CenterViewController.xib */,
+				516D4FD41CD9EC5A008BA6CA /* MyQRCodeViewController.h */,
+				516D4FD51CD9EC5A008BA6CA /* MyQRCodeViewController.m */,
+				516D4FD61CD9EC5A008BA6CA /* MyQRCodeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2795,6 +2813,12 @@
 		5189EF331CC09E1000091684 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				516D4FCA1CD9D18E008BA6CA /* LoginViewController.h */,
+				516D4FCB1CD9D18E008BA6CA /* LoginViewController.m */,
+				516D4FCC1CD9D18E008BA6CA /* LoginViewController.xib */,
+				516D4FCF1CD9D3AD008BA6CA /* ResignViewController.h */,
+				516D4FD01CD9D3AD008BA6CA /* ResignViewController.m */,
+				516D4FD11CD9D3AD008BA6CA /* ResignViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3183,6 +3207,7 @@
 				5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */,
 				5173EAA81CC8B8B6009E3636 /* Home.json in Resources */,
 				516830F81CD21A6A00F017DF /* .gitkeep in Resources */,
+				516D4FD81CD9EC5A008BA6CA /* MyQRCodeViewController.xib in Resources */,
 				5177C8221CC4C0830023E6B2 /* CenterViewController.xib in Resources */,
 				51727B021CC77D8600DAE734 /* page_4s1.png in Resources */,
 				51B7737E1CC61BD700001B95 /* icon_chose_bottom@2x.png in Resources */,
@@ -3201,6 +3226,7 @@
 				516D4FBD1CD99B2D008BA6CA /* DrawViewController.xib in Resources */,
 				51880C701CD34F8100C9197C /* placeholder@2x.png in Resources */,
 				51727B061CC77D8600DAE734 /* page_5s2.png in Resources */,
+				516D4FD31CD9D3AD008BA6CA /* ResignViewController.xib in Resources */,
 				516D4FBF1CD99B2D008BA6CA /* TouchViewController.xib in Resources */,
 				5172AD1F1CCF625700537050 /* ThirdTableViewController.xib in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
@@ -3214,6 +3240,7 @@
 				51B4DC6A1CD88BE000D07BD8 /* HomeListData.json in Resources */,
 				51880C6D1CD34F7500C9197C /* pageControlCurrentDot@3x.png in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
+				516D4FCE1CD9D18E008BA6CA /* LoginViewController.xib in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
 				51727B081CC77D8600DAE734 /* page_6s1.png in Resources */,
 				516830F71CD21A6A00F017DF /* KRVideoPlayer.bundle in Resources */,
@@ -3325,6 +3352,7 @@
 				51880C451CD3078A00C9197C /* ZXQRCodeReader.m in Sources */,
 				51880BE81CD3078A00C9197C /* ZXRSSExpandedBlockParsedResult.m in Sources */,
 				51880C341CD3078A00C9197C /* ZXQRCodeFormatInformation.m in Sources */,
+				516D4FD71CD9EC5A008BA6CA /* MyQRCodeViewController.m in Sources */,
 				5172AD251CCF62C300537050 /* FriendGroup.m in Sources */,
 				51880BDD1CD3078A00C9197C /* ZXAbstractExpandedDecoder.m in Sources */,
 				51880BF71CD3078A00C9197C /* ZXRSSFinderPattern.m in Sources */,
@@ -3411,6 +3439,7 @@
 				51880BF51CD3078A00C9197C /* ZXRSS14Reader.m in Sources */,
 				51880B871CD3078A00C9197C /* ZXISBNParsedResult.m in Sources */,
 				51880B961CD3078A00C9197C /* ZXURLTOResultParser.m in Sources */,
+				516D4FCD1CD9D18E008BA6CA /* LoginViewController.m in Sources */,
 				51880BFA1CD3078A00C9197C /* ZXCodaBarReader.m in Sources */,
 				51880B781CD3078A00C9197C /* ZXAztecWriter.m in Sources */,
 				5175AFD11CD0B6E900BB73DE /* DNThirdLogin.m in Sources */,
@@ -3505,6 +3534,7 @@
 				51880B8B1CD3078A00C9197C /* ZXProductResultParser.m in Sources */,
 				5177C8141CC4BE8B0023E6B2 /* DNQRCodeReader.m in Sources */,
 				51880BBB1CD3078A00C9197C /* ZXEncodeHints.m in Sources */,
+				516D4FD21CD9D3AD008BA6CA /* ResignViewController.m in Sources */,
 				5173EAA51CC8A936009E3636 /* HomeService.m in Sources */,
 				51880BB11CD3078A00C9197C /* ZXGridSampler.m in Sources */,
 				51880BFF1CD3078A00C9197C /* ZXCode39Writer.m in Sources */,
@@ -3757,7 +3787,7 @@
 				INFOPLIST_FILE = DNAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjn.DNAppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = us.gfzj.openshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3776,7 +3806,7 @@
 				INFOPLIST_FILE = DNAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjn.DNAppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = us.gfzj.openshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

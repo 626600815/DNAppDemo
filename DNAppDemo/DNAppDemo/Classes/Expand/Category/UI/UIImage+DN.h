@@ -109,5 +109,15 @@
 + (UIImage *)streImageNamed:(NSString *)imageName;
 + (UIImage *)streImageNamed:(NSString *)imageName capX:(CGFloat)x capY:(CGFloat)y;
 
+/**
+ *  通过连接生成二维码图片
+ *
+ *  @param qrString 连接地址
+ *  @param size     图片大小
+ *
+ *  @return 生成的二维码图片
+ */
++ (UIImage *)createQRForString:(NSString *)qrString withSize:(CGFloat)size;
+
 @end
 

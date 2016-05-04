@@ -36,13 +36,11 @@
 
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
     UIPreviewAction * action1 = [UIPreviewAction actionWithTitle:@"去画画" style:0 handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-       DrawViewController *vc = [[DrawViewController alloc] initWithNibName:@"DrawViewController" bundle:nil];
+        DrawViewController *vc = [[DrawViewController alloc] initWithNibName:@"DrawViewController" bundle:nil];
         [[self topViewController].navigationController pushViewController:vc animated:YES];
-        
     }];
     UIPreviewAction * action2 = [UIPreviewAction actionWithTitle:@"取消" style:2 handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
     }];
-    
     NSArray * actions = @[action1,action2];
     
     return actions;

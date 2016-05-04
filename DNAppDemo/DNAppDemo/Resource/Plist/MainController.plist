@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>controller</key>
-		<string>HomeViewController</string>
+		<string>SecondViewController</string>
 		<key>title</key>
 		<string>首页</string>
 		<key>image</key>
@@ -14,7 +14,7 @@
 	</dict>
 	<dict>
 		<key>controller</key>
-		<string>SecondViewController</string>
+		<string>HomeViewController</string>
 		<key>title</key>
 		<string>第二页</string>
 		<key>image</key>

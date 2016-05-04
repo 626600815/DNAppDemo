@@ -84,4 +84,8 @@
     [self.captureSession stopRunning];
 }
 
+- (void)startReader {
+    [self.captureSession startRunning];
+}
+
 @end

@@ -26,11 +26,11 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>openshare</string>
-				<string>wx23a6cb69443b042f</string>
-				<string>tencent1105131586</string>
-				<string>tencent1105131586.content</string>
-				<string>QQ41DEF842</string>
-				<string>wb4076797266</string>
+				<string>wxd930ea5d5a258f4f</string>
+				<string>tencent1103194207</string>
+				<string>tencent1103194207.content</string>
+				<string>QQ41C1685F</string>
+				<string>wb402180334</string>
 			</array>
 		</dict>
 	</array>
@@ -92,6 +92,39 @@
 	<string>YES</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>YES</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeHome</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>进入首页</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>首页</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>one</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeBookmark</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>去画一个大象吧</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>画画</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>two</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>快速识别二维码</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>扫码</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>third</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -106,39 +139,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>one</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>首页</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>进入首页</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeHome</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>two</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>画画</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>去画一个大象吧</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeBookmark</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>third</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>扫码</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>快速识别二维码</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
-		</dict>
 	</array>
 </dict>
 </plist>

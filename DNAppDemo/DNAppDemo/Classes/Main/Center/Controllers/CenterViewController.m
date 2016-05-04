@@ -11,6 +11,7 @@
 #import "DNQRCodeReader.h"
 #import "DetailViewController.h"
 #import "ZXingObjC.h"
+#import "MyQRCodeViewController.h"
 
 @interface CenterViewController ()<DNQRCodeReaderDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -45,14 +46,15 @@
     
     [self initNav];//初始化导航栏
     [[DNQRCodeReader sharedReader] setDelegate:self];
+    [[DNQRCodeReader sharedReader] startReaderOnView:self.QRBackView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[DNQRCodeReader sharedReader] startReaderOnView:self.QRBackView];
+    [[DNQRCodeReader sharedReader] startReader];
     [self createFunctionView];//创建摄像头操作界面
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -64,7 +66,6 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *image = info[UIImagePickerControllerEditedImage];
-        //这里是准备解析图片中的二维码的，等等在写
         
         CGImageRef imageToDecode = image.CGImage;
         
@@ -141,7 +142,9 @@
 
 //我的二维码
 - (void)myQRCode {
-    
+    MyQRCodeViewController *myCode = [[MyQRCodeViewController alloc] initWithNibName:@"MyQRCodeViewController" bundle:nil];
+    myCode.myUrlString = @"http://www.baidu.com";
+    [self.navigationController pushViewController:myCode animated:YES];
 }
 
 //打开闪光灯

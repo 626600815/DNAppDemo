@@ -24,6 +24,8 @@
 + (DNQRCodeReader *)sharedReader;
 
 - (void)startReaderOnView:(UIView *)view;
+- (void)startReader;
 - (void)stopReader;
+
 
 @end
