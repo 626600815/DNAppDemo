@@ -14,6 +14,10 @@
 		516830F81CD21A6A00F017DF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 516830F21CD21A6A00F017DF /* .gitkeep */; };
 		516830F91CD21A6A00F017DF /* KRVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516830F41CD21A6A00F017DF /* KRVideoPlayerController.m */; };
 		516830FA1CD21A6A00F017DF /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516830F61CD21A6A00F017DF /* KRVideoPlayerControlView.m */; };
+		516D4FBC1CD99B2D008BA6CA /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FB71CD99B2D008BA6CA /* DrawViewController.m */; };
+		516D4FBD1CD99B2D008BA6CA /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */; };
+		516D4FBE1CD99B2D008BA6CA /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */; };
+		516D4FBF1CD99B2D008BA6CA /* TouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FBB1CD99B2D008BA6CA /* TouchViewController.xib */; };
 		5170CED41CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */; };
 		5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECF1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m */; };
 		5170CED61CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED11CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m */; };
@@ -408,6 +412,12 @@
 		516830F41CD21A6A00F017DF /* KRVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerController.m; sourceTree = "<group>"; };
 		516830F51CD21A6A00F017DF /* KRVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRVideoPlayerControlView.h; sourceTree = "<group>"; };
 		516830F61CD21A6A00F017DF /* KRVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerControlView.m; sourceTree = "<group>"; };
+		516D4FB61CD99B2D008BA6CA /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		516D4FB71CD99B2D008BA6CA /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
+		516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawViewController.xib; sourceTree = "<group>"; };
+		516D4FB91CD99B2D008BA6CA /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
+		516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
+		516D4FBB1CD99B2D008BA6CA /* TouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchViewController.xib; sourceTree = "<group>"; };
 		5170CECC1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		5170CECE1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -2404,6 +2414,12 @@
 				51888D261CC0BB66004E93A9 /* HomeViewController.h */,
 				51888D271CC0BB66004E93A9 /* HomeViewController.m */,
 				51888D281CC0BB66004E93A9 /* HomeViewController.xib */,
+				516D4FB61CD99B2D008BA6CA /* DrawViewController.h */,
+				516D4FB71CD99B2D008BA6CA /* DrawViewController.m */,
+				516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */,
+				516D4FB91CD99B2D008BA6CA /* TouchViewController.h */,
+				516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */,
+				516D4FBB1CD99B2D008BA6CA /* TouchViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3182,8 +3198,10 @@
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
 				5173EA971CC87393009E3636 /* webview_menu.png in Resources */,
 				51B7737D1CC61BD700001B95 /* icon_chose_arrow_sel@2x.png in Resources */,
+				516D4FBD1CD99B2D008BA6CA /* DrawViewController.xib in Resources */,
 				51880C701CD34F8100C9197C /* placeholder@2x.png in Resources */,
 				51727B061CC77D8600DAE734 /* page_5s2.png in Resources */,
+				516D4FBF1CD99B2D008BA6CA /* TouchViewController.xib in Resources */,
 				5172AD1F1CCF625700537050 /* ThirdTableViewController.xib in Resources */,
 				51888D491CC0C20A004E93A9 /* DNShowHUD.bundle in Resources */,
 				51727B041CC77D8600DAE734 /* page_4s3.png in Resources */,
@@ -3505,6 +3523,7 @@
 				51880C221CD3078A00C9197C /* ZXPDF417DetectorResult.m in Sources */,
 				51880B941CD3078A00C9197C /* ZXURIParsedResult.m in Sources */,
 				51880C2C1CD3078A00C9197C /* ZXPDF417Writer.m in Sources */,
+				516D4FBE1CD99B2D008BA6CA /* TouchViewController.m in Sources */,
 				51880B731CD3078A00C9197C /* ZXAztecSimpleToken.m in Sources */,
 				51880C651CD34F1E00C9197C /* UIView+SDExtension.m in Sources */,
 				51880C441CD3078A00C9197C /* ZXQRCodeMultiReader.m in Sources */,
@@ -3593,6 +3612,7 @@
 				5191AC841CC5C858007FF44E /* UIColor+DN.m in Sources */,
 				51880C191CD3078A00C9197C /* ZXPDF417BoundingBox.m in Sources */,
 				5173EA9F1CC874D4009E3636 /* DNWebViewController.m in Sources */,
+				516D4FBC1CD99B2D008BA6CA /* DrawViewController.m in Sources */,
 				51880BB41CD3078A00C9197C /* ZXPerspectiveTransform.m in Sources */,
 				516830EB1CD212AF00F017DF /* Reachability.m in Sources */,
 				51880BFB1CD3078A00C9197C /* ZXCodaBarWriter.m in Sources */,

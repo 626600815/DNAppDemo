@@ -12,11 +12,13 @@
 #import "HomeService.h"
 #import "HomeModel.h"
 #import "HomeCell.h"
+#import "TouchViewController.h"
+#import "DrawViewController.h"
 
 
 static NSString *const Indentifier = @"cellID";
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate>
 
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -33,6 +35,7 @@ static NSString *const Indentifier = @"cellID";
     self.tableView.fd_debugLogEnabled = NO;
 
     [self loadDataList];
+    [self check3DTouch];
 }
 
 //请求数据刷新列表
@@ -53,10 +56,12 @@ static NSString *const Indentifier = @"cellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:Indentifier forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
+   
     return cell;
 }
 
 - (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    [self registerForPreviewingWithDelegate:self sourceView:cell];
     cell.fd_enforceFrameLayout = NO;
     cell.homeModel = self.listArray[indexPath.row];
 }
@@ -75,7 +80,35 @@ static NSString *const Indentifier = @"cellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    DrawViewController *vc = [[DrawViewController alloc] initWithNibName:@"DrawViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)check3DTouch
+{
+    if(self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)
+    {
+        //ok
+    }
+    else{
+        //notok
+    }
+}
+
+#pragma mark - UIViewControllerPreviewingDelegate
+- (UIViewController *)previewingContext:(id)context viewControllerForLocation:(CGPoint) point {
     
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell* )[context sourceView]];
+    HomeModel *homeModel = self.listArray[indexPath.row];
+    
+    TouchViewController *touchVC = [[TouchViewController alloc] initWithNibName:@"TouchViewController" bundle:nil];
+    touchVC.preferredContentSize = CGSizeMake(0.0f,600.f);
+    touchVC.homeModel = homeModel;
+    return touchVC;
+}
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 

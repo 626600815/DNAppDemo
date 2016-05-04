@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (nonatomic, assign) float viewHeight;
 
 //轮播图
 @property (weak, nonatomic) IBOutlet UIView *cyclebackView;
@@ -27,11 +26,15 @@
 
 
 @property (nonatomic, strong) NSMutableArray *cycleArray;//轮播图数据
-@property (nonatomic, nonnull, strong) NSMutableArray *functionArray;//功能区数据
+@property (nonatomic, strong) NSMutableArray *functionArray;//功能区数据
 @property (nonatomic, strong) NSMutableArray *fourthArray;//四个奇怪的数据
 @property (nonatomic, strong) NSMutableArray *scrollArray;//滚动的数据
 @property (nonatomic, strong) NSMutableArray *nextFourthArray;//四个奇怪的数据
 @property (nonatomic, strong) NSMutableArray *centerCycleArray;//中间轮播图
+
+
+@property (nonatomic, assign) float viewHeight;
+
 
 @end
 
@@ -59,7 +62,10 @@
             self.functionArray = listinfoDic[@"function"];
             self.fourthArray = listinfoDic[@"fourth"];
             self.scrollArray = listinfoDic[@"scroll"];
+            self.nextFourthArray = listinfoDic[@"nextfourth"];
             self.centerCycleArray = listinfoDic[@"centercycle"];
+            
+            
             //刷新界面
             [self refreshView];
         }];
@@ -80,7 +86,6 @@
             [mutArray addObject:imageurl];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"mutArray : %@",mutArray);
             self.cycleScrollView.imageURLStringsGroup = mutArray;
         });
     });
@@ -144,19 +149,17 @@
     }
     
     //设置另外四个奇怪的
-    //设置四个奇怪的按钮
     for (NSInteger i = 0; i < self.nextFourthArray.count; i++) {
         UIImageView *imageView = (UIImageView *)[self.scrollView viewWithTag:1800+i];
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.nextFourthArray[i][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-        
         imageView.userInteractionEnabled = YES;
         [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
             NSLog(@"点击的四个奇怪按钮上得图标：%@",self.nextFourthArray[i][@"id"]);
         }];
     }
     
-    //设置轮播图
-    NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:self.cycleArray.count];
+    //设置中间轮播图
+    NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:self.centerCycleArray.count];
     dispatch_queue_t queue1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue1, ^{
         for (NSInteger i = 0; i < self.centerCycleArray.count; i++) {
@@ -164,10 +167,11 @@
             [tempArray addObject:imageurl];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"mutArray : %@",mutArray);
             self.centerCycleScrollView.imageURLStringsGroup = mutArray;
         });
     });
+    
+    //
     
 }
 
@@ -178,9 +182,13 @@
 
 
 #pragma mark - delegate
-
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    NSLog(@"轮播图点击的是：%@", self.cycleArray[index][@"id"]);
+    if (cycleScrollView == self.cycleScrollView) {
+        NSLog(@"轮播图点击的是：%@", self.cycleArray[index][@"id"]);
+    }else if (cycleScrollView == self.centerCycleScrollView) {
+        NSLog(@"轮播图点击的是：%@", self.centerCycleArray[index][@"id"]);
+    }
+    
 }
 
 - (void)dismissVC {
@@ -210,7 +218,6 @@
         _cycleScrollView.autoScrollTimeInterval = 4.0f;
         _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
         [self.cyclebackView addSubview:_cycleScrollView];
-        _cycleScrollView.autoScroll = NO;
     }
     return _cycleScrollView;
 }
@@ -269,6 +276,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, SCREEM_WIDTH, 30)];
     label.text = @"最高返佣";
+    label.textColor = [UIColor whiteColor];
     label.font = [UIFont systemFontOfSize:14];
     [backView addSubview:label];
     

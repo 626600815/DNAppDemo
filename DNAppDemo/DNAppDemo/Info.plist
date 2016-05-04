@@ -107,5 +107,38 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>one</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>首页</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>进入首页</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeHome</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>two</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>画画</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>去画一个大象吧</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeBookmark</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>third</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>扫码</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>快速识别二维码</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+		</dict>
+	</array>
 </dict>
 </plist>
