@@ -19,6 +19,6 @@
 //字体颜色,默认是白色
 @property (nonatomic, strong) UIColor *colorText;
 //开始动画,默认是YES
-@property (nonatomic, assign, getter=isStart) BOOL start;
+@property (nonatomic, assign, getter = isStart) BOOL start;
 
 @end

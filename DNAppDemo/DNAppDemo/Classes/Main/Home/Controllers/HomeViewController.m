@@ -35,8 +35,6 @@ static NSString *const Indentifier = @"cellID";
     self.tableView.fd_debugLogEnabled = NO;
 
     [self loadDataList];
-    
-    
 }
 
 //请求数据刷新列表
@@ -56,20 +54,19 @@ static NSString *const Indentifier = @"cellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:Indentifier forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
-   
-    return cell;
-}
-
-- (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //判断是否支持3Dtouch
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0f) {
         if(self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
             [self registerForPreviewingWithDelegate:self sourceView:cell];
         }
     }
-    
+    [self configureCell:cell atIndexPath:indexPath];
+   
+    return cell;
+}
+
+- (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     cell.fd_enforceFrameLayout = NO;
     cell.homeModel = self.listArray[indexPath.row];
 }
@@ -92,17 +89,15 @@ static NSString *const Indentifier = @"cellID";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
-
 #pragma mark - UIViewControllerPreviewingDelegate
 - (UIViewController *)previewingContext:(id)context viewControllerForLocation:(CGPoint) point {
     
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell* )[context sourceView]];
-    HomeModel *homeModel = self.listArray[indexPath.row];
-    
+    NSIndexPath *indexPath       = [self.tableView indexPathForCell:(UITableViewCell* )[context sourceView]];
+    HomeModel *homeModel         = self.listArray[indexPath.row];
+
     TouchViewController *touchVC = [[TouchViewController alloc] initWithNibName:@"TouchViewController" bundle:nil];
     touchVC.preferredContentSize = CGSizeMake(0.0f,600.f);
-    touchVC.homeModel = homeModel;
+    touchVC.homeModel            = homeModel;
     return touchVC;
 }
 
@@ -110,15 +105,12 @@ static NSString *const Indentifier = @"cellID";
     [self showViewController:viewControllerToCommit sender:self];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma Mark- 初始化
-
 - (NSMutableArray *)listArray {
     if (!_listArray) {
         _listArray = [[NSMutableArray alloc] init];

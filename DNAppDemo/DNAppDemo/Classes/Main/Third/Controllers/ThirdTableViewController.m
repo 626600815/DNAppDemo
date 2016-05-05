@@ -22,9 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.sectionHeaderHeight = 50;
-    self.tableView.rowHeight = 65;
-    self.tableView.tableFooterView = [[UIView alloc] init];
+    self.tableView.rowHeight           = 65;
+    self.tableView.tableFooterView     = [[UIView alloc] init];
     [self loadListData];
 }
 
@@ -61,12 +62,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    FriendGroup *friendGroup = self.listArray[indexPath.section];
-    Friend *friend = friendGroup.friends[indexPath.row];
-    
-    cell.imageView.image = [UIImage imageNamed:friend.icon];
-    cell.textLabel.textColor = friend.isVip ? [UIColor redColor] : [UIColor blackColor];
-    cell.textLabel.text = friend.name;
+    FriendGroup *friendGroup  = self.listArray[indexPath.section];
+    Friend *friend            = friendGroup.friends[indexPath.row];
+
+    cell.imageView.image      = [UIImage imageNamed:friend.icon];
+    cell.textLabel.textColor  = friend.isVip ? [UIColor redColor] : [UIColor blackColor];
+    cell.textLabel.text       = friend.name;
     cell.detailTextLabel.text = friend.intro;
     
     return cell;
@@ -74,8 +75,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     ThirdHeadView *headView = [ThirdHeadView headViewWithTableView:tableView];
-    headView.delegate = self;
-    headView.friendGroup = self.listArray[section];
+    headView.delegate       = self;
+    headView.friendGroup    = self.listArray[section];
     
     return headView;
 }
@@ -88,9 +89,7 @@
     [self.tableView reloadData];
 }
 
-
 #pragma mark - 初始化
-
 - (NSMutableArray *)listArray {
     if (!_listArray) {
         _listArray = [[NSMutableArray alloc] init];

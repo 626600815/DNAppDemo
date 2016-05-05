@@ -33,17 +33,23 @@
 }
 
 - (void)showImagePickerWithVC:(UIViewController *)VC selectImage:(DNSelectImage)image cancel:(DNBlock)cancel {
-    self.imageBlock = [image copy];
-    self.cancelBlock = [cancel copy];
-    self.currentVC = VC;
-    DNActionSheet *sheet = [[DNActionSheet alloc] initWithTitle:ImagePicker_Title delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拍照", @"从相册选取", nil];
+    self.imageBlock      = [image copy];
+    self.cancelBlock     = [cancel copy];
+    self.currentVC       = VC;
+    DNActionSheet *sheet = [[DNActionSheet alloc] initWithTitle:ImagePicker_Title
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                              otherButtonTitles:@"拍照", @"从相册选取", nil];
     [sheet show];
 }
 
 - (void)showLogoutWithIndex:(DNClickIndex)index {
     
-    self.indexBlock = [index copy];
-    DNActionSheet *sheet = [[DNActionSheet alloc] initWithTitle:@"是否退出登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出登录", nil];
+    self.indexBlock      = [index copy];
+    DNActionSheet *sheet = [[DNActionSheet alloc] initWithTitle:@"是否退出登录"
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                              otherButtonTitles:@"退出登录", nil];
     [sheet setButtonTitleColor:[UIColor redColor] bgColor:nil fontSize:0 atIndex:0];
     [sheet show];
 }
@@ -59,7 +65,6 @@
     if ([sheet.title isEqualToString:ImagePicker_Title]) {
         [self selectImageWithIndex:buttonIndex];
     }
-    
 }
 
 #pragma mark - 拍照，选相册
@@ -70,12 +75,11 @@
             BOOL isCameraSupport = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
             if(isCameraSupport){
                 UIImagePickerController *imagepicker = [[UIImagePickerController alloc]init];
-                imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                imagepicker.allowsEditing = YES;
-                imagepicker.delegate = self;
+                imagepicker.sourceType               = UIImagePickerControllerSourceTypeCamera;
+                imagepicker.allowsEditing            = YES;
+                imagepicker.delegate                 = self;
                 [self.currentVC presentViewController:imagepicker animated:YES completion:nil];
             }
-            
         }
             break;
         case 1://相册
@@ -83,12 +87,11 @@
             BOOL isCameraSupport = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
             if(isCameraSupport){
                 UIImagePickerController *imagepicker = [[UIImagePickerController alloc]init];
-                imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                imagepicker.allowsEditing = YES;
-                imagepicker.delegate = self;
+                imagepicker.sourceType               = UIImagePickerControllerSourceTypePhotoLibrary;
+                imagepicker.allowsEditing            = YES;
+                imagepicker.delegate                 = self;
                 [self.currentVC presentViewController:imagepicker animated:YES completion:nil];
             }
-            
         }
             break;
         default:

@@ -14,12 +14,9 @@
     UITabBarItem *tabItem;
     UIImage * normalImage = [[UIImage imageNamed:normalImg] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage * selectImage = [[UIImage imageNamed:selectImg] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabItem = [[UITabBarItem alloc] initWithTitle:nil
-                                            image:normalImage
-                                    selectedImage:selectImage];
-    [tabItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor]}
-                           forState:UIControlStateSelected];
-    tabItem.title = title;
+    tabItem               = [[UITabBarItem alloc] initWithTitle:nil image:normalImage selectedImage:selectImage];
+    [tabItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor]} forState:UIControlStateSelected];
+    tabItem.title         = title;
     return tabItem;
 }
 

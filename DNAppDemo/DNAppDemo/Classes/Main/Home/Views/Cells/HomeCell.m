@@ -24,8 +24,8 @@
 }
 
 - (void)setHomeModel:(HomeModel *)homeModel {
-    _homeModel = homeModel;
-    self.titleLabel.text = homeModel.title;
+//    self.homeModel        = homeModel;
+    self.titleLabel.text  = homeModel.title;
     self.detailLabel.text = homeModel.content;
     [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:homeModel.imageName]];
 }

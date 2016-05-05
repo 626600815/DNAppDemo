@@ -68,10 +68,10 @@
 
 - (CLLocationManager *)locationM {
     if (!_locationM) {
-        _locationM = [[CLLocationManager alloc]init];
-        _locationM.delegate = self;
+        _locationM                 = [[CLLocationManager alloc]init];
+        _locationM.delegate        = self;
         _locationM.desiredAccuracy = kCLLocationAccuracyBest;//定位精确度
-        _locationM.distanceFilter = 10;//超出位置变化范围更新位置信息
+        _locationM.distanceFilter  = 10;//超出位置变化范围更新位置信息
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
             [_locationM requestWhenInUseAuthorization ];//使用的时候使用
             //            [_locationM requestAlwaysAuthorization];//总是使用

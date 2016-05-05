@@ -48,13 +48,13 @@
 
 - (UIView *)backView {
     if (!_backView) {
-        _backView = [[UIView alloc]initWithFrame:self.view.bounds];
-        _backView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _backView.hidden = YES;
-        _backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.3];
+        _backView                        = [[UIView alloc]initWithFrame:self.view.bounds];
+        _backView.autoresizingMask       = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _backView.hidden                 = YES;
+        _backView.backgroundColor        = [UIColor colorWithRed:0 green:0 blue:0 alpha:.3];
         [self.view addSubview:_backView];
-        
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissBackView)];
+
+        UITapGestureRecognizer * tap     = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissBackView)];
         _backView.userInteractionEnabled = YES;
         [_backView addGestureRecognizer:tap];
     }

@@ -44,7 +44,6 @@
     return YES;
 }
 
-
 // 程序暂行
 - (void)applicationWillResignActive:(UIApplication *)application {
     //记录进入后台的时间
@@ -90,18 +89,18 @@
     if ([shortcutItem.type isEqualToString:@"one"]) {
         
         UITabBarController *mytab = (UITabBarController*)self.window.rootViewController;
-        mytab.selectedIndex = 0;
+        mytab.selectedIndex       = 0;
     }else if ([shortcutItem.type isEqualToString:@"two"]){
-        DrawViewController *DrawVC = [[DrawViewController alloc]initWithNibName:@"DrawViewController" bundle:nil];
-        UITabBarController *mytab = (UITabBarController*)self.window.rootViewController;
-        mytab.selectedIndex = 1;
-        UINavigationController *myNAV = [mytab.viewControllers firstObject];
+        UITabBarController *mytab     = (UITabBarController*)self.window.rootViewController;
+        mytab.selectedIndex           = 1;
+        DrawViewController *DrawVC    = [[DrawViewController alloc]initWithNibName:@"DrawViewController" bundle:nil];
+        UINavigationController *myNAV = [mytab.viewControllers objectAtIndex:1];
         [myNAV pushViewController:DrawVC animated:YES];
         
     } else if ([shortcutItem.type isEqualToString:@"third"]) {
-        UITabBarController *mytab = (UITabBarController*)self.window.rootViewController;
+        UITabBarController *mytab      = (UITabBarController*)self.window.rootViewController;
         CenterViewController *centerVC = [[CenterViewController alloc] initWithNibName:NSStringFromClass([CenterViewController class]) bundle:nil];
-        DNNavigationController *nav = [[DNNavigationController alloc] initWithRootViewController:centerVC];
+        DNNavigationController *nav    = [[DNNavigationController alloc] initWithRootViewController:centerVC];
         [mytab presentViewController:nav animated:NO completion:nil];
     }
 }
@@ -124,7 +123,7 @@
 - (void)TouchSetting {//也可以在info.plist中静态配置UIApplicationShortcutItems
     UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"扫码" localizedTitle:@"扫码"];
     UIApplicationShortcutItem *shortItem2 = [[UIApplicationShortcutItem alloc] initWithType:@"打开应用" localizedTitle:@"打开应用"];
-    NSArray *shortItems = [[NSArray alloc] initWithObjects:shortItem1, shortItem2, nil];
+    NSArray *shortItems                   = [[NSArray alloc] initWithObjects:shortItem1, shortItem2, nil];
     [[UIApplication sharedApplication] setShortcutItems:shortItems];
 }
 

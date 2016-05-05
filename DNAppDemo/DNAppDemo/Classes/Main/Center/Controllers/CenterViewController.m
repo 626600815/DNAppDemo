@@ -65,26 +65,20 @@
 //UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
-        UIImage *image = info[UIImagePickerControllerEditedImage];
         
-        CGImageRef imageToDecode = image.CGImage;
-        
-        ZXLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:imageToDecode];
-        ZXBinaryBitmap *bitmap = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
-        
-        NSError *error = nil;
-        
-        ZXDecodeHints *hints = [ZXDecodeHints hints];
-        
+        UIImage *image              = info[UIImagePickerControllerEditedImage];
+        CGImageRef imageToDecode    = image.CGImage;
+        ZXLuminanceSource *source   = [[ZXCGImageLuminanceSource alloc] initWithCGImage:imageToDecode];
+        ZXBinaryBitmap *bitmap      = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
+        NSError *error              = nil;
+        ZXDecodeHints *hints        = [ZXDecodeHints hints];
         ZXMultiFormatReader *reader = [ZXMultiFormatReader reader];
-        ZXResult *result = [reader decode:bitmap
-                                    hints:hints
-                                    error:&error];
+        ZXResult *result            = [reader decode:bitmap hints:hints error:&error];
         
         if (result.text.length == 0) {
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
                
-            } title:@"解析结果" message:@"解析失败" cancelButtonName:@"取消" otherButtonTitles:@"前往", nil];
+            } title:@"解析结果" message:@"解析失败" cancelButtonName:@"确定" otherButtonTitles:nil];
             return;
         }
         [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
@@ -133,9 +127,9 @@
     BOOL isCameraSupport = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
     if(isCameraSupport){
         UIImagePickerController *imagepicker = [[UIImagePickerController alloc]init];
-        imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        imagepicker.allowsEditing = YES;
-        imagepicker.delegate = self;
+        imagepicker.sourceType               = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagepicker.allowsEditing            = YES;
+        imagepicker.delegate                 = self;
         [self presentViewController:imagepicker animated:YES completion:nil];
     }
 }
@@ -188,27 +182,25 @@
         return;
     }
     
-    self.bottomItemsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-100,
-                                                                   CGRectGetWidth(self.view.frame), 100)];
+    self.bottomItemsView             = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-100, CGRectGetWidth(self.view.frame), 100)];
     _bottomItemsView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-    
     [self.view addSubview:_bottomItemsView];
     
-    CGSize size = CGSizeMake(65, 87);
-    self.btnFlash = [[UIButton alloc]init];
+    CGSize size      = CGSizeMake(65, 87);
+    self.btnFlash    = [[UIButton alloc]init];
     _btnFlash.bounds = CGRectMake(0, 0, size.width, size.height);
     _btnFlash.center = CGPointMake(CGRectGetWidth(_bottomItemsView.frame)/2, CGRectGetHeight(_bottomItemsView.frame)/2);
     [_btnFlash setImage:[UIImage imageNamed:@"qrcode_scan_btn_flash_nor"] forState:UIControlStateNormal];
     [_btnFlash addTarget:self action:@selector(openOrCloseFlash) forControlEvents:UIControlEventTouchUpInside];
     
-    self.btnPhoto = [[UIButton alloc]init];
+    self.btnPhoto    = [[UIButton alloc]init];
     _btnPhoto.bounds = _btnFlash.bounds;
     _btnPhoto.center = CGPointMake(CGRectGetWidth(_bottomItemsView.frame)/4, CGRectGetHeight(_bottomItemsView.frame)/2);
     [_btnPhoto setImage:[UIImage imageNamed:@"qrcode_scan_btn_photo_nor"] forState:UIControlStateNormal];
     [_btnPhoto setImage:[UIImage imageNamed:@"qrcode_scan_btn_photo_down"] forState:UIControlStateHighlighted];
     [_btnPhoto addTarget:self action:@selector(openPhoto) forControlEvents:UIControlEventTouchUpInside];
     
-    self.btnMyQR = [[UIButton alloc]init];
+    self.btnMyQR    = [[UIButton alloc]init];
     _btnMyQR.bounds = _btnFlash.bounds;
     _btnMyQR.center = CGPointMake(CGRectGetWidth(_bottomItemsView.frame) * 3/4, CGRectGetHeight(_bottomItemsView.frame)/2);
     [_btnMyQR setImage:[UIImage imageNamed:@"qrcode_scan_btn_myqrcode_nor"] forState:UIControlStateNormal];

@@ -39,11 +39,11 @@
 
 - (void)setViewControllers:(NSArray *)viewControllers {
     
-    NSInteger centerIndex = viewControllers.count/2;
-    UIViewController *viewController = [[UIViewController alloc] init];
+    NSInteger centerIndex              = viewControllers.count/2;
+    UIViewController *viewController   = [[UIViewController alloc] init];
     NSMutableArray *newViewControllers = [[NSMutableArray alloc] initWithArray:viewControllers];
     [newViewControllers insertObject:viewController atIndex:centerIndex];
     [super setViewControllers:newViewControllers];
-    self.centerButton = [[DNTabBarButton alloc] initWithTabBar:self.tabBar forItemIndex:centerIndex];
+    self.centerButton                  = [[DNTabBarButton alloc] initWithTabBar:self.tabBar forItemIndex:centerIndex];
 }
 @end

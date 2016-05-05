@@ -68,24 +68,23 @@ static NSInteger const pageNum = 3;
     }
     
    [imageNameArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(idx * SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-       NSString *path = [[NSBundle mainBundle] pathForResource:obj ofType:@"png"];
-       imageView.image = [UIImage imageWithContentsOfFile:path];
-       imageView.contentMode = UIViewContentModeScaleToFill;
+       UIImageView *imageView           = [[UIImageView alloc] initWithFrame:CGRectMake(idx * SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+       NSString *path                   = [[NSBundle mainBundle] pathForResource:obj ofType:@"png"];
+       imageView.image                  = [UIImage imageWithContentsOfFile:path];
+       imageView.contentMode            = UIViewContentModeScaleToFill;
        imageView.userInteractionEnabled = YES;
        [self.scrollView addSubview:imageView];
        if (idx == pageNum-1) {//最后一张上添加进入按钮
            [imageView addSubview:self.doneButton];
        }
    }];
-    
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    CGFloat pageWidth = CGRectGetWidth(self.bounds);
-    CGFloat pageFraction = self.scrollView.contentOffset.x / pageWidth;
+    CGFloat pageWidth            = CGRectGetWidth(self.bounds);
+    CGFloat pageFraction         = self.scrollView.contentOffset.x / pageWidth;
     self.pageControl.currentPage = roundf(pageFraction);
     
     if (scrollView.contentOffset.x > SCREEN_WIDTH * (pageNum-1)) {
@@ -128,7 +127,8 @@ static NSInteger const pageNum = 3;
 #pragma mark - 初始化
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _scrollView                                = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _scrollView.contentSize                    = CGSizeMake(SCREEN_WIDTH *(pageNum+1), SCREEN_HEIGHT);
         _scrollView.pagingEnabled                  = YES;
         _scrollView.showsVerticalScrollIndicator   = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
@@ -136,8 +136,7 @@ static NSInteger const pageNum = 3;
         _scrollView.userInteractionEnabled         = YES;
         _scrollView.clipsToBounds                  = NO;
         _scrollView.scrollEnabled                  = YES;
-        _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH *(pageNum+1), SCREEN_HEIGHT);
-        _scrollView.delegate = self;
+        _scrollView.delegate                       = self;
         [self addSubview:_scrollView];
     }
     return _scrollView;
@@ -156,7 +155,7 @@ static NSInteger const pageNum = 3;
 
 - (UIButton *)doneButton {
     if (!_doneButton) {
-        _doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _doneButton       = [UIButton buttonWithType:UIButtonTypeCustom];
         _doneButton.frame = CGRectMake(0, SCREEN_HEIGHT-120, SCREEN_WIDTH, 80);
         [_doneButton addTarget:self action:@selector(doneBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }

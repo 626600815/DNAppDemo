@@ -36,10 +36,10 @@
     for (NSString *key in params.allKeys) {
         [paramsString appendFormat:@"%@=%@&", key, params[key]];
     }
-    NSString *url = [NSString stringWithFormat:@"%@%@", urlPath, paramsString];
-    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *url                = [NSString stringWithFormat:@"%@%@", urlPath, paramsString];
+    url                          = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    request.HTTPMethod = @"GET";
+    request.HTTPMethod           = @"GET";
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         id responseObject = nil;

@@ -60,7 +60,7 @@
         NSLog(@"error:%@", error);
         return;
     }
-    self.captureSession = [[AVCaptureSession alloc] init];
+    self.captureSession               = [[AVCaptureSession alloc] init];
     self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
     
     if ([self.captureSession canAddInput:captureDeviceInput]) {
@@ -72,10 +72,10 @@
     if ([self.captureSession canAddOutput:self.captureMetadataOutput]) {
         [self.captureSession addOutput:self.captureMetadataOutput];
     }
-    self.captureMetadataOutput.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
+    self.captureMetadataOutput.metadataObjectTypes       = @[AVMetadataObjectTypeQRCode];
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
-    captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;// AVLayerVideoGravityResizeAspect is default.
-    captureVideoPreviewLayer.frame = view.bounds;
+    captureVideoPreviewLayer.videoGravity                = AVLayerVideoGravityResizeAspectFill;// AVLayerVideoGravityResizeAspect is default.
+    captureVideoPreviewLayer.frame                       = view.bounds;
     [view.layer addSublayer:captureVideoPreviewLayer];
     [self.captureSession startRunning];
 }

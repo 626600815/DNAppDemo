@@ -78,12 +78,12 @@
         [keyValueString appendFormat:@"%@=%@&", key, params[key]];
     }
     [keyValueString appendString:@"userip="];
-    keyValueString = [keyValueString encodeURL].mutableCopy;
+    keyValueString    = [keyValueString encodeURL].mutableCopy;
     [keyValueString appendString:@"10.0.0.1"];
     NSString *signStr = [NSString stringWithFormat:@"%@%@", paramsString, keyValueString];
-    NSString *sss = [signStr hmacSha1WithKey:[NSString stringWithFormat:@"%@&", QQAppKey]];
-    NSString *sig = [sss encodeURL];
-    params[@"sig"] = sig;
+    NSString *sss     = [signStr hmacSha1WithKey:[NSString stringWithFormat:@"%@&", QQAppKey]];
+    NSString *sig     = [sss encodeURL];
+    params[@"sig"]    = sig;
     params[@"userip"] = @"10.0.0.1";
     
     NSMutableString *urlString = @"?".mutableCopy;
@@ -91,7 +91,7 @@
         [urlString appendFormat:@"%@=%@&", key, params[key]];
     }
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@", url, urlString];
-    requestUrl = [requestUrl substringToIndex:requestUrl.length - 1];
+    requestUrl           = [requestUrl substringToIndex:requestUrl.length - 1];
     
     [DNSNSRequest get:requestUrl completionHandler:^(NSDictionary *data, NSError *error) {
         NSMutableDictionary *dict = data.mutableCopy;
@@ -107,7 +107,7 @@
     NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", weixinAppID, weixinAppSecret, message[@"code"]];
     [DNSNSRequest get:url completionHandler:^(NSDictionary *data, NSError *error) {
         NSString *accessToken = data[@"access_token"];
-        NSString *openid = data[@"openid"];
+        NSString *openid      = data[@"openid"];
         NSString *userInfoUrl = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@&lang=zh_CN", accessToken, openid];
         [DNSNSRequest get:userInfoUrl completionHandler:^(NSDictionary *userInfo, NSError *error) {
             NSMutableDictionary *dict = userInfo.mutableCopy;

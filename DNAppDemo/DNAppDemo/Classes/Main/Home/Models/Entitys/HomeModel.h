@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface HomeModel : NSObject
-
 
 @property (nonatomic, copy) NSString *title;    //标题
 @property (nonatomic, copy) NSString *content;  //内容

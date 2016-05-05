@@ -20,9 +20,7 @@
 @interface MineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic,strong) DNTableHeaderView *stretchHeaderView;
-
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
@@ -64,23 +62,23 @@
 
 - (void)initStretchHeader {
     //背景
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, StretchHeaderHeight)];
-    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    bgImageView.clipsToBounds = YES;
-    bgImageView.image = [UIImage imageNamed:@"mine_bg.jpg"];
-    
+    UIImageView *bgImageView      = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, StretchHeaderHeight)];
+    bgImageView.contentMode       = UIViewContentModeScaleAspectFill;
+    bgImageView.clipsToBounds     = YES;
+    bgImageView.image             = [UIImage imageNamed:@"mine_bg.jpg"];
+
     //背景之上的内容
-    UIView *contentView = [[UIView alloc] initWithFrame:bgImageView.bounds];
-    contentView.backgroundColor = [UIColor clearColor];
-    
-    UIImageView *avater = [[UIImageView alloc] initWithFrame:CGRectMake(bgImageView.center.x-35, bgImageView.frame.size.height - 120, 70, 70)];
-    avater.image = [UIImage imageNamed:@"mine_avater"];
+    UIView *contentView           = [[UIView alloc] initWithFrame:bgImageView.bounds];
+    contentView.backgroundColor   = [UIColor clearColor];
+
+    UIImageView *avater           = [[UIImageView alloc] initWithFrame:CGRectMake(bgImageView.center.x-35, bgImageView.frame.size.height - 120, 70, 70)];
+    avater.image                  = [UIImage imageNamed:@"mine_avater"];
     [contentView addSubview:avater];
-    
+
     avater.userInteractionEnabled = YES;
     //点击头像去登录
     [avater addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-        LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        LoginViewController *loginVC     = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         DNNavigationController *loginNvc = [[DNNavigationController alloc] initWithRootViewController:loginVC];
         [self presentViewController:loginNvc animated:YES completion:nil];
     }];
@@ -105,8 +103,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    cell.textLabel.text = self.dataArray[indexPath.row];
-    cell.backgroundColor = [UIColor colorWithRed:230 green:230 blue:230 alpha:1];
+    cell.textLabel.text          = self.dataArray[indexPath.row];
+    cell.backgroundColor         = [UIColor colorWithRed:230 green:230 blue:230 alpha:1];
     return cell;
 }
 

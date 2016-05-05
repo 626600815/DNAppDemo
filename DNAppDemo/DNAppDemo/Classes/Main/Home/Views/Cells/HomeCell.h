@@ -11,9 +11,8 @@
 
 @interface HomeCell : UITableViewCell
 
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel     *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel     *detailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
 
 @property (nonatomic, strong) HomeModel *homeModel;

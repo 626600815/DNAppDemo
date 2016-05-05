@@ -11,11 +11,7 @@
 #import "ShareModel.h"
 #import "MJExtension.h"
 #import "OpenShareHeader.h"
-
 #import <MessageUI/MessageUI.h>
-
-
-
 
 #define SHARE_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SHARE_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -142,13 +138,9 @@
     return CGSizeMake(SHARE_WIDTH/4, SHARE_WIDTH/4);
 }
 
-
-
 #define mark - TypeButtonCellDelegate
 - (void)clickButtonWithName:(NSString *)name {
-    NSLog(@"我选中分享按钮下的 %@",name);
     [self tappedCancel];
-    
     
     if ([name isEqualToString:@"复制链接"]) {
         if (self.myCopyUrl.length != 0) {
@@ -159,7 +151,6 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"当前拷贝地址为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }
-        
         return;
     }
     
@@ -176,11 +167,11 @@
     
     //设置分享的内容
     OSMessage *msg = [[OSMessage alloc] init];
-    msg.title = self.titleName;
-    msg.desc = self.showtext;
-    msg.link = self.contentUrl;
-    msg.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.showImageUrl]]];
-    
+    msg.title      = self.titleName;
+    msg.desc       = self.showtext;
+    msg.link       = self.contentUrl;
+    msg.image      = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.showImageUrl]]];
+
     if ([name isEqualToString:@"微信"]) {
         if (![OpenShare isWeixinInstalled]) {
             [self alertViewWithName:@"微信"];
@@ -327,7 +318,7 @@
 
 //提醒没有安装客户端
 - (void)alertViewWithName:(NSString *)nameStr {
-    NSString *msg = [NSString stringWithFormat:@"没有安装%@客户端",nameStr];
+    NSString *msg       = [NSString stringWithFormat:@"没有安装%@客户端",nameStr];
     UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"提醒" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
     [alertV show];
 }
@@ -345,14 +336,14 @@
     if (!_collectionView) {
         UICollectionViewFlowLayout * flowlayout = [[UICollectionViewFlowLayout alloc]init];
         [flowlayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        flowlayout.minimumLineSpacing = 0;
-        flowlayout.minimumInteritemSpacing = 0;
+        flowlayout.minimumLineSpacing           = 0;
+        flowlayout.minimumInteritemSpacing      = 0;
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SHARE_WIDTH, SHARE_WIDTH/2) collectionViewLayout:flowlayout];
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor colorWithWholeRed:245 green:245 blue:245 alpha:1];
-        _collectionView.pagingEnabled = YES;
+        _collectionView                                = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SHARE_WIDTH, SHARE_WIDTH/2) collectionViewLayout:flowlayout];
+        _collectionView.dataSource                     = self;
+        _collectionView.delegate                       = self;
+        _collectionView.backgroundColor                = [UIColor colorWithWholeRed:245 green:245 blue:245 alpha:1];
+        _collectionView.pagingEnabled                  = YES;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [self.shareView addSubview:_collectionView];
     }
@@ -369,13 +360,13 @@
 
 #pragma mark - InterpolatedUIImage
 - (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {
-    CGRect extent = CGRectIntegral(image.extent);
-    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
-    size_t width = CGRectGetWidth(extent) * scale;
-    size_t height = CGRectGetHeight(extent) * scale;
-    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+    CGRect extent          = CGRectIntegral(image.extent);
+    CGFloat scale          = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    size_t width           = CGRectGetWidth(extent) * scale;
+    size_t height          = CGRectGetHeight(extent) * scale;
+    CGColorSpaceRef cs     = CGColorSpaceCreateDeviceGray();
     CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
-    CIContext *context = [CIContext contextWithOptions:nil];
+    CIContext *context     = [CIContext contextWithOptions:nil];
     CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
     CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
     CGContextScaleCTM(bitmapRef, scale, scale);

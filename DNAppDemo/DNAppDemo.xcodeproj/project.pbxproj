@@ -311,10 +311,6 @@
 		51880C631CD34F1E00C9197C /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51880C5A1CD34F1E00C9197C /* SDCollectionViewCell.m */; };
 		51880C641CD34F1E00C9197C /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51880C5C1CD34F1E00C9197C /* SDCycleScrollView.m */; };
 		51880C651CD34F1E00C9197C /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 51880C5E1CD34F1E00C9197C /* UIView+SDExtension.m */; };
-		51880C6B1CD34F7500C9197C /* pageControlDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51880C671CD34F7500C9197C /* pageControlDot@2x.png */; };
-		51880C6C1CD34F7500C9197C /* pageControlDot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51880C681CD34F7500C9197C /* pageControlDot@3x.png */; };
-		51880C6D1CD34F7500C9197C /* pageControlCurrentDot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51880C691CD34F7500C9197C /* pageControlCurrentDot@3x.png */; };
-		51880C6E1CD34F7500C9197C /* pageControlCurrentDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51880C6A1CD34F7500C9197C /* pageControlCurrentDot@2x.png */; };
 		51880C701CD34F8100C9197C /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51880C6F1CD34F8100C9197C /* placeholder@2x.png */; };
 		51888D251CC0BB09004E93A9 /* MainController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51888D241CC0BB09004E93A9 /* MainController.plist */; };
 		51888D291CC0BB66004E93A9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D271CC0BB66004E93A9 /* HomeViewController.m */; };
@@ -377,7 +373,6 @@
 		5191AC991CC5D27B007FF44E /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5191AC981CC5D27B007FF44E /* UINavigationController+FDFullscreenPopGesture.m */; };
 		5191AC9D1CC5DAC3007FF44E /* DNPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5191AC9C1CC5DAC3007FF44E /* DNPageView.m */; };
 		5191ACA01CC5DD76007FF44E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5191AC9F1CC5DD76007FF44E /* MediaPlayer.framework */; };
-		51B4DC641CD853BD00D07BD8 /* functionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B4DC631CD853BD00D07BD8 /* functionView.m */; };
 		51B4DC681CD8881100D07BD8 /* SecondServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B4DC671CD8881100D07BD8 /* SecondServices.m */; };
 		51B4DC6A1CD88BE000D07BD8 /* HomeListData.json in Resources */ = {isa = PBXBuildFile; fileRef = 51B4DC691CD88BE000D07BD8 /* HomeListData.json */; };
 		51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B773771CC61BD700001B95 /* DOPDropDownMenu.m */; };
@@ -1005,10 +1000,6 @@
 		51880C5C1CD34F1E00C9197C /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		51880C5D1CD34F1E00C9197C /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		51880C5E1CD34F1E00C9197C /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
-		51880C671CD34F7500C9197C /* pageControlDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlDot@2x.png"; sourceTree = "<group>"; };
-		51880C681CD34F7500C9197C /* pageControlDot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlDot@3x.png"; sourceTree = "<group>"; };
-		51880C691CD34F7500C9197C /* pageControlCurrentDot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@3x.png"; sourceTree = "<group>"; };
-		51880C6A1CD34F7500C9197C /* pageControlCurrentDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@2x.png"; sourceTree = "<group>"; };
 		51880C6F1CD34F8100C9197C /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		51888D241CC0BB09004E93A9 /* MainController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainController.plist; sourceTree = "<group>"; };
 		51888D261CC0BB66004E93A9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -1126,8 +1117,6 @@
 		5191AC9B1CC5DAC3007FF44E /* DNPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNPageView.h; sourceTree = "<group>"; };
 		5191AC9C1CC5DAC3007FF44E /* DNPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNPageView.m; sourceTree = "<group>"; };
 		5191AC9F1CC5DD76007FF44E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		51B4DC621CD853BD00D07BD8 /* functionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functionView.h; sourceTree = "<group>"; };
-		51B4DC631CD853BD00D07BD8 /* functionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functionView.m; sourceTree = "<group>"; };
 		51B4DC661CD8881100D07BD8 /* SecondServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondServices.h; sourceTree = "<group>"; };
 		51B4DC671CD8881100D07BD8 /* SecondServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondServices.m; sourceTree = "<group>"; };
 		51B4DC691CD88BE000D07BD8 /* HomeListData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeListData.json; sourceTree = "<group>"; };
@@ -2237,10 +2226,6 @@
 			isa = PBXGroup;
 			children = (
 				51880C6F1CD34F8100C9197C /* placeholder@2x.png */,
-				51880C671CD34F7500C9197C /* pageControlDot@2x.png */,
-				51880C681CD34F7500C9197C /* pageControlDot@3x.png */,
-				51880C691CD34F7500C9197C /* pageControlCurrentDot@3x.png */,
-				51880C6A1CD34F7500C9197C /* pageControlCurrentDot@2x.png */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -2656,8 +2641,6 @@
 		5189EF231CC09AA700091684 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				51B4DC621CD853BD00D07BD8 /* functionView.h */,
-				51B4DC631CD853BD00D07BD8 /* functionView.m */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -3213,10 +3196,8 @@
 				51B7737E1CC61BD700001B95 /* icon_chose_bottom@2x.png in Resources */,
 				51888D351CC0BB85004E93A9 /* MineViewController.xib in Resources */,
 				5175AFA51CD0949800BB73DE /* DNShare.bundle in Resources */,
-				51880C6E1CD34F7500C9197C /* pageControlCurrentDot@2x.png in Resources */,
 				5175AFA21CD0947700BB73DE /* SharePlist.plist in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
-				51880C6B1CD34F7500C9197C /* pageControlDot@2x.png in Resources */,
 				51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */,
 				51888D251CC0BB09004E93A9 /* MainController.plist in Resources */,
 				51727B051CC77D8600DAE734 /* page_5s1.png in Resources */,
@@ -3238,7 +3219,6 @@
 				5177C8271CC4CA5E0023E6B2 /* DetailViewController.xib in Resources */,
 				51727B0A1CC77D8600DAE734 /* page_6s3.png in Resources */,
 				51B4DC6A1CD88BE000D07BD8 /* HomeListData.json in Resources */,
-				51880C6D1CD34F7500C9197C /* pageControlCurrentDot@3x.png in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
 				516D4FCE1CD9D18E008BA6CA /* LoginViewController.xib in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
@@ -3246,7 +3226,6 @@
 				516830F71CD21A6A00F017DF /* KRVideoPlayer.bundle in Resources */,
 				51B773831CC61CC900001B95 /* MenuViewController.xib in Resources */,
 				51727B031CC77D8600DAE734 /* page_4s2.png in Resources */,
-				51880C6C1CD34F7500C9197C /* pageControlDot@3x.png in Resources */,
 				51888D2A1CC0BB66004E93A9 /* HomeViewController.xib in Resources */,
 				51727B091CC77D8600DAE734 /* page_6s2.png in Resources */,
 				51888D4B1CC0C37C004E93A9 /* Home.xcassets in Resources */,
@@ -3583,7 +3562,6 @@
 				51880C621CD34F1E00C9197C /* TAPageControl.m in Sources */,
 				51880B931CD3078A00C9197C /* ZXTextParsedResult.m in Sources */,
 				51880B7F1CD3078A00C9197C /* ZXCalendarParsedResult.m in Sources */,
-				51B4DC641CD853BD00D07BD8 /* functionView.m in Sources */,
 				51880B921CD3078A00C9197C /* ZXTelResultParser.m in Sources */,
 				5191AC751CC5C858007FF44E /* NSData+DN.m in Sources */,
 				5191AC861CC5C858007FF44E /* UIImageView+DN.m in Sources */,

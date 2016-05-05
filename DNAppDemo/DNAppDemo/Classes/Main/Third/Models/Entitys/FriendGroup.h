@@ -10,8 +10,8 @@
 
 @interface FriendGroup : NSObject
 
-@property (nonatomic, strong) NSArray *friends;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSArray   *friends;
+@property (nonatomic, copy  ) NSString  *name;
 @property (nonatomic, assign) NSInteger online;
 
 @property (nonatomic, assign, getter = isOpened) BOOL opened;

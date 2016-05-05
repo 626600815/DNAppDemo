@@ -61,8 +61,6 @@
 }
 
 
-
-
 #pragma mark - KRVideoPlayerControllerDelegate
 //满屏
 - (void)fullScreen {
@@ -70,7 +68,6 @@
     [self.navigationController.navigationBar RsetTranslationY:-64];
     [self hideStatusBar];
 }
-
 
 //小屏
 - (void)shrinkScreen {
@@ -108,13 +105,10 @@
         [self setNeedsStatusBarAppearanceUpdate];
     }
 }
-
                           
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

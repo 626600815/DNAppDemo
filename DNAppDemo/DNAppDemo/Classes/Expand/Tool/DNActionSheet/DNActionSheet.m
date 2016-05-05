@@ -36,11 +36,11 @@ CGFloat contentViewHeight;
 
 - (id)initWithTitle:(NSString *)title delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
-        _title = title;
-        _delegate = delegate;
+        _title             = title;
+        _delegate          = delegate;
         _cancelButtonTitle = cancelButtonTitle;
-        _buttonArray = [NSMutableArray array];
-        _buttonTitleArray = [NSMutableArray array];
+        _buttonArray       = [NSMutableArray array];
+        _buttonTitleArray  = [NSMutableArray array];
         
         va_list args;
         va_start(args, otherButtonTitles);
@@ -60,9 +60,9 @@ CGFloat contentViewHeight;
         self.backgroundColor = [UIColor clearColor];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
-        _backgroundView = [[UIView alloc] initWithFrame:self.frame];
-        _backgroundView.alpha = 0;
-        _backgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
+        _backgroundView                              = [[UIView alloc] initWithFrame:self.frame];
+        _backgroundView.alpha                        = 0;
+        _backgroundView.backgroundColor              = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
         [_backgroundView addGestureRecognizer:tapGestureRecognizer];
         [self addSubview:_backgroundView];
         
@@ -72,13 +72,13 @@ CGFloat contentViewHeight;
 }
 
 - (void)initContentView {
-    contentViewWidth = self.frame.size.width;
-    contentViewHeight = 0;
-    
-    _contentView = [[UIView alloc] init];
+    contentViewWidth             = self.frame.size.width;
+    contentViewHeight            = 0;
+
+    _contentView                 = [[UIView alloc] init];
     _contentView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:.9];
-    
-    _buttonView = [[UIView alloc] init];
+
+    _buttonView                  = [[UIView alloc] init];
     _buttonView.backgroundColor = BUTTON_WHITEALPHA;
     
     [self initTitle];
@@ -91,14 +91,14 @@ CGFloat contentViewHeight;
 
 - (void)initTitle {
     if (_title != nil && ![_title isEqualToString:@""]) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, contentViewWidth, 40)];
-        _titleLabel.text = _title;
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.textColor = [UIColor grayColor];
-        _titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
+        _titleLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, contentViewWidth, 40)];
+        _titleLabel.text            = _title;
+        _titleLabel.textAlignment   = NSTextAlignmentCenter;
+        _titleLabel.textColor       = [UIColor grayColor];
+        _titleLabel.font            = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
         _titleLabel.backgroundColor = BUTTON_WHITEALPHA;
         [_buttonView addSubview:_titleLabel];
-        contentViewHeight += _titleLabel.frame.size.height;
+        contentViewHeight           += _titleLabel.frame.size.height;
     }
 }
 
@@ -106,18 +106,18 @@ CGFloat contentViewHeight;
     if (_buttonTitleArray.count > 0) {
         NSInteger count = _buttonTitleArray.count;
         for (int i = 0; i < count; i++) {
-            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, contentViewHeight, contentViewWidth, 1)];
+            UIView *lineView         = [[UIView alloc] initWithFrame:CGRectMake(0, contentViewHeight, contentViewWidth, 1)];
             lineView.backgroundColor = [UIColor colorWithRed:230 / 255.0 green:230 / 255.0 blue:230 / 255.0 alpha:1.0];
             [_buttonView addSubview:lineView];
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + 1, contentViewWidth, BUTTON_HEIGHT)];
-            button.backgroundColor = BUTTON_WHITEALPHA;
-            button.titleLabel.font = [UIFont systemFontOfSize:18];
+            UIButton *button         = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + 1, contentViewWidth, BUTTON_HEIGHT)];
+            button.backgroundColor   = BUTTON_WHITEALPHA;
+            button.titleLabel.font   = [UIFont systemFontOfSize:18];
             [button setTitle:_buttonTitleArray[i] forState:UIControlStateNormal];
             [button setTitleColor:BUTTON_TitlecColor forState:UIControlStateNormal];
             [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             [_buttonArray addObject:button];
             [_buttonView addSubview:button];
-            contentViewHeight += lineView.frame.size.height + button.frame.size.height;
+            contentViewHeight        += lineView.frame.size.height + button.frame.size.height;
         }
         _buttonView.frame = CGRectMake(0, 0, contentViewWidth, contentViewHeight);
         [_contentView addSubview:_buttonView];
@@ -126,14 +126,14 @@ CGFloat contentViewHeight;
 
 - (void)initCancelButton {
     if (_cancelButtonTitle != nil) {
-        _cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + SPACE_SMALL, contentViewWidth, BUTTON_HEIGHT)];
+        _cancelButton                 = [[UIButton alloc] initWithFrame:CGRectMake(0, contentViewHeight + SPACE_SMALL, contentViewWidth, BUTTON_HEIGHT)];
         _cancelButton.backgroundColor = [UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:.8];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
         [_cancelButton setTitle:_cancelButtonTitle forState:UIControlStateNormal];
         [_cancelButton setTitleColor:BUTTON_TitlecColor forState:UIControlStateNormal];
         [_cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [_contentView addSubview:_cancelButton];
-        contentViewHeight += SPACE_SMALL + _cancelButton.frame.size.height;
+        contentViewHeight             += SPACE_SMALL + _cancelButton.frame.size.height;
     }
 }
 

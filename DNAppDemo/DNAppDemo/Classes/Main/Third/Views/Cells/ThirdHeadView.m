@@ -29,24 +29,24 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-        UIButton *bgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *bgButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
         [bgButton setBackgroundImage:[UIImage imageNamed:@"buddy_header_bg"] forState:UIControlStateNormal];
         [bgButton setBackgroundImage:[UIImage imageNamed:@"buddy_header_bg_highlighted"] forState:UIControlStateHighlighted];
         [bgButton setImage:[UIImage imageNamed:@"buddy_header_arrow"] forState:UIControlStateNormal];
         [bgButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        bgButton.imageView.contentMode = UIViewContentModeCenter;
-        bgButton.imageView.clipsToBounds = NO;
+        bgButton.imageView.contentMode      = UIViewContentModeCenter;
+        bgButton.imageView.clipsToBounds    = NO;
         bgButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        bgButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-        bgButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        bgButton.contentEdgeInsets          = UIEdgeInsetsMake(0, 10, 0, 0);
+        bgButton.titleEdgeInsets            = UIEdgeInsetsMake(0, 10, 0, 0);
         [bgButton addTarget:self action:@selector(headBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:bgButton];
-        _bgButton = bgButton;
-        
-        UILabel *numLabel = [[UILabel alloc] init];
-        numLabel.textAlignment = NSTextAlignmentRight;
+        _bgButton                           = bgButton;
+
+        UILabel *numLabel                   = [[UILabel alloc] init];
+        numLabel.textAlignment              = NSTextAlignmentRight;
         [self addSubview:numLabel];
-        _numLabel = numLabel;
+        _numLabel                           = numLabel;
     }
     return self;
 }
