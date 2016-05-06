@@ -97,7 +97,7 @@
             [imageView addCornerWithRadius:imageView.width/2];
         }];
         [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            NSLog(@"功能区点击的按钮是:%@",self.functionArray[i][@"id"]);
+            DNLog(@"功能区点击的按钮是:%@",self.functionArray[i][@"id"]);
         }];
     }
     
@@ -108,7 +108,7 @@
         
         imageView.userInteractionEnabled = YES;
         [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            NSLog(@"点击的四个奇怪按钮上得图标：%@",self.fourthArray[i][@"id"]);
+            DNLog(@"点击的四个奇怪按钮上得图标：%@",self.fourthArray[i][@"id"]);
         }];
     }
     
@@ -132,7 +132,7 @@
         
         imageV.userInteractionEnabled = YES;
         [imageV addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            NSLog(@"点击的scrollView上得图标：%@",self.scrollArray[i][@"id"]);
+            DNLog(@"点击的scrollView上得图标：%@",self.scrollArray[i][@"id"]);
         }];
         
         UILabel *commissionLabel      = [[UILabel alloc] initWithFrame:CGRectMake(imageV.x, imageV.height+5, imageV.width, 20)];
@@ -156,7 +156,7 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.nextFourthArray[i][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
         imageView.userInteractionEnabled = YES;
         [imageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            NSLog(@"点击的四个奇怪按钮上得图标：%@",self.nextFourthArray[i][@"id"]);
+            DNLog(@"点击的四个奇怪按钮上得图标：%@",self.nextFourthArray[i][@"id"]);
         }];
     }
     
@@ -184,9 +184,9 @@
 #pragma mark - delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     if (cycleScrollView == self.cycleScrollView) {
-        NSLog(@"轮播图点击的是：%@", self.cycleArray[index][@"id"]);
+        DNLog(@"轮播图点击的是：%@", self.cycleArray[index][@"id"]);
     }else if (cycleScrollView == self.centerCycleScrollView) {
-        NSLog(@"轮播图点击的是：%@", self.centerCycleArray[index][@"id"]);
+        DNLog(@"轮播图点击的是：%@", self.centerCycleArray[index][@"id"]);
     }
 }
 
@@ -284,7 +284,7 @@
     button.frame             = CGRectMake(SCREEM_WIDTH- 90, 0, 90, 30);
     [backView addSubview:button];
     [button addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-        NSLog(@"查看更多");
+        DNLog(@"查看更多");
     }];
 
     UIScrollView *scrollV    = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.viewHeight + 30, SCREEM_WIDTH, 150)];

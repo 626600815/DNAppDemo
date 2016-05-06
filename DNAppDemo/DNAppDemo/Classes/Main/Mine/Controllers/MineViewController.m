@@ -56,7 +56,7 @@
 }
 
 - (void)loadDataWithArray {
-    NSArray *array = @[@"重现引导页", @"选个图片放个视频"];
+    NSArray *array = @[@"重现引导页", @"选个图片放个视频", @"发送一条本地通知", @"设置", @"重现引导页", @"选个图片放个视频", @"清理缓存", @"设置"];
     [self.dataArray addObjectsFromArray:array];
 }
 
@@ -113,9 +113,27 @@
     if (indexPath.row == 0) {
         [NSFileManager setAppSettingsForObject:@"1.0" forKey:@"VersionStr"];
         return;
+    } else if (indexPath.row == 1) {
+        SettingViewController *setting = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+        [self.navigationController pushViewController:setting animated:YES];
+    }else if (indexPath.row == 2) {
+        UIMutableUserNotificationCategory *inviteCategory = [[UIMutableUserNotificationCategory alloc]init];
+        inviteCategory.identifier = @"INVITE_CATEGORY";
+        NSSet *categories = [NSSet setWithObjects:inviteCategory, nil];
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [[NSDate date]dateByAddingTimeInterval:5.0];
+        notification.alertBody = @"您有一条最新消息";
+//        notification.alertTitle = @"我是alertTitle";
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        notification.category = @"INVITE_CATEGORY";
+        notification.userInfo = @{@"pushurl":@"http://www.baidu.com"};
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
-    SettingViewController *setting = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
-    [self.navigationController pushViewController:setting animated:YES];
+    
 }
 
 #pragma mark - stretchableTable delegate

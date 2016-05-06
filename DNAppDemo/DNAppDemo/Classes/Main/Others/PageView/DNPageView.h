@@ -4,7 +4,7 @@
 //
 //  Created by mainone on 16/4/19.
 //  Copyright © 2016年 wjn. All rights reserved.
-//
+//  https://github.com/626600815/DNPageView
 
 #import <UIKit/UIKit.h>
 

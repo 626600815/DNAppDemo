@@ -54,10 +54,10 @@ typedef NS_ENUM(NSInteger, ScrollDirection) {
 - (CGFloat)pagesX;
 - (CGFloat)currentPageY;
 - (CGFloat)currentPageX;
-- (void) setPageY:(CGFloat)page;
-- (void) setPageX:(CGFloat)page;
-- (void) setPageY:(CGFloat)page animated:(BOOL)animated;
-- (void) setPageX:(CGFloat)page animated:(BOOL)animated;
+- (void)setPageY:(CGFloat)page;
+- (void)setPageX:(CGFloat)page;
+- (void)setPageY:(CGFloat)page animated:(BOOL)animated;
+- (void)setPageX:(CGFloat)page animated:(BOOL)animated;
 
 @end
 

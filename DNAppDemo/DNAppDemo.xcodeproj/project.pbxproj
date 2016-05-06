@@ -24,6 +24,8 @@
 		516D4FD31CD9D3AD008BA6CA /* ResignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FD11CD9D3AD008BA6CA /* ResignViewController.xib */; };
 		516D4FD71CD9EC5A008BA6CA /* MyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FD51CD9EC5A008BA6CA /* MyQRCodeViewController.m */; };
 		516D4FD81CD9EC5A008BA6CA /* MyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FD61CD9EC5A008BA6CA /* MyQRCodeViewController.xib */; };
+		516DDFED1CDC447E00BB63EB /* DNTextInput.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 516DDFEA1CDC447E00BB63EB /* DNTextInput.bundle */; };
+		516DDFEE1CDC447E00BB63EB /* DNTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516DDFEC1CDC447E00BB63EB /* DNTextInputView.m */; };
 		5170CED41CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */; };
 		5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CECF1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m */; };
 		5170CED61CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED11CC9B1B500C063FD /* UITableView+FDIndexPathHeightCache.m */; };
@@ -428,6 +430,9 @@
 		516D4FD41CD9EC5A008BA6CA /* MyQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQRCodeViewController.h; sourceTree = "<group>"; };
 		516D4FD51CD9EC5A008BA6CA /* MyQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQRCodeViewController.m; sourceTree = "<group>"; };
 		516D4FD61CD9EC5A008BA6CA /* MyQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQRCodeViewController.xib; sourceTree = "<group>"; };
+		516DDFEA1CDC447E00BB63EB /* DNTextInput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DNTextInput.bundle; sourceTree = "<group>"; };
+		516DDFEB1CDC447E00BB63EB /* DNTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTextInputView.h; sourceTree = "<group>"; };
+		516DDFEC1CDC447E00BB63EB /* DNTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTextInputView.m; sourceTree = "<group>"; };
 		5170CECC1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		5170CECD1CC9B1B500C063FD /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		5170CECE1CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -1217,6 +1222,16 @@
 				516830F61CD21A6A00F017DF /* KRVideoPlayerControlView.m */,
 			);
 			path = KRVideoPlayerController;
+			sourceTree = "<group>";
+		};
+		516DDFE91CDC447500BB63EB /* DNTextInputView */ = {
+			isa = PBXGroup;
+			children = (
+				516DDFEA1CDC447E00BB63EB /* DNTextInput.bundle */,
+				516DDFEB1CDC447E00BB63EB /* DNTextInputView.h */,
+				516DDFEC1CDC447E00BB63EB /* DNTextInputView.m */,
+			);
+			path = DNTextInputView;
 			sourceTree = "<group>";
 		};
 		5170CED81CC9C7A700C063FD /* DNActionSheet */ = {
@@ -2369,6 +2384,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				516DDFE91CDC447500BB63EB /* DNTextInputView */,
 				5188097F1CD2FA8E00C9197C /* DNScrollText */,
 				516830E71CD212A100F017DF /* DNNetStatus */,
 				5175AFCE1CD0B6CD00BB73DE /* DNThirdLogin */,
@@ -3199,6 +3215,7 @@
 				5175AFA21CD0947700BB73DE /* SharePlist.plist in Resources */,
 				51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */,
 				51888D3F1CC0BBB5004E93A9 /* SecondViewController.xib in Resources */,
+				516DDFED1CDC447E00BB63EB /* DNTextInput.bundle in Resources */,
 				51888D251CC0BB09004E93A9 /* MainController.plist in Resources */,
 				51727B051CC77D8600DAE734 /* page_5s1.png in Resources */,
 				51888D4D1CC0C386004E93A9 /* Second.xcassets in Resources */,
@@ -3339,6 +3356,7 @@
 				51880C201CD3078A00C9197C /* ZXPDF417ScanningDecoder.m in Sources */,
 				5191AC801CC5C858007FF44E /* UIActionSheet+DN.m in Sources */,
 				51880BDA1CD3078A00C9197C /* ZXMaxiCodeReader.m in Sources */,
+				516DDFEE1CDC447E00BB63EB /* DNTextInputView.m in Sources */,
 				51880BD81CD3078A00C9197C /* ZXMaxiCodeDecodedBitStreamParser.m in Sources */,
 				51880BD61CD3078A00C9197C /* ZXDataMatrixWriter.m in Sources */,
 				51880BE01CD3078A00C9197C /* ZXAI01392xDecoder.m in Sources */,

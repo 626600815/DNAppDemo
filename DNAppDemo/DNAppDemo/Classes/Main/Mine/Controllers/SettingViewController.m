@@ -64,14 +64,14 @@
 #pragma mark - KRVideoPlayerControllerDelegate
 //满屏
 - (void)fullScreen {
-    NSLog(@"我全屏显示了");
+    DNLog(@"我全屏显示了");
     [self.navigationController.navigationBar RsetTranslationY:-64];
     [self hideStatusBar];
 }
 
 //小屏
 - (void)shrinkScreen {
-    NSLog(@"回到原来位置");
+    DNLog(@"回到原来位置");
      [self.navigationController.navigationBar RsetTranslationY:0];
     [self showStatusBar];
 }

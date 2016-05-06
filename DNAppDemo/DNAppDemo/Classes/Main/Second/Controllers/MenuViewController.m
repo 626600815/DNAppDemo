@@ -137,10 +137,10 @@
     NSString * str = @"";
     if (indexPath.item >= 0) {
         str = [NSString stringWithFormat:@"点击的是第%ld个，第%ld行，第%ld分行",(long)indexPath.column,(long)indexPath.row,(long)indexPath.item];
-        NSLog(@"点击了 %ld - %ld - %ld 项目",(long)indexPath.column,(long)indexPath.row,(long)indexPath.item);
+        DNLog(@"点击了 %ld - %ld - %ld 项目",(long)indexPath.column,(long)indexPath.row,(long)indexPath.item);
     }else {
         str = [NSString stringWithFormat:@"点击的是第%ld个，第%ld行",(long)indexPath.column,(long)indexPath.row];
-        NSLog(@"点击了 %ld - %ld 项目",(long)indexPath.column,(long)indexPath.row);
+        DNLog(@"点击了 %ld - %ld 项目",(long)indexPath.column,(long)indexPath.row);
     }
 }
 

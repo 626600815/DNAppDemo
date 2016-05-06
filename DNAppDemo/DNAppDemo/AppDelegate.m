@@ -14,6 +14,8 @@
 #import "CenterViewController.h"
 #import "DNNavigationController.h"
 
+#import "DetailViewController.h"
+
 @interface AppDelegate ()
 
 @property (nonatomic, assign) CFAbsoluteTime resignTime;  //记录进入后台的时间
@@ -31,6 +33,8 @@
     [DNNetworking updateBaseUrl:DNHostURLStr];
     //设置三方登录分享的key
     [self setThirdKeys];
+    //检测app版本是否需要升级
+    [self refreshApp];
     
     //创建跟视图
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -62,6 +66,7 @@
     if (self.resignTime != 0 && self.currentTime - self.resignTime > 600) {
         DNLog(@"我是不是沉睡了好长时间");
     }
+    
 }
 
 // 程序重新激活
@@ -73,6 +78,27 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
 }
+
+//本地推送接收消息
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    //通知栏的通知消息全部清除
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 1;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive || [UIApplication sharedApplication].applicationState == UIApplicationStateInactive) {
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self pushToDetailVCWithNotification:notification.userInfo];
+            }
+        } title:@"新消息" message:notification.alertBody cancelButtonName:@"忽略" otherButtonTitles:@"查看", nil];
+    }else {
+        [self pushToDetailVCWithNotification:notification.userInfo];
+    }
+    
+}
+
 
 //客户端回调
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
@@ -87,18 +113,17 @@
 //3D touch回调
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
     if ([shortcutItem.type isEqualToString:@"one"]) {
-        
-        UITabBarController *mytab = (UITabBarController*)self.window.rootViewController;
+        UITabBarController *mytab = (UITabBarController *)self.window.rootViewController;
         mytab.selectedIndex       = 0;
     }else if ([shortcutItem.type isEqualToString:@"two"]){
-        UITabBarController *mytab     = (UITabBarController*)self.window.rootViewController;
+        UITabBarController *mytab     = (UITabBarController *)self.window.rootViewController;
         mytab.selectedIndex           = 1;
-        DrawViewController *DrawVC    = [[DrawViewController alloc]initWithNibName:@"DrawViewController" bundle:nil];
+        DrawViewController *DrawVC    = [[DrawViewController alloc] initWithNibName:@"DrawViewController" bundle:nil];
         UINavigationController *myNAV = [mytab.viewControllers objectAtIndex:1];
         [myNAV pushViewController:DrawVC animated:YES];
         
     } else if ([shortcutItem.type isEqualToString:@"third"]) {
-        UITabBarController *mytab      = (UITabBarController*)self.window.rootViewController;
+        UITabBarController *mytab      = (UITabBarController *)self.window.rootViewController;
         CenterViewController *centerVC = [[CenterViewController alloc] initWithNibName:NSStringFromClass([CenterViewController class]) bundle:nil];
         DNNavigationController *nav    = [[DNNavigationController alloc] initWithRootViewController:centerVC];
         [mytab presentViewController:nav animated:NO completion:nil];
@@ -106,6 +131,30 @@
 }
 
 #pragma mark - method
+//检测到app有新版本提醒更新
+- (void)refreshApp {
+    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/lookup?id=%@",appstoreId];
+    
+    [DNNetworking getWithURLString:urlStr success:^(id obj) {
+        //下载地址
+        NSString *trackViewUrlStr = [[[obj objectForKey:@"results"] firstObject] objectForKey:@"trackViewUrl"];
+        //线上版本
+        NSString *appstoreVersion = [[[obj objectForKey:@"results"] firstObject] objectForKey:@"version"];
+        //当前版本
+        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        //判断客户端是不是最新版本
+        if ([appstoreVersion compare:currentVersion options:NSNumericSearch] == NSOrderedDescending) {
+            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+                if (buttonIndex == 1) {
+                    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:trackViewUrlStr]];
+                }
+            } title:@"温馨提示" message:@"发现新版本，是否升级" cancelButtonName:@"取消" otherButtonTitles:@"升级", nil];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 //加载引导页
 - (void)PageLoadingGuide {
     NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
@@ -134,5 +183,19 @@
     [OpenShare connectWeixinWithAppId:weixinAppID];
     [OpenShare connectAlipay];//支付宝参数都是服务器端生成的，这里不需要key.
 }
+
+//push消息接收后跳转
+- (void)pushToDetailVCWithNotification:(NSDictionary *)userInfo {
+    if (userInfo) {
+        DetailViewController *detailVC               = [[DetailViewController alloc] init];
+        detailVC.urlStr                              = userInfo[@"pushurl"];
+        
+        UITabBarController *tabViewController        = (UITabBarController *)self.window.rootViewController;
+        DNNavigationController *sourceViewController = (DNNavigationController *)tabViewController.viewControllers[tabViewController.selectedIndex];
+        [sourceViewController dismissAllModalController];
+        [sourceViewController pushViewController:detailVC animated:YES];
+    }
+}
+
 
 @end

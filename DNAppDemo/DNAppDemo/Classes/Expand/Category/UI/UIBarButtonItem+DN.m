@@ -34,29 +34,29 @@ static NSString *const DNActionBlocksArray = @"DNActionBlocksArray";
 
 + (UIBarButtonItem *)itemWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem block:(DNActionBlock)actionBlock {
     UIBarButtonItem *barButtonItem = [[[self class] alloc] initWithBarButtonSystemItem:systemItem target:nil action:nil];
-    [barButtonItem setBlock:actionBlock];
+    [barButtonItem setItemBlock:actionBlock];
     return barButtonItem;
 }
 
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style block:(DNActionBlock)actionBlock {
     UIBarButtonItem *barButtonItem = [[[self class] alloc] initWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:nil action:nil];
-    [barButtonItem setBlock:actionBlock];
+    [barButtonItem setItemBlock:actionBlock];
     return barButtonItem;
 }
 
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style block:(DNActionBlock)actionBlock {
     UIBarButtonItem *barButtonItem = [[[self class] alloc] initWithImage:image style:style target:nil action:nil];
-    [barButtonItem setBlock:actionBlock];
+    [barButtonItem setItemBlock:actionBlock];
     return barButtonItem;
 }
 
 + (UIBarButtonItem *)itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style block:(DNActionBlock)actionBlock {
     UIBarButtonItem *barButtonItem = [[[self class] alloc] initWithTitle:title style:style target:nil action:nil];
-    [barButtonItem setBlock:actionBlock];
+    [barButtonItem setItemBlock:actionBlock];
     return barButtonItem;
 }
 
-- (void)setBlock:(DNActionBlock)actionBlock {
+- (void)setItemBlock:(DNActionBlock)actionBlock {
     NSMutableArray *actionBlocksArray = [self actionBlocksArray];
     DNActionBlockWrapper *blockActionWrapper = [[DNActionBlockWrapper alloc] init];
     blockActionWrapper.actionBlock = actionBlock;

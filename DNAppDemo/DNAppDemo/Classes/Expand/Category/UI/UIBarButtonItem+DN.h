@@ -61,6 +61,6 @@ typedef void (^DNActionBlock)(id weakSender);
  *
  *  @param actionBlock 点击回调
  */
-- (void)setBlock:(DNActionBlock)actionBlock;
+- (void)setItemBlock:(DNActionBlock)actionBlock;
 
 @end

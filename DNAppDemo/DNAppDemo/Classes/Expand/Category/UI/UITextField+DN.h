@@ -27,7 +27,7 @@
 - (void)setShouldReturnBlock:(BOOL (^)(UITextField *textField))shouldReturnBlock;/**<return按键操作*/
 
 /**
- *  显示左侧图片
+ *  左侧显示图片
  *
  *  @param image 图片
  */

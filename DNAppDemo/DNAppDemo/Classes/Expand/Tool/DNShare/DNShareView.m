@@ -62,6 +62,7 @@
                 continue;
             }
         }
+        
         ShareModel *shareM = [ShareModel mj_objectWithKeyValues:dict];
         [muArr addObject:shareM];
     }

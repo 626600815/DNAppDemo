@@ -43,7 +43,7 @@
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
     float lineWidthc = 10.0;
     if ([touch respondsToSelector:@selector(force)]) {
-        NSLog(@"压力指数:%f", touch.force);
+        DNLog(@"压力指数:%f", touch.force);
         lineWidthc = lineWidthc * touch.force;
     }
     CGContextSetLineWidth(UIGraphicsGetCurrentContext(), lineWidthc);

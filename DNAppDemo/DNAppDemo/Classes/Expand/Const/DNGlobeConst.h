@@ -3,6 +3,9 @@
 //主机域名
 static NSString *const DNHostURLStr = @"http://www.baidu.com";
 
+//AppStore上线的Id
+static NSString *const appstoreId = @"1040403875";
+
 #pragma mark - 三方登录分享
 //微信
 static NSString *const weixinAppID         = @"wxd930ea5d5a258f4f";
