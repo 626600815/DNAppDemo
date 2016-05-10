@@ -11,6 +11,7 @@
 #import "FriendGroup.h"
 #import "Friend.h"
 #import "ThirdHeadView.h"
+#import "LayoutViewController.h"
 
 @interface ThirdTableViewController () <ThirdHeadViewDelegate>
 
@@ -83,6 +84,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LayoutViewController *layoutVC = [[LayoutViewController alloc] initWithNibName:@"LayoutViewController" bundle:nil];
+    [self.navigationController pushViewController:layoutVC animated:YES];
 }
 
 - (void)clickHeadView {

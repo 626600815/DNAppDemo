@@ -4,7 +4,7 @@
 static NSString *const DNHostURLStr = @"http://www.baidu.com";
 
 //AppStore上线的Id
-static NSString *const appstoreId = @"1040403875";
+static NSString *const appstoreId = @"1095957597";
 
 #pragma mark - 三方登录分享
 //微信
@@ -19,3 +19,8 @@ static NSString *const QQAppKey            = @"EG6Gu07agawph6Dg";
 static NSString *const WeiBoAppId          = @"402180334";
 static NSString *const WeiBoAppSecret      = @"b1f6bcc02324260e357b42a9e5c4a26d";
 static NSString *const WeiBoAppRedirectURL = @"http://openshare.gfzj.us/";
+
+#pragma mark - 友盟
+//推送
+static NSString *const UM_AppKey    = @"57317b86e0f55a28fe0028ea";
+static NSString *const UM_AppSecret = @"u2cwctwwvfx6i6qktqmwzagqnlatznd8";

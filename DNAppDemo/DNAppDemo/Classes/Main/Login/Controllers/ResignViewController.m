@@ -7,6 +7,7 @@
 //
 
 #import "ResignViewController.h"
+#import "MainControllerManage.h"
 
 @interface ResignViewController ()
 

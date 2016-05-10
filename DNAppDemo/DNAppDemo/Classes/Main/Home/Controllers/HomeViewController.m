@@ -35,6 +35,7 @@ static NSString *const Indentifier = @"cellID";
     self.tableView.fd_debugLogEnabled = NO;
 
     [self loadDataList];
+    
 }
 
 //请求数据刷新列表

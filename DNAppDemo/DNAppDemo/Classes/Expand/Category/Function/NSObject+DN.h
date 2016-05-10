@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  密码强度级别枚举，从0到6
+ */
+typedef NS_ENUM(NSInteger, PasswordStrengthLevel)
+{
+    PasswordStrengthLevelVeryWeak = 0,
+    PasswordStrengthLevelWeak,
+    PasswordStrengthLevelAverage,
+    PasswordStrengthLevelStrong,
+    PasswordStrengthLevelVeryStrong,
+    PasswordStrengthLevelSecure,
+    PasswordStrengthLevelVerySecure
+};
+
+
 @interface NSObject (DN)
 
 #pragma mark - App信息
@@ -31,6 +46,10 @@
  *  设备型号
  */
 -(NSString *)ai_deviceModel;
+/**
+ *  检查密码强度级别
+ */
++ (PasswordStrengthLevel)passwordCheckStrength:(NSString *)password;
 
 /**
  *  浅拷贝目标的所有属性

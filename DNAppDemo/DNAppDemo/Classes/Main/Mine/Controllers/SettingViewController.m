@@ -12,6 +12,8 @@
 #import "KRVideoPlayerController.h"
 #import "DNScrollText.h"
 
+#define videoURL @"http://krtv.qiniudn.com/150522nextapp"
+
 
 @interface SettingViewController () <KRVideoPlayerControllerDelegate>
 
@@ -46,7 +48,7 @@
     //加载一个视频
     self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 64, width, width*(9.0/16.0))];
     self.videoController.delegate = self;
-    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    self.videoController.contentURL = [NSURL URLWithString:videoURL];
     [self.videoController showInView:self.view];
 }
 

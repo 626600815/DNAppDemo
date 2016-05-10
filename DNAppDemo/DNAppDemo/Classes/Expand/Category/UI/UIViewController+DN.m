@@ -14,7 +14,7 @@
     return NSStringFromClass([self class]);
 }
 
-- (void)dismissAllModalController{
+- (void)dismissAllModalControllerWithAnimated:(BOOL)flag {
     UIViewController *presentViewController = [self presentingViewController];
     UIViewController *lastViewController = self;
     while (presentViewController) {
@@ -22,7 +22,7 @@
         presentViewController = [presentViewController presentingViewController];
         lastViewController = temp;
     }
-    [lastViewController dismissViewControllerAnimated:YES completion:^{
+    [lastViewController dismissViewControllerAnimated:flag completion:^{
     }];
 }
 

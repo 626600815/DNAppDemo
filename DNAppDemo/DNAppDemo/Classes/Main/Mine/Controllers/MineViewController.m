@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "DNNavigationController.h"
+#import "MainControllerManage.h"
 
 #define StretchHeaderHeight 200
 
@@ -56,7 +57,7 @@
 }
 
 - (void)loadDataWithArray {
-    NSArray *array = @[@"重现引导页", @"选个图片放个视频", @"发送一条本地通知", @"设置", @"重现引导页", @"选个图片放个视频", @"清理缓存", @"设置"];
+    NSArray *array = @[@"重现引导页", @"选个图片放个视频", @"发送一条本地通知", @"退出", @"重现引导页", @"选个图片放个视频", @"清理缓存", @"设置"];
     [self.dataArray addObjectsFromArray:array];
 }
 
@@ -120,18 +121,28 @@
         UIMutableUserNotificationCategory *inviteCategory = [[UIMutableUserNotificationCategory alloc]init];
         inviteCategory.identifier = @"INVITE_CATEGORY";
         NSSet *categories = [NSSet setWithObjects:inviteCategory, nil];
-        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert|UIUserNotificationTypeSound) categories:categories];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+
+        }else {
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+             (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+            
+        }
+        
         
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.fireDate = [[NSDate date]dateByAddingTimeInterval:5.0];
         notification.alertBody = @"您有一条最新消息";
-//        notification.alertTitle = @"我是alertTitle";
         notification.soundName = UILocalNotificationDefaultSoundName;
-        notification.category = @"INVITE_CATEGORY";
-        notification.userInfo = @{@"pushurl":@"http://www.baidu.com"};
+        notification.userInfo = @{@"go_url":@"http://www.baidu.com"};
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }else if (indexPath.row == 3) {//退出应用返回到首页
+        DNUser.isLoginStatus = NO;
+        [DNUser saveUserToSanbox];
+        [[MainControllerManage sharedManager] jumpToHomeFromVC:self];
     }
     
 }

@@ -24,10 +24,10 @@
 }
 
 - (void)setHomeModel:(HomeModel *)homeModel {
-//    self.homeModel        = homeModel;
-    self.titleLabel.text  = homeModel.title;
-    self.detailLabel.text = homeModel.content;
-    [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:homeModel.imageName]];
+    _homeModel        = homeModel;
+    self.titleLabel.text  = _homeModel.title;
+    self.detailLabel.text = _homeModel.content;
+    [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:_homeModel.imageName]];
 }
 
 

@@ -10,6 +10,7 @@
 #import "ResignViewController.h"
 #import "DNThirdLogin.h"
 #import "OpenShareHeader.h"
+#import "MBProgressHUD+DN.h"
 
 @interface LoginViewController ()
 
@@ -33,10 +34,13 @@
 #pragma mark - Method
 //取消按钮点击
 - (void)leftItemClick {
-    [self dismissAllModalController];
+    [self dismissAllModalControllerWithAnimated:YES];
+    if (self.loginDelegate && [self.loginDelegate respondsToSelector:@selector(dismissWithtype:withTabSelect:)]) {
+        [self.loginDelegate dismissWithtype:DNLoginTypeCancel withTabSelect:self.index];
+    }
 }
 
-//注销按钮点击
+//注册按钮点击
 - (void)rightItemClick {
     ResignViewController *resignVC = [[ResignViewController alloc] initWithNibName:@"ResignViewController" bundle:nil];
     [self.navigationController pushViewController:resignVC animated:YES];
@@ -68,6 +72,17 @@
             return ;
         }
         DNLog(@"=======>%@",data);
+        [MBProgressHUD showSuccess:@"登录成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissAllModalControllerWithAnimated:YES];
+            //登录成功
+             DNUser.isLoginStatus = YES;
+            [DNUser saveUserToSanbox];
+            if (self.loginDelegate && [self.loginDelegate respondsToSelector:@selector(dismissWithtype:withTabSelect:)]) {
+                [self.loginDelegate dismissWithtype:DNLoginTypeSuccess withTabSelect:self.index];
+            }
+        });
+        
     }];
 }
 

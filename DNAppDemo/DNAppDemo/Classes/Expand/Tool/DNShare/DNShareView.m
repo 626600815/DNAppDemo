@@ -103,7 +103,11 @@
 
 #pragma mark - 显示视图
 - (void)showInView:(UIView *)view {
-    [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:self];
+    if (view == nil) {
+        [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:self];
+    }
+    [view addSubview:self];
+    
 }
 
 #pragma mark - 取消收回视图

@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM (NSUInteger, DNLoginType){
+    DNLoginTypeSuccess,
+    DNLoginTypeCancel
+};
+
+@class LoginViewController;
+
+@protocol LoginViewControllerDelegate <NSObject>
+
+@optional
+
+- (void)dismissWithtype:(DNLoginType)type withTabSelect:(NSInteger)index;
+
+@end
+
 @interface LoginViewController : UIViewController
+
+@property (nonatomic, assign) NSInteger index;
+
+@property (nonatomic, assign) id<LoginViewControllerDelegate>loginDelegate;
 
 @end

@@ -49,5 +49,8 @@
 //自动布局
 #import "Masonry.h"
 
+//用户信息
+#import "DNUserInfo.h"
+
 
 #endif

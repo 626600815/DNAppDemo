@@ -46,4 +46,6 @@
     [super setViewControllers:newViewControllers];
     self.centerButton                  = [[DNTabBarButton alloc] initWithTabBar:self.tabBar forItemIndex:centerIndex];
 }
+
+
 @end

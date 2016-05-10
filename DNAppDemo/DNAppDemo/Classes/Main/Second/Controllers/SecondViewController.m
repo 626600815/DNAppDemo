@@ -203,7 +203,7 @@
     shareView.erweimaUrl   = @"http://www.baidu.com";
     shareView.titleName    = @"title";
     shareView.showImageUrl = @"http://www.5068.com/u/faceimg/20140804114111.jpg";
-    [shareView showInView:self.view];
+    [shareView showInView:nil];
 }
 
 #pragma mark - 初始化

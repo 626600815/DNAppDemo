@@ -14,6 +14,8 @@
 		516830F81CD21A6A00F017DF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 516830F21CD21A6A00F017DF /* .gitkeep */; };
 		516830F91CD21A6A00F017DF /* KRVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516830F41CD21A6A00F017DF /* KRVideoPlayerController.m */; };
 		516830FA1CD21A6A00F017DF /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516830F61CD21A6A00F017DF /* KRVideoPlayerControlView.m */; };
+		516CA65F1CE05B1F00C1F9F9 /* LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CA65D1CE05B1F00C1F9F9 /* LayoutViewController.m */; };
+		516CA6601CE05B1F00C1F9F9 /* LayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516CA65E1CE05B1F00C1F9F9 /* LayoutViewController.xib */; };
 		516D4FBC1CD99B2D008BA6CA /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FB71CD99B2D008BA6CA /* DrawViewController.m */; };
 		516D4FBD1CD99B2D008BA6CA /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */; };
 		516D4FBE1CD99B2D008BA6CA /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D4FBA1CD99B2D008BA6CA /* TouchViewController.m */; };
@@ -32,6 +34,8 @@
 		5170CED71CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CED31CC9B1B500C063FD /* UITableView+FDTemplateLayoutCellDebug.m */; };
 		5170CEE11CC9F7C800C063FD /* DNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CEE01CC9F7C800C063FD /* DNActionSheet.m */; };
 		5170CEE71CCA046F00C063FD /* DNActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */; };
+		5171CEC81CE17259001F5D14 /* UIWindow+DN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5171CEC71CE17259001F5D14 /* UIWindow+DN.m */; };
+		5171CED01CE1B3E7001F5D14 /* libUMessage_Sdk_1.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5171CECE1CE1B3E7001F5D14 /* libUMessage_Sdk_1.2.6.a */; };
 		51727B021CC77D8600DAE734 /* page_4s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF51CC77D8600DAE734 /* page_4s1.png */; };
 		51727B031CC77D8600DAE734 /* page_4s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF61CC77D8600DAE734 /* page_4s2.png */; };
 		51727B041CC77D8600DAE734 /* page_4s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51727AF71CC77D8600DAE734 /* page_4s3.png */; };
@@ -415,6 +419,9 @@
 		516830F41CD21A6A00F017DF /* KRVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerController.m; sourceTree = "<group>"; };
 		516830F51CD21A6A00F017DF /* KRVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRVideoPlayerControlView.h; sourceTree = "<group>"; };
 		516830F61CD21A6A00F017DF /* KRVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerControlView.m; sourceTree = "<group>"; };
+		516CA65C1CE05B1F00C1F9F9 /* LayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutViewController.h; sourceTree = "<group>"; };
+		516CA65D1CE05B1F00C1F9F9 /* LayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutViewController.m; sourceTree = "<group>"; };
+		516CA65E1CE05B1F00C1F9F9 /* LayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayoutViewController.xib; sourceTree = "<group>"; };
 		516D4FB61CD99B2D008BA6CA /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
 		516D4FB71CD99B2D008BA6CA /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawViewController.xib; sourceTree = "<group>"; };
@@ -445,6 +452,10 @@
 		5170CEE01CC9F7C800C063FD /* DNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNActionSheet.m; sourceTree = "<group>"; };
 		5170CEE51CCA046F00C063FD /* DNActionSheetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNActionSheetManager.h; sourceTree = "<group>"; };
 		5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNActionSheetManager.m; sourceTree = "<group>"; };
+		5171CEC61CE17259001F5D14 /* UIWindow+DN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+DN.h"; sourceTree = "<group>"; };
+		5171CEC71CE17259001F5D14 /* UIWindow+DN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+DN.m"; sourceTree = "<group>"; };
+		5171CECE1CE1B3E7001F5D14 /* libUMessage_Sdk_1.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.6.a; sourceTree = "<group>"; };
+		5171CECF1CE1B3E7001F5D14 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		51727AEF1CC7539F00DAE734 /* DNGlobeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNGlobeConst.h; sourceTree = "<group>"; };
 		51727AF51CC77D8600DAE734 /* page_4s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s1.png; sourceTree = "<group>"; };
 		51727AF61CC77D8600DAE734 /* page_4s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_4s2.png; sourceTree = "<group>"; };
@@ -1147,6 +1158,7 @@
 				5173EA991CC873C0009E3636 /* WebKit.framework in Frameworks */,
 				5191ACA01CC5DD76007FF44E /* MediaPlayer.framework in Frameworks */,
 				5177C8101CC4AAF50023E6B2 /* CoreLocation.framework in Frameworks */,
+				5171CED01CE1B3E7001F5D14 /* libUMessage_Sdk_1.2.6.a in Frameworks */,
 				5177C8021CC480AE0023E6B2 /* libsqlite3.tbd in Frameworks */,
 				5177C7E91CC4782C0023E6B2 /* Security.framework in Frameworks */,
 				5FBB418836D234B562B3F6B8 /* libPods.a in Frameworks */,
@@ -1243,6 +1255,23 @@
 				5170CEE61CCA046F00C063FD /* DNActionSheetManager.m */,
 			);
 			path = DNActionSheet;
+			sourceTree = "<group>";
+		};
+		5171CECC1CE1B3AA001F5D14 /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				5171CECD1CE1B3E7001F5D14 /* UM_Push */,
+			);
+			path = UMeng;
+			sourceTree = "<group>";
+		};
+		5171CECD1CE1B3E7001F5D14 /* UM_Push */ = {
+			isa = PBXGroup;
+			children = (
+				5171CECE1CE1B3E7001F5D14 /* libUMessage_Sdk_1.2.6.a */,
+				5171CECF1CE1B3E7001F5D14 /* UMessage.h */,
+			);
+			path = UM_Push;
 			sourceTree = "<group>";
 		};
 		51727AEB1CC74EDA00DAE734 /* Const(常量) */ = {
@@ -2678,6 +2707,9 @@
 				5172AD1B1CCF625700537050 /* ThirdTableViewController.h */,
 				5172AD1C1CCF625700537050 /* ThirdTableViewController.m */,
 				5172AD1D1CCF625700537050 /* ThirdTableViewController.xib */,
+				516CA65C1CE05B1F00C1F9F9 /* LayoutViewController.h */,
+				516CA65D1CE05B1F00C1F9F9 /* LayoutViewController.m */,
+				516CA65E1CE05B1F00C1F9F9 /* LayoutViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2746,6 +2778,7 @@
 		5189EF2D1CC09AA700091684 /* Vendor(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				5171CECC1CE1B3AA001F5D14 /* UMeng */,
 				51880C4F1CD34F1E00C9197C /* SDCycleScrollView */,
 				518809831CD3078A00C9197C /* ZXingObjC */,
 				5175AFBA1CD0A4E900BB73DE /* openshare */,
@@ -3022,6 +3055,8 @@
 				5191AC711CC5C858007FF44E /* UIViewController+DN.m */,
 				5191AC721CC5C858007FF44E /* UIWebView+DN.h */,
 				5191AC731CC5C858007FF44E /* UIWebView+DN.m */,
+				5171CEC61CE17259001F5D14 /* UIWindow+DN.h */,
+				5171CEC71CE17259001F5D14 /* UIWindow+DN.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -3238,6 +3273,7 @@
 				51B4DC6A1CD88BE000D07BD8 /* HomeListData.json in Resources */,
 				5189EEDD1CC08F2900091684 /* LaunchScreen.storyboard in Resources */,
 				516D4FCE1CD9D18E008BA6CA /* LoginViewController.xib in Resources */,
+				516CA6601CE05B1F00C1F9F9 /* LayoutViewController.xib in Resources */,
 				5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */,
 				51727B081CC77D8600DAE734 /* page_6s1.png in Resources */,
 				516830F71CD21A6A00F017DF /* KRVideoPlayer.bundle in Resources */,
@@ -3559,6 +3595,7 @@
 				5170CED51CC9B1B500C063FD /* UITableView+FDKeyedHeightCache.m in Sources */,
 				51880B8E1CD3078A00C9197C /* ZXSMSParsedResult.m in Sources */,
 				51880C631CD34F1E00C9197C /* SDCollectionViewCell.m in Sources */,
+				5171CEC81CE17259001F5D14 /* UIWindow+DN.m in Sources */,
 				51880B891CD3078A00C9197C /* ZXParsedResult.m in Sources */,
 				51880C2A1CD3078A00C9197C /* ZXPDF417Reader.m in Sources */,
 				51880BE71CD3078A00C9197C /* ZXAnyAIDecoder.m in Sources */,
@@ -3569,6 +3606,7 @@
 				5173EA9E1CC874D4009E3636 /* DNActionSheetView.m in Sources */,
 				51880BC41CD3078A00C9197C /* ZXDataMatrixDataBlock.m in Sources */,
 				51880C2E1CD3078A00C9197C /* ZXQRCodeDataBlock.m in Sources */,
+				516CA65F1CE05B1F00C1F9F9 /* LayoutViewController.m in Sources */,
 				516830FA1CD21A6A00F017DF /* KRVideoPlayerControlView.m in Sources */,
 				5177C8261CC4CA5E0023E6B2 /* DetailViewController.m in Sources */,
 				51B773821CC61CC900001B95 /* MenuViewController.m in Sources */,
@@ -3776,16 +3814,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Weishuang (2T4DGXMXFB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhang Weishuang (2T4DGXMXFB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DNAppDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DNAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.gfzj.openshare;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DNAppDemo/Classes/Vendor/UMeng/UM_Push",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjn.DNAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2e31e14b-116b-4c89-bf68-c04e36d9531a";
 			};
 			name = Debug;
 		};
@@ -3795,16 +3837,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Weishuang (2T4DGXMXFB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhang Weishuang (2T4DGXMXFB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DNAppDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DNAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.gfzj.openshare;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DNAppDemo/Classes/Vendor/UMeng/UM_Push",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjn.DNAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2e31e14b-116b-4c89-bf68-c04e36d9531a";
 			};
 			name = Release;
 		};

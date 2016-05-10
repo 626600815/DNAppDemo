@@ -25,8 +25,10 @@ typedef NS_ENUM(NSInteger, UIViewControllerPresentOrientation) {
 - (NSString *)toString;
 
 /**
- *  关闭所有modal
+ *  关闭所有model
+ *
+ *  @param flag 是否动画
  */
-- (void)dismissAllModalController;
+- (void)dismissAllModalControllerWithAnimated:(BOOL)flag;
 
 @end

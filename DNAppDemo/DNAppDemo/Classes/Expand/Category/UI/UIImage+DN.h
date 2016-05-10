@@ -119,5 +119,8 @@
  */
 + (UIImage *)createQRForString:(NSString *)qrString withSize:(CGFloat)size;
 
+/*! 获得的就是一个圆形的图片 */
+- (UIImage *)getCircleImage;
+
 @end
 

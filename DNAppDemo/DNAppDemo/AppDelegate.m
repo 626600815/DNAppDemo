@@ -16,6 +16,11 @@
 
 #import "DetailViewController.h"
 
+#import "UMessage.h"
+
+#define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
 @interface AppDelegate ()
 
 @property (nonatomic, assign) CFAbsoluteTime resignTime;  //记录进入后台的时间
@@ -27,14 +32,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
+    /*-----------------与界面无关的设置-----------------*/
     //设置全局接口请求的主机域名
     [DNNetworking updateBaseUrl:DNHostURLStr];
     //设置三方登录分享的key
     [self setThirdKeys];
     //检测app版本是否需要升级
-    [self refreshApp];
+    [self upgradeAppVersion];
+    //设置友盟推送
+    [self setUMPushWithOptions:launchOptions];
+    
+    
     
     //创建跟视图
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -42,49 +51,91 @@
     self.window.rootViewController = [[MainControllerManage sharedManager] mainViewController];
     [self.window makeKeyAndVisible];
     
+    /*-----------------与界面相关的设置需要在创建跟视图之后设置-----------------*/
     [self PageLoadingGuide];//设置引导图
 //    [self TouchSetting];//设置3D touch
+    
+    
+   //处理应用退出后的推送
+    NSDictionary *userInfo = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    if (userInfo) {
+        [self pushToDetailVCWithNotification:userInfo];
+    }
     
     return YES;
 }
 
 // 程序暂行
 - (void)applicationWillResignActive:(UIApplication *)application {
+    DNLog(@"程序暂行");
     //记录进入后台的时间
     self.resignTime = CFDateGetAbsoluteTime((CFDateRef)[NSDate date]);
 }
 
 // 程序进入后台
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    
+    DNLog(@"程序进入后台");
 }
 
 // 程序进入前台
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    DNLog(@"程序进入前台");
     //当应用进入后台时间超过10分钟(处理一些有时效性的界面或者账号)
     self.currentTime = CFDateGetAbsoluteTime((CFDateRef)[NSDate date]);
     if (self.resignTime != 0 && self.currentTime - self.resignTime > 600) {
         DNLog(@"我是不是沉睡了好长时间");
     }
-    
 }
 
 // 程序重新激活
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
+    DNLog(@"程序重新激活");
 }
 
-// 程序意外暂行
+// 程序意外退出
 - (void)applicationWillTerminate:(UIApplication *)application {
-    
+    DNLog(@"程序意外退出");
 }
+
+//远程推送
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [UMessage registerDeviceToken:deviceToken];
+    DNLog(@"deviceToken :%@",[deviceToken APNSToken]);
+}
+
+//- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+//    //如果注册成功，可以删掉这个方法
+//    NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+//}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    //通知栏的通知消息全部清除
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    //关闭友盟自带的弹出框
+    [UMessage setAutoAlert:NO];
+    [UMessage didReceiveRemoteNotification:userInfo];
+    
+    //消息接收后处理
+    [UMessage sendClickReportForRemoteNotification:userInfo];
+    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive || [UIApplication sharedApplication].applicationState == UIApplicationStateInactive) {
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self pushToDetailVCWithNotification:userInfo];
+            }
+        } title:@"新消息" message:@"有一条新消息" cancelButtonName:@"忽略" otherButtonTitles:@"查看", nil];
+    }else {
+        [self pushToDetailVCWithNotification:userInfo];
+    }
+}
+
 
 //本地推送接收消息
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
     //通知栏的通知消息全部清除
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 1;
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     if([UIApplication sharedApplication].applicationState == UIApplicationStateActive || [UIApplication sharedApplication].applicationState == UIApplicationStateInactive) {
@@ -96,12 +147,10 @@
     }else {
         [self pushToDetailVCWithNotification:notification.userInfo];
     }
-    
 }
 
-
 //客户端回调
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     //第二步：添加回调
     if ([OpenShare handleOpenURL:url]) {
         return YES;
@@ -129,12 +178,10 @@
         [mytab presentViewController:nav animated:NO completion:nil];
     }
 }
-
 #pragma mark - method
 //检测到app有新版本提醒更新
-- (void)refreshApp {
-    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/lookup?id=%@",appstoreId];
-    
+- (void)upgradeAppVersion {
+    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/cn/lookup?id=%@",appstoreId];
     [DNNetworking getWithURLString:urlStr success:^(id obj) {
         //下载地址
         NSString *trackViewUrlStr = [[[obj objectForKey:@"results"] firstObject] objectForKey:@"trackViewUrl"];
@@ -142,6 +189,7 @@
         NSString *appstoreVersion = [[[obj objectForKey:@"results"] firstObject] objectForKey:@"version"];
         //当前版本
         NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        DNLog(@"线上版本%@----当前版本%@----下载地址%@",appstoreVersion, currentVersion, trackViewUrlStr);
         //判断客户端是不是最新版本
         if ([appstoreVersion compare:currentVersion options:NSNumericSearch] == NSOrderedDescending) {
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
@@ -184,15 +232,28 @@
     [OpenShare connectAlipay];//支付宝参数都是服务器端生成的，这里不需要key.
 }
 
+//设置友盟推送
+- (void)setUMPushWithOptions:(NSDictionary *)launchOptions {
+    [UMessage startWithAppkey:UM_AppKey launchOptions:launchOptions];
+    if (UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+        [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+    }else {
+        [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+    }
+    [UMessage setLogEnabled:YES];
+    
+}
+
 //push消息接收后跳转
 - (void)pushToDetailVCWithNotification:(NSDictionary *)userInfo {
     if (userInfo) {
         DetailViewController *detailVC               = [[DetailViewController alloc] init];
-        detailVC.urlStr                              = userInfo[@"pushurl"];
+        detailVC.urlStr                              = userInfo[@"go_url"];
         
         UITabBarController *tabViewController        = (UITabBarController *)self.window.rootViewController;
         DNNavigationController *sourceViewController = (DNNavigationController *)tabViewController.viewControllers[tabViewController.selectedIndex];
-        [sourceViewController dismissAllModalController];
+        [sourceViewController dismissAllModalControllerWithAnimated:NO];
         [sourceViewController pushViewController:detailVC animated:YES];
     }
 }

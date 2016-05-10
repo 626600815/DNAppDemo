@@ -5,6 +5,8 @@
 
 //工具
 #define DNWeakSelf __weak typeof(self) weakSelf = self;//弱引用
+#define APPDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])//获取AppDelegate
+
 
 //默认加载图片
 #define PLACEHOLDER [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"placeholder" ofType:@"jpg"]]

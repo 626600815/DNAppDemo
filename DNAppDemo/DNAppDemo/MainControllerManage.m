@@ -13,15 +13,16 @@
 #import "TabBarTool.h"
 
 #import "CenterViewController.h"
+#import "LoginViewController.h"
 
-@interface MainControllerManage ()
+@interface MainControllerManage () <UITabBarControllerDelegate, LoginViewControllerDelegate>
 
 //主视图(tabbar)
-@property (nonatomic, strong) UIViewController *mainViewController;
+@property (nonatomic, strong) UIViewController   *mainViewController;
 //tabbar
 @property (nonatomic, strong) DNTabBarController *tabBarController;
 //所有controller的信息
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray     *dataArray;
 
 @end
 
@@ -73,7 +74,7 @@
 }
 
 - (DNNavigationController *)addChildWithVC:(UIViewController *)childVC title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName {
-    childVC.tabBarItem = [TabBarTool  itemWithTitle:title normalImg:imageName selectImg:selectImageName];
+    childVC.tabBarItem           = [TabBarTool  itemWithTitle:title normalImg:imageName selectImg:selectImageName];
     childVC.navigationItem.title = title;
     DNNavigationController *navi = [[DNNavigationController alloc] initWithRootViewController:childVC];
 //    [self.tabBarController addChildViewController:navi];;
@@ -83,7 +84,7 @@
 //按钮按下
 - (void)centerButtonPressed {
     CenterViewController *centerVC = [[CenterViewController alloc] initWithNibName:NSStringFromClass([CenterViewController class]) bundle:nil];
-    DNNavigationController *nav = [[DNNavigationController alloc] initWithRootViewController:centerVC];
+    DNNavigationController *nav    = [[DNNavigationController alloc] initWithRootViewController:centerVC];
     [self.tabBarController presentViewController:nav animated:NO completion:nil];
 }
 
@@ -96,8 +97,32 @@
     tabBarVC.selectedIndex = 0;
 }
 
-#pragma mark - 初始化
+#pragma mark - UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    [DNUser loadUserFromSanbox];//读取应用的登录状态
+    
+    DNNavigationController *navc = (DNNavigationController *)viewController;
+    NSString *className          = [navc.rootViewController toString];
+    if([className isEqualToString:@"MineViewController"] && !DNUser.isLoginStatus) {//该去登陆页登录
+        LoginViewController *loginVC     = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        loginVC.loginDelegate            = self;
+        loginVC.index                    = 4;
+        DNNavigationController *loginNvc = [[DNNavigationController alloc] initWithRootViewController:loginVC];
+        [navc.rootViewController presentViewController:loginNvc animated:YES completion:nil];
+        return NO;
+    }
+    
+    return YES;
+}
 
+#pragma mark - LoginViewControllerDelegate
+- (void)dismissWithtype:(DNLoginType)type withTabSelect:(NSInteger)index {
+    if (type == DNLoginTypeSuccess) {
+        self.tabBarController.selectedIndex = index;
+    }
+}
+
+#pragma mark - 初始化
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc]init];
@@ -108,6 +133,7 @@
 - (DNTabBarController *)tabBarController {
     if (!_tabBarController) {
         _tabBarController = [[DNTabBarController alloc] init];
+        _tabBarController.delegate = self;
     }
     return _tabBarController;
 }

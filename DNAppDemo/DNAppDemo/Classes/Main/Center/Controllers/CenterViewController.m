@@ -89,16 +89,12 @@
     }];
 }
 
-
-
 //DNQRCodeReaderDelegate
 - (void)didDetectQRCode:(AVMetadataMachineReadableCodeObject *)qrCode {
     [self loadWebViewWithUrlStr:qrCode.stringValue];
 }
 
-
 #pragma mark - Method
-
 - (void)dismissVC {
     DNLog(@"关闭页面");
     [self dismissViewControllerAnimated:NO completion:nil];
@@ -107,7 +103,7 @@
 - (void)loadWebViewWithUrlStr:(NSString *)urlString {
     [[DNQRCodeReader sharedReader] stopReader];
     DetailViewController *detailVC = [[DetailViewController alloc] init];
-    detailVC.urlStr = urlString;
+    detailVC.urlStr                = urlString;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
