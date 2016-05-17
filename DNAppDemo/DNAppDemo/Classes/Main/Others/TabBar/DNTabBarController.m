@@ -30,6 +30,9 @@
     [super viewDidAppear:animated];
     
     [self.tabBar bringSubviewToFront:self.centerButton];
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

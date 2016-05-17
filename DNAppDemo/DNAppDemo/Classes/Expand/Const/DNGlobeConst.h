@@ -1,7 +1,7 @@
 
 
 //主机域名
-static NSString *const DNHostURLStr = @"http://www.baidu.com";
+static NSString *const DNHostURLStr = @"http://wiibao.tc.mainone.cn";
 
 //AppStore上线的Id
 static NSString *const appstoreId = @"1095957597";

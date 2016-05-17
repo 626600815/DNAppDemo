@@ -110,6 +110,15 @@
 + (UIImage *)streImageNamed:(NSString *)imageName capX:(CGFloat)x capY:(CGFloat)y;
 
 /**
+ *  中心拉伸图片
+ *
+ *  @param name 图片名字
+ *
+ *  @return 图片
+ */
++ (UIImage *)stretchedImageWithName:(NSString *)name;
+
+/**
  *  通过连接生成二维码图片
  *
  *  @param qrString 连接地址

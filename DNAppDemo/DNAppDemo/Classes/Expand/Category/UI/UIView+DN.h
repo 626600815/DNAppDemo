@@ -105,7 +105,7 @@ typedef void (^GestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
  *  添加阴影
  *
  *  @param radius      阴影大小
- *  @param offset      便宜
+ *  @param offset      偏移
  *  @param opacity     阴影透明度
  *  @param shadowColor 颜色
  */

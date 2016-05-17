@@ -13,7 +13,7 @@
 #import "DrawViewController.h"
 #import "CenterViewController.h"
 #import "DNNavigationController.h"
-
+#import "DNTabBarController.h"
 #import "DetailViewController.h"
 
 #import "UMessage.h"
@@ -33,17 +33,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    DNDocumentUrl;
     /*-----------------与界面无关的设置-----------------*/
     //设置全局接口请求的主机域名
     [DNNetworking updateBaseUrl:DNHostURLStr];
     //设置三方登录分享的key
     [self setThirdKeys];
     //检测app版本是否需要升级
-    [self upgradeAppVersion];
+//    [self upgradeAppVersion];
     //设置友盟推送
     [self setUMPushWithOptions:launchOptions];
-    
-    
     
     //创建跟视图
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -61,6 +61,10 @@
     if (userInfo) {
         [self pushToDetailVCWithNotification:userInfo];
     }
+    
+    
+    
+    [[MainControllerManage sharedManager] setBadgeValue:@"4" atIndex:2];
     
     return YES;
 }

@@ -7,11 +7,13 @@
 //
 
 #import "DrawViewController.h"
+#import "CircleView.h"
 
 @interface DrawViewController () {
     CGPoint touchPoint;
     UIImageView *canDraw;
 }
+@property (weak, nonatomic) IBOutlet CircleView *circle;
 @end
 
 @implementation DrawViewController
@@ -20,9 +22,21 @@
     [super viewDidLoad];
     self.navigationItem.title = @"用手指画画看";
     
-    canDraw = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEM_WIDTH, SCREEM_HEIGHT)];
+    canDraw = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.circle.height+64, SCREEM_WIDTH, SCREEM_HEIGHT)];
     canDraw.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:canDraw];
+    
+    
+    //下载进度
+    [DNNetworking downloadFileWithURLString:@"https://s3.amazonaws.com/elasticbeanstalk-us-east-1-725151976758/audio/mclean_kjv/2/1.mp3" progress:^(NSProgress *progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.circle.progress = progress.fractionCompleted;
+        });
+        
+    } result:^(NSURL *filePath, NSError *error) {
+        NSLog(@"error------>%@",error);
+    }];
+
     
 }
 
@@ -30,7 +44,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     touchPoint = [touch locationInView:canDraw];

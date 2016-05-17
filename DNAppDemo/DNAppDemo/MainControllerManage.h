@@ -25,4 +25,6 @@
  */
 - (void)jumpToHomeFromVC:(UIViewController *)VC;
 
+- (void)setBadgeValue:(NSString *)value atIndex:(NSInteger)index;
+
 @end

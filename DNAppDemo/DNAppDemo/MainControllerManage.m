@@ -70,6 +70,10 @@
     [self.tabBarController.centerButton setImage:[UIImage imageNamed:@"tab_center_selected"] forState:UIControlStateHighlighted];
     [self.tabBarController.centerButton addTarget:self action:@selector(centerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    //开启小红点
+    self.tabBarController.tabBarItem.badgeValue = @"0";
+    
+    
     return self.tabBarController;
 }
 
@@ -96,6 +100,13 @@
     [VC.navigationController popToRootViewControllerAnimated:NO];
     tabBarVC.selectedIndex = 0;
 }
+
+- (void)setBadgeValue:(NSString *)value atIndex:(NSInteger)index {
+    //如果需要改变，在改变的地方添加如下代码
+    self.tabBarController.tabBar.items[index].badgeValue = value;
+
+}
+
 
 #pragma mark - UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {

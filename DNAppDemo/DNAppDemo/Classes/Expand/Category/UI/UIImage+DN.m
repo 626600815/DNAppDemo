@@ -272,6 +272,12 @@ static const void *FailBlockKey = &FailBlockKey;
     return streImage;
 }
 
++ (UIImage *)stretchedImageWithName:(NSString *)name {
+    UIImage *image = [UIImage imageNamed:name];
+    int leftCap = image.size.width * 0.5;
+    int topCap = image.size.height * 0.5;
+    return [image stretchableImageWithLeftCapWidth:leftCap topCapHeight:topCap];
+}
 
 + (UIImage *)createQRForString:(NSString *)qrString withSize:(CGFloat)size {
     NSData *stringData = [qrString dataUsingEncoding:NSUTF8StringEncoding];

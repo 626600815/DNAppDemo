@@ -8,6 +8,15 @@
 
 #import "MenuViewController.h"
 #import "DOPDropDownMenu.h"
+#import "FunctionView.h"
+#import "SecondServices.h"
+#import "CommissionScrollView.h"
+#import "FourPictureView.h"
+#import "FourPictureViewTwo.h"
+#import "GoodShopView.h"
+#import "GoodsListViewController.h"
+
+static NSString *baseUrlStr = @"http://wiibao.tc.mainone.cn/appservice/distributioninterface/search";//内网
 
 
 @interface MenuViewController () <DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
@@ -21,9 +30,20 @@
 @property (nonatomic, strong) NSArray *sorts;
 @property (nonatomic, weak) DOPDropDownMenu *menu;
 
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+
 @end
 
 @implementation MenuViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,11 +69,75 @@
     
     // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
     [menu selectDefalutIndexPath];
+    
+    
+    
+
+    self.scrollView.contentSize = CGSizeMake(SCREEM_WIDTH, 1400);
+    
+    //功能区
+    CGFloat functionViewHeight = SCREEM_WIDTH*2/5 +5;
+    FunctionView *functionView = [[FunctionView alloc] initWithFrame:CGRectMake(0, 50, SCREEM_WIDTH, functionViewHeight)];
+    [self.scrollView addSubview:functionView];
+    functionView.block = ^(NSString *functionID) {
+        NSLog(@"点击ID是：%@",functionID);
+        
+        [self gotoListVCWithID:functionID];
+        
+    };
+    
+    //滚动区
+    CommissionScrollView *commissionView = [[CommissionScrollView alloc] initWithFrame:CGRectMake(0, 50+functionViewHeight, SCREEM_WIDTH, 180)];
+    [self.scrollView addSubview:commissionView];
+    
+    commissionView.block = ^(NSString *scrollID) {
+        NSLog(@"最高返佣ID:%@",scrollID);
+    };
+    
+    //四个奇怪的布局
+    FourPictureView *picView = [[FourPictureView alloc] initWithFrame:CGRectMake(0, 50+180+functionViewHeight, SCREEM_WIDTH, SCREEM_WIDTH*3/5)];
+    [self.scrollView addSubview:picView];
+    picView.block = ^(NSString *picID) {
+        NSLog(@"四个奇怪布局的ID：%@",picID);
+    };
+    
+    //另外四个奇怪的布局
+    FourPictureViewTwo *picView2 = [[FourPictureViewTwo alloc] initWithFrame:CGRectMake(0, 50+180+functionViewHeight+SCREEM_WIDTH*3/5, SCREEM_WIDTH, SCREEM_WIDTH*2/3)];
+    [self.scrollView addSubview:picView2];
+    
+    picView2.block = ^(NSString *picID) {
+        NSLog(@"另外四个奇怪布局的ID：%@",picID);
+    };
+    
+    GoodShopView*goodView = [[GoodShopView alloc] initWithFrame:CGRectMake(0, picView2.y+picView2.height, SCREEM_WIDTH, SCREEM_WIDTH*2/7+50)];
+    [self.scrollView addSubview:goodView];
+    
+    
+    
+    self.scrollView.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [SecondServices requestListInfo:^(NSDictionary *listinfoDic) {
+            [self.scrollView.mj_header endRefreshing];
+
+            functionView.functionArray = listinfoDic[@"function"];
+            commissionView.scrollArray = listinfoDic[@"scroll"];
+            picView.picArray = listinfoDic[@"fourth"];
+            picView2.picArray = listinfoDic[@"nextfourth"];
+            goodView.shopArray = listinfoDic[@"scroll"];
+        }];
+    }];
+    [self.scrollView.mj_header beginRefreshing];
+    
+}
+
+- (void)gotoListVCWithID:(NSString *)listId {
+    GoodsListViewController *goodsListVC = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
+    [self.navigationController pushViewController:goodsListVC animated:YES];
 }
 
 - (void)menuReloadData {
     self.classifys = @[@"美食",@"今日新单",@"电影"];
     [_menu reloadData];
+    
 }
 
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu {

@@ -36,6 +36,8 @@ static NSString *const Indentifier = @"cellID";
 
     [self loadDataList];
     
+   
+    
 }
 
 //请求数据刷新列表

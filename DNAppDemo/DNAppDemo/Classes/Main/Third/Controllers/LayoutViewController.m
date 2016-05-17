@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self baseView];
     
+ 
+}
+
+- (void)baseView {
     UIView *view1 = [[UIView alloc] init];
     view1.backgroundColor = [UIColor RandomColor];
     [self.view addSubview:view1];
@@ -27,7 +32,7 @@
     UIView *view3 = [[UIView alloc] init];
     view3.backgroundColor = [UIColor RandomColor];
     [self.view addSubview:view3];
-   
+    
     UIView *superview = self.view;
     NSInteger padding = 10;
     
@@ -53,14 +58,13 @@
         make.bottom.equalTo(superview.mas_bottom).offset(-padding);
         
     }];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end
