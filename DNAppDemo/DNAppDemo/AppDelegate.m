@@ -64,7 +64,7 @@
     
     
     
-    [[MainControllerManage sharedManager] setBadgeValue:@"4" atIndex:2];
+    [[MainControllerManage sharedManager] setBadgeValue:@"4" atIndex:3];
     
     return YES;
 }

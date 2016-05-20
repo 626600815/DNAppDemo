@@ -25,7 +25,7 @@
 /**读取密码*/
 + (NSString *)readPassWord;
 
-/**删除用户名和密码*/
+/**删除用户所有信息*/
 + (void)deletePassWord;
 
 @end

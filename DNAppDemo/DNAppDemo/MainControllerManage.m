@@ -24,6 +24,9 @@
 //所有controller的信息
 @property (nonatomic, strong) NSMutableArray     *dataArray;
 
+@property (nonatomic, strong) NSMutableArray *currentArray;
+
+
 @end
 
 @implementation MainControllerManage
@@ -110,8 +113,8 @@
 
 #pragma mark - UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    [DNUser loadUserFromSanbox];//读取应用的登录状态
     
+    [DNUser loadUserFromSanbox];//读取应用的登录状态
     DNNavigationController *navc = (DNNavigationController *)viewController;
     NSString *className          = [navc.rootViewController toString];
     if([className isEqualToString:@"MineViewController"] && !DNUser.isLoginStatus) {//该去登陆页登录
@@ -125,6 +128,25 @@
     
     return YES;
 }
+
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    DNNavigationController *navc = (DNNavigationController *)viewController;
+//    NSString *vcStr = [navc.rootViewController toString];
+//    if (self.currentArray.count > 1) {
+//        [self.currentArray removeObjectAtIndex:0];
+//    }
+//    [self.currentArray addObject:vcStr];
+//    
+//    if (self.currentArray.count == 2) {
+//        if ([self.currentArray[0] isEqualToString:self.currentArray[1]]) {
+//           NSLog(@"开始刷新------>%@",self.currentArray);
+//        }
+//    }
+//    
+//    
+//}
+
+
 
 #pragma mark - LoginViewControllerDelegate
 - (void)dismissWithtype:(DNLoginType)type withTabSelect:(NSInteger)index {
@@ -147,6 +169,13 @@
         _tabBarController.delegate = self;
     }
     return _tabBarController;
+}
+
+- (NSMutableArray *)currentArray {
+    if (!_currentArray) {
+        _currentArray = [[NSMutableArray alloc] init];
+    }
+    return _currentArray;
 }
 
 @end

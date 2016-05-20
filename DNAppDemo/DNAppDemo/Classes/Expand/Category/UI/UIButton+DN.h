@@ -11,6 +11,12 @@
 typedef void (^TouchedBlock)(NSInteger tag);
 @interface UIButton (DN)
 
++ (UIButton *)buttonWithFrame:(CGRect)frame title:(NSString *)title target:(id)target selector:(SEL)selector;
+
++ (UIButton *)buttonWithFrame:(CGRect)frame Target:(id)target Selector:(SEL)selector Image:(NSString*)image ImagePressed:(NSString *)imagePressed;
+
++ (UIButton *)buttonWithFrame:(CGRect)frame Target:(id)target Selector:(SEL)selector Image:(NSString*)image ImageSelected:(NSString *)imageSelected;
+
 /**
  *  设置按钮的背景颜色
  *

@@ -36,7 +36,21 @@ static NSString *const Indentifier = @"cellID";
 
     [self loadDataList];
     
-   
+   NSString *url = @"http://wiibao.tc.mainone.cn/appservice/distributioninterface/search?page=1";
+    NSDictionary *para = @{
+                           @"cate_id":@"28",
+                           @"order":@"sales",
+                           @"type":@"1",
+                           @"type_s":@"desc",
+                           @"userid":@"1364"
+                           };
+    
+    [DNNetworking postWithURLString:url parameters:para success:^(id obj) {
+        NSLog(@"---------------->%@",obj);
+    } failure:^(NSError *error) {
+        
+    }];
+    
     
 }
 
