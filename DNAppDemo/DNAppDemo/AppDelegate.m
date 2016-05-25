@@ -59,10 +59,13 @@
    //处理应用退出后的推送
     NSDictionary *userInfo = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"];
     if (userInfo) {
-        [self pushToDetailVCWithNotification:userInfo];
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self pushToDetailVCWithNotification:userInfo];
+            }
+        } title:@"新消息" message:@"有一条新消息" cancelButtonName:@"忽略" otherButtonTitles:@"查看", nil];
+
     }
-    
-    
     
     [[MainControllerManage sharedManager] setBadgeValue:@"4" atIndex:3];
     
@@ -113,9 +116,6 @@
 //}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    //通知栏的通知消息全部清除
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     //关闭友盟自带的弹出框
     [UMessage setAutoAlert:NO];
@@ -138,9 +138,6 @@
 //本地推送接收消息
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
-    //通知栏的通知消息全部清除
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     if([UIApplication sharedApplication].applicationState == UIApplicationStateActive || [UIApplication sharedApplication].applicationState == UIApplicationStateInactive) {
         [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
@@ -252,6 +249,11 @@
 //push消息接收后跳转
 - (void)pushToDetailVCWithNotification:(NSDictionary *)userInfo {
     if (userInfo) {
+        //通知栏的通知消息全部清除
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 1;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        
         DetailViewController *detailVC               = [[DetailViewController alloc] init];
         detailVC.urlStr                              = userInfo[@"go_url"];
         

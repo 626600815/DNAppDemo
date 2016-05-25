@@ -95,6 +95,7 @@
 		5177C82A1CC4E2470023E6B2 /* DNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C8291CC4E2470023E6B2 /* DNTableHeaderView.m */; };
 		5177C82E1CC4EFDC0023E6B2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5177C82C1CC4EFDC0023E6B2 /* SettingViewController.m */; };
 		5177C82F1CC4EFDC0023E6B2 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5177C82D1CC4EFDC0023E6B2 /* SettingViewController.xib */; };
+		517D1AAD1CF30DE000987CE6 /* DNDragImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D1AAC1CF30DE000987CE6 /* DNDragImageView.m */; };
 		518809821CD2FADA00C9197C /* DNScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 518809811CD2FADA00C9197C /* DNScrollText.m */; };
 		51880B6D1CD3078A00C9197C /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 518809871CD3078A00C9197C /* ZXAztecDecoder.m */; };
 		51880B6E1CD3078A00C9197C /* ZXAztecDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5188098A1CD3078A00C9197C /* ZXAztecDetector.m */; };
@@ -571,6 +572,8 @@
 		5177C82B1CC4EFDC0023E6B2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		5177C82C1CC4EFDC0023E6B2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		5177C82D1CC4EFDC0023E6B2 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		517D1AAB1CF30DE000987CE6 /* DNDragImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDragImageView.h; sourceTree = "<group>"; };
+		517D1AAC1CF30DE000987CE6 /* DNDragImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNDragImageView.m; sourceTree = "<group>"; };
 		518809801CD2FADA00C9197C /* DNScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNScrollText.h; sourceTree = "<group>"; };
 		518809811CD2FADA00C9197C /* DNScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNScrollText.m; sourceTree = "<group>"; };
 		518809861CD3078A00C9197C /* ZXAztecDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDecoder.h; sourceTree = "<group>"; };
@@ -1551,6 +1554,15 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		517D1AAA1CF30DD000987CE6 /* DNDragImageView */ = {
+			isa = PBXGroup;
+			children = (
+				517D1AAB1CF30DE000987CE6 /* DNDragImageView.h */,
+				517D1AAC1CF30DE000987CE6 /* DNDragImageView.m */,
+			);
+			path = DNDragImageView;
+			sourceTree = "<group>";
+		};
 		5188097F1CD2FA8E00C9197C /* DNScrollText */ = {
 			isa = PBXGroup;
 			children = (
@@ -2457,6 +2469,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				517D1AAA1CF30DD000987CE6 /* DNDragImageView */,
 				516DDFE91CDC447500BB63EB /* DNTextInputView */,
 				5188097F1CD2FA8E00C9197C /* DNScrollText */,
 				516830E71CD212A100F017DF /* DNNetStatus */,
@@ -3458,6 +3471,7 @@
 				51880BB71CD3078A00C9197C /* ZXBinaryBitmap.m in Sources */,
 				51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */,
 				5191AC8C1CC5C858007FF44E /* UISearchBar+DN.m in Sources */,
+				517D1AAD1CF30DE000987CE6 /* DNDragImageView.m in Sources */,
 				51880BC51CD3078A00C9197C /* ZXDataMatrixDecodedBitStreamParser.m in Sources */,
 				51880C451CD3078A00C9197C /* ZXQRCodeReader.m in Sources */,
 				51880BE81CD3078A00C9197C /* ZXRSSExpandedBlockParsedResult.m in Sources */,
