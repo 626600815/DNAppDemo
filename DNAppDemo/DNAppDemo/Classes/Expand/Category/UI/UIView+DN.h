@@ -153,5 +153,15 @@ typedef void (^GestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
  */
 - (void)startSelectedAnimation;
 
+/**
+ *  摇摆动画
+ */
+- (void)shakeView;
+
+/**
+ *  脉冲动画
+ */
+- (void)pulseViewWithTime:(CGFloat)seconds;
+
 @end
 

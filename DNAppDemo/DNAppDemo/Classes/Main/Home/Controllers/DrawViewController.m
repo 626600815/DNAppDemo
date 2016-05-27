@@ -38,6 +38,17 @@
     }];
 
     
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(20, 70, 100, 100)];
+    backView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:backView];
+    __weak typeof(UIView *)weakView = backView;
+    [backView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        [weakView addMotionEffectWithMinRelative:2 maxRelative:3 EffectType:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis keyPath:@"transform"];
+    }];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

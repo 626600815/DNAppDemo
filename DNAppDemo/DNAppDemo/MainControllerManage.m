@@ -76,12 +76,11 @@
     //开启小红点
     self.tabBarController.tabBarItem.badgeValue = @"0";
     
-    
     return self.tabBarController;
 }
 
 - (DNNavigationController *)addChildWithVC:(UIViewController *)childVC title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName {
-    childVC.tabBarItem           = [TabBarTool  itemWithTitle:title normalImg:imageName selectImg:selectImageName];
+    childVC.tabBarItem           = [TabBarTool itemWithTitle:title normalImg:imageName selectImg:selectImageName];
     childVC.navigationItem.title = title;
     DNNavigationController *navi = [[DNNavigationController alloc] initWithRootViewController:childVC];
 //    [self.tabBarController addChildViewController:navi];;

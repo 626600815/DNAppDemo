@@ -15,7 +15,6 @@
 #import "TouchViewController.h"
 #import "DrawViewController.h"
 
-
 static NSString *const Indentifier = @"cellID";
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate>
@@ -33,7 +32,7 @@ static NSString *const Indentifier = @"cellID";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:Indentifier];
     self.tableView.fd_debugLogEnabled = NO;
-
+    
     [self loadDataList];
     
    NSString *url = @"http://wiibao.tc.mainone.cn/appservice/distributioninterface/search?page=1";
