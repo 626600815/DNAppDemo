@@ -546,5 +546,15 @@ static char kActionHandlerSwipeGestureKey;
 }
 
 
+- (void)addCornerWithRadius:(CGFloat)radius byRoundingCorners:(UIRectCorner)corners {
+    UIBezierPath *maskPath  = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame         = self.bounds;
+    maskLayer.path          = maskPath.CGPath;
+    self.layer.mask         = maskLayer;
+}
+
+
+
 @end
 

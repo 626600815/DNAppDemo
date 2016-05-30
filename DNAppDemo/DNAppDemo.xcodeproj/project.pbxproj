@@ -349,6 +349,8 @@
 		51888D4F1CC0C38E004E93A9 /* Third.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D4E1CC0C38E004E93A9 /* Third.xcassets */; };
 		51888D511CC0C395004E93A9 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51888D501CC0C395004E93A9 /* Mine.xcassets */; };
 		51888D521CC0E84F004E93A9 /* MBProgressHUD+DN.m in Sources */ = {isa = PBXBuildFile; fileRef = 51888D421CC0C02B004E93A9 /* MBProgressHUD+DN.m */; };
+		518928751CFBE8E300EBC5D8 /* DNPlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = 518928741CFBE8E300EBC5D8 /* DNPlaySound.m */; };
+		518928781CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 518928771CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.m */; };
 		5189EECF1CC08F2900091684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189EECE1CC08F2900091684 /* main.m */; };
 		5189EED21CC08F2900091684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189EED11CC08F2900091684 /* AppDelegate.m */; };
 		5189EEDA1CC08F2900091684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5189EED91CC08F2900091684 /* Assets.xcassets */; };
@@ -1084,6 +1086,10 @@
 		51888D4C1CC0C386004E93A9 /* Second.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Second.xcassets; sourceTree = "<group>"; };
 		51888D4E1CC0C38E004E93A9 /* Third.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Third.xcassets; sourceTree = "<group>"; };
 		51888D501CC0C395004E93A9 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mine.xcassets; sourceTree = "<group>"; };
+		518928731CFBE8E300EBC5D8 /* DNPlaySound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNPlaySound.h; sourceTree = "<group>"; };
+		518928741CFBE8E300EBC5D8 /* DNPlaySound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNPlaySound.m; sourceTree = "<group>"; };
+		518928761CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PiShowBanner.h"; sourceTree = "<group>"; };
+		518928771CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PiShowBanner.m"; sourceTree = "<group>"; };
 		5189EECA1CC08F2900091684 /* DNAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5189EECE1CC08F2900091684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5189EED01CC08F2900091684 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2340,6 +2346,15 @@
 			path = DNShowHUD;
 			sourceTree = "<group>";
 		};
+		5189286F1CFBE8B900EBC5D8 /* DNPlaySound */ = {
+			isa = PBXGroup;
+			children = (
+				518928731CFBE8E300EBC5D8 /* DNPlaySound.h */,
+				518928741CFBE8E300EBC5D8 /* DNPlaySound.m */,
+			);
+			path = DNPlaySound;
+			sourceTree = "<group>";
+		};
 		5189EEC11CC08F2900091684 = {
 			isa = PBXGroup;
 			children = (
@@ -2469,6 +2484,7 @@
 		5189EF071CC09AA700091684 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				5189286F1CFBE8B900EBC5D8 /* DNPlaySound */,
 				517D1AAA1CF30DD000987CE6 /* DNDragImageView */,
 				516DDFE91CDC447500BB63EB /* DNTextInputView */,
 				5188097F1CD2FA8E00C9197C /* DNScrollText */,
@@ -2519,6 +2535,8 @@
 				51888D261CC0BB66004E93A9 /* HomeViewController.h */,
 				51888D271CC0BB66004E93A9 /* HomeViewController.m */,
 				51888D281CC0BB66004E93A9 /* HomeViewController.xib */,
+				518928761CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.h */,
+				518928771CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.m */,
 				516D4FB61CD99B2D008BA6CA /* DrawViewController.h */,
 				516D4FB71CD99B2D008BA6CA /* DrawViewController.m */,
 				516D4FB81CD99B2D008BA6CA /* DrawViewController.xib */,
@@ -3468,6 +3486,7 @@
 				5189EF421CC09EC900091684 /* DNNavigationController.m in Sources */,
 				51880BDF1CD3078A00C9197C /* ZXAI01320xDecoder.m in Sources */,
 				51880B701CD3078A00C9197C /* ZXAztecCode.m in Sources */,
+				518928781CFBEAE800EBC5D8 /* UIViewController+PiShowBanner.m in Sources */,
 				51880BB71CD3078A00C9197C /* ZXBinaryBitmap.m in Sources */,
 				51B7737B1CC61BD700001B95 /* DOPDropDownMenu.m in Sources */,
 				5191AC8C1CC5C858007FF44E /* UISearchBar+DN.m in Sources */,
@@ -3508,6 +3527,7 @@
 				5189EF4C1CC0B85500091684 /* DNTabBarController.m in Sources */,
 				5189EF491CC0B81C00091684 /* DNTabBarButton.m in Sources */,
 				5191AC7E1CC5C858007FF44E /* NSURL+DN.m in Sources */,
+				518928751CFBE8E300EBC5D8 /* DNPlaySound.m in Sources */,
 				5175AFC81CD0A4E900BB73DE /* OpenShare+Alipay.m in Sources */,
 				51880C101CD3078A00C9197C /* ZXUPCEANExtensionSupport.m in Sources */,
 				51880BCC1CD3078A00C9197C /* ZXDataMatrixDefaultPlacement.m in Sources */,

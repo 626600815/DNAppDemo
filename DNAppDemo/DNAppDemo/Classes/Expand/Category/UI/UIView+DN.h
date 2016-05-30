@@ -163,5 +163,13 @@ typedef void (^GestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
  */
 - (void)pulseViewWithTime:(CGFloat)seconds;
 
+/**
+ *  给View添加圆角
+ *
+ *  @param radius  圆角大小
+ *  @param corners 要变成圆角的地方
+ */
+- (void)addCornerWithRadius:(CGFloat)radius byRoundingCorners:(UIRectCorner)corners;
+
 @end
 

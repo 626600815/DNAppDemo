@@ -8,6 +8,8 @@
 
 #import "DrawViewController.h"
 #import "CircleView.h"
+#import "UIViewController+PiShowBanner.h"
+
 
 @interface DrawViewController () {
     CGPoint touchPoint;
@@ -31,6 +33,7 @@
     [DNNetworking downloadFileWithURLString:@"https://s3.amazonaws.com/elasticbeanstalk-us-east-1-725151976758/audio/mclean_kjv/2/1.mp3" progress:^(NSProgress *progress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.circle.progress = progress.fractionCompleted;
+            [self showBannerWithMessage:@"下载完成" belowView:self.view];
         });
         
     } result:^(NSURL *filePath, NSError *error) {
@@ -40,11 +43,15 @@
     
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(20, 70, 100, 100)];
     backView.backgroundColor = [UIColor redColor];
+    [backView addCornerWithRadius:10 byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomRight];
     [self.view addSubview:backView];
     __weak typeof(UIView *)weakView = backView;
     [backView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
         [weakView addMotionEffectWithMinRelative:2 maxRelative:3 EffectType:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis keyPath:@"transform"];
+        
     }];
+    
+    
     
     
     

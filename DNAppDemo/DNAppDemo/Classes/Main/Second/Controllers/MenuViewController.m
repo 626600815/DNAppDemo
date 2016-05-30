@@ -49,6 +49,7 @@ static NSString *baseUrlStr = @"http://wiibao.tc.mainone.cn/appservice/distribut
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     self.navigationItem.title = @"餐单";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"重新加载" style:UIBarButtonItemStylePlain target:self action:@selector(menuReloadData)];
